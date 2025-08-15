@@ -1,0 +1,2 @@
+Tdrive filter=lfs diff=lfs merge=lfs -text
+Tdrive_norm_traj filter=lfs diff=lfs merge=lfs -text

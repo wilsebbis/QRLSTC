@@ -1,3 +1,5 @@
+# From https://github.com/llianga/RLSTCcode
+
 from MDP import TrajRLclus
 from rl_nn import DeepQNetwork
 import numpy as np

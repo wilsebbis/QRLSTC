@@ -1,3 +1,5 @@
+# From https://github.com/llianga/RLSTCcode
+
 os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 
 """

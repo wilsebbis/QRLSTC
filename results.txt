@@ -1,0 +1,19 @@
+Classical Version:
+
+Attempt 1
+
+* Clustering completed in 165.46 seconds.
+* Goodness of fit (SSE): 33052.0346
+
+Attempt 2
+
+* Clustering completed in 96334 seconds.
+* Goodness of fit (SSE): 56571.7269
+
+
+
+
+
+Quantum Version:
+
+N/A

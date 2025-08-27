@@ -1,0 +1,1912 @@
+head screenlog.0[16Dcat[P[12C [15Dpython3 RLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[K[?2004l
+0% - Loading raw trajectories...
+→ Done in 1.95 seconds.
+
+10% - Filtering by geographic bounding box...
+^CTraceback (most recent call last):
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/RLSTCcode-main/subtrajcluster/preprocessing.py"[0m, line [35m234[0m, in [35m<module>[0m
+    trajslist = processtrajs(trajs)
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/RLSTCcode-main/subtrajcluster/preprocessing.py"[0m, line [35m35[0m, in [35mprocesstrajs[0m
+    [31mtemptraj.append[0m[1;31m(trajs[i][j])[0m
+    [31m~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^[0m
+[1;35mKeyboardInterrupt[0m
+
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hppython3 qrlstc/preprocessing.py; python3 qrl [Ksstc/quantum_initcenters.py[?2004l
+Starting QRLSTC Preprocessing...
+Starting to process trajectories...
+Processing 0% done...
+Processing 9% done...
+Processing 19% done...
+Processing 29% done...
+Processing 39% done...
+Processing 49% done...
+Processing 59% done...
+Processing 69% done...
+Processing 79% done...
+Processing 89% done...
+Processing 99% done...
+Processing 99% done...
+→ Trajectories processed in 1.76 seconds.
+
+Processing trajectory lengths...
+Processing 0% done...
+Processing 9% done...
+Processing 19% done...
+Processing 29% done...
+Processing 39% done...
+Processing 49% done...
+Processing 59% done...
+Processing 69% done...
+Processing 79% done...
+Processing 89% done...
+Processing 99% done...
+Processing 99% done...
+→ Trajectory length processing completed in 1.91 seconds.
+
+Normalizing trajectory time...
+→ Time normalization completed in 1.58 seconds.
+
+Converting trajectory data to Traj objects...
+Converting 0% done...
+Converting 9% done...
+Converting 19% done...
+Converting 29% done...
+Converting 39% done...
+Converting 49% done...
+Converting 59% done...
+Converting 69% done...
+Converting 79% done...
+Converting 89% done...
+Converting 99% done...
+Converting 99% done...
+→ Trajectory conversion completed in 3.87 seconds.
+
+Simplifying trajectories...
+Simplifying 0% done...
+Simplifying 9% done...
+Simplifying 19% done...
+Simplifying 29% done...
+Simplifying 39% done...
+Simplifying 49% done...
+Simplifying 59% done...
+Simplifying 69% done...
+Simplifying 79% done...
+Simplifying 89% done...
+Simplifying 99% done...
+Simplifying 99% done...
+→ Simplification completed in 10.12 seconds.
+
+QRLSTC Preprocessing finished in 45.73 seconds.
+Encoding full trajectories (candidate centers)...
+→ Encoded 1000 centers in 0.09s.
+Encoding subtrajectories (members)...
+→ Encoded 78103 subtrajs in 0.94s.
+
+Initializing centers via q-means++ (quantum distance)...
+→ q-means++ init done in 0.17s.
+
+Assigning subtrajectories to centers...
+→ Assignment done in 0.83s.
+
+Clustering 0% done... (step 0.00s)
+Clustering 4% done... (step 0.00s)
+Clustering 9% done... (step 0.00s)
+Clustering 14% done... (step 0.00s)
+Clustering 19% done... (step 0.00s)
+Clustering 24% done... (step 0.00s)
+Clustering 29% done... (step 0.00s)
+Clustering 34% done... (step 0.00s)
+Clustering 39% done... (step 0.00s)
+Clustering 44% done... (step 0.00s)
+Clustering 49% done... (step 0.00s)
+Clustering 54% done... (step 0.00s)
+Clustering 59% done... (step 0.00s)
+Clustering 64% done... (step 0.00s)
+Clustering 69% done... (step 0.00s)
+Clustering 74% done... (step 0.00s)
+Clustering 79% done... (step 0.00s)
+Clustering 84% done... (step 0.00s)
+Clustering 89% done... (step 0.00s)
+Clustering 94% done... (step 0.00s)
+Clustering 99% done... (step 0.00s)
+Clustering 99% done... (step 0.00s)
+QRLSTC (q-means++ / quantum-inspired) clustering completed in 2.05 seconds.
+QRLSTC Goodness of fit (SSE): 3741999999998457993494528.0000
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KM[18CRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[K[?2004l
+0% - Loading raw trajectories...
+→ Done in 1.84 seconds.
+
+10% - Filtering by geographic bounding box...
+→ Done in 1.36 seconds.
+
+30% - Filtering and truncating by length...
+→ Done in 2.01 seconds.
+
+50% - Normalizing time values...
+→ Done in 1.64 seconds.
+
+65% - Converting to Traj objects...
+→ Done in 3.91 seconds.
+
+80% - Simplifying trajectories (may take a while)...
+→ Done in 10.44 seconds.
+
+95% - Saving simplified trajectories...
+→ Done in 23.18 seconds.
+
+100% - RLSTC Preprocessing finished in 44.37 seconds.
+Starting center initialization...
+→ Center initialization done in 40.06 seconds.
+
+Clustering 0% done... (step took 0.00 seconds)
+Clustering 4% done... (step took 6.76 seconds)
+Clustering 9% done... (step took 6.84 seconds)
+Clustering 14% done... (step took 6.84 seconds)
+Clustering 19% done... (step took 6.77 seconds)
+Clustering 24% done... (step took 6.92 seconds)
+Clustering 29% done... (step took 6.90 seconds)
+Clustering 34% done... (step took 6.81 seconds)
+Clustering 39% done... (step took 7.00 seconds)
+Clustering 44% done... (step took 6.87 seconds)
+Clustering 49% done... (step took 6.79 seconds)
+Clustering 54% done... (step took 6.76 seconds)
+Clustering 59% done... (step took 6.70 seconds)
+^CTraceback (most recent call last):
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/RLSTCcode-main/subtrajcluster/initcenters.py"[0m, line [35m199[0m, in [35m<module>[0m
+    res = saveclus(args.k, subtrajs, trajs, args.amount)
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/RLSTCcode-main/subtrajcluster/initcenters.py"[0m, line [35m168[0m, in [35msaveclus[0m
+    cluster_dict = getbaseclus(trajs, k, subtrajs)
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/RLSTCcode-main/subtrajcluster/initcenters.py"[0m, line [35m128[0m, in [35mgetbaseclus[0m
+    dist = traj2trajIED(centers[j].points, subtraj.points)
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/RLSTCcode-main/subtrajcluster/trajdistance.py"[0m, line [35m146[0m, in [35mtraj2trajIED[0m
+    pd = getstaticIED(traj_points1, timedtraj.points[0].x, timedtraj.points[0].y, t1s, cut1)
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/RLSTCcode-main/subtrajcluster/trajdistance.py"[0m, line [35m132[0m, in [35mgetstaticIED[0m
+    [1;31msum[0m += pd
+    [1;31m^^^[0m
+[1;35mKeyboardInterrupt[0m
+^C
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython3 RLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[K[?2004l
+Starting RLSTC Preprocessing...
+Starting to process trajectories...
+Processing 0% done...
+Processing 9% done...
+Processing 19% done...
+Processing 29% done...
+Processing 39% done...
+Processing 49% done...
+Processing 59% done...
+Processing 69% done...
+Processing 79% done...
+Processing 89% done...
+Processing 99% done...
+Processing 99% done...
+→ Trajectories processed in 1.84 seconds.
+
+Processing trajectory lengths...
+Processing 0% done...
+Processing 9% done...
+Processing 19% done...
+Processing 29% done...
+Processing 39% done...
+Processing 49% done...
+Processing 59% done...
+Processing 69% done...
+Processing 79% done...
+Processing 89% done...
+Processing 99% done...
+Processing 99% done...
+→ Trajectory length processing completed in 1.99 seconds.
+
+Normalizing trajectory time...
+→ Time normalization completed in 1.66 seconds.
+
+Converting trajectory data to Traj objects...
+Converting 0% done...
+Converting 9% done...
+Converting 19% done...
+Converting 29% done...
+Converting 39% done...
+Converting 49% done...
+Converting 59% done...
+Converting 69% done...
+Converting 79% done...
+Converting 89% done...
+Converting 99% done...
+Converting 99% done...
+→ Trajectory conversion completed in 3.96 seconds.
+
+Simplifying trajectories...
+Simplifying 0% done...
+Simplifying 9% done...
+Simplifying 19% done...
+Simplifying 29% done...
+Simplifying 39% done...
+Simplifying 49% done...
+Simplifying 59% done...
+Simplifying 69% done...
+Simplifying 79% done...
+Simplifying 89% done...
+Simplifying 99% done...
+Simplifying 99% done...
+→ Simplification completed in 10.65 seconds.
+
+RLSTC Preprocessing finished in 45.25 seconds.
+Starting center initialization...
+→ Center initialization done in 39.43 seconds.
+
+Clustering 0% done... (step took 0.00 seconds)
+Clustering 4% done... (step took 6.53 seconds)
+Clustering 9% done... (step took 6.60 seconds)
+Clustering 14% done... (step took 6.58 seconds)
+Clustering 19% done... (step took 6.57 seconds)
+Clustering 24% done... (step took 6.60 seconds)
+Clustering 29% done... (step took 6.93 seconds)
+Clustering 34% done... (step took 6.96 seconds)
+Clustering 39% done... (step took 6.79 seconds)
+Clustering 44% done... (step took 6.67 seconds)
+Clustering 49% done... (step took 6.66 seconds)
+Clustering 54% done... (step took 6.66 seconds)
+Clustering 59% done... (step took 6.92 seconds)
+Clustering 64% done... (step took 6.92 seconds)
+Clustering 69% done... (step took 6.84 seconds)
+Clustering 74% done... (step took 6.63 seconds)
+Clustering 79% done... (step took 6.73 seconds)
+Clustering 84% done... (step took 6.87 seconds)
+Clustering 89% done... (step took 6.88 seconds)
+Clustering 94% done... (step took 6.86 seconds)
+Clustering 99% done... (step took 6.89 seconds)
+Clustering 99% done... (step took 0.00 seconds)
+Clustering 100% done.
+RLSTC Clustering completed in 174.55 seconds.
+RLSTC Goodness of fit (SSE): 15479.4302
+Starting QRLSTC Preprocessing...
+Starting to process trajectories...
+Processing 0% done...
+Processing 9% done...
+Processing 19% done...
+Processing 29% done...
+Processing 39% done...
+Processing 49% done...
+Processing 59% done...
+Processing 69% done...
+Processing 79% done...
+Processing 89% done...
+Processing 99% done...
+Processing 99% done...
+→ Trajectories processed in 1.86 seconds.
+
+Processing trajectory lengths...
+Processing 0% done...
+Processing 9% done...
+Processing 19% done...
+Processing 29% done...
+Processing 39% done...
+Processing 49% done...
+Processing 59% done...
+Processing 69% done...
+Processing 79% done...
+Processing 89% done...
+Processing 99% done...
+Processing 99% done...
+→ Trajectory length processing completed in 2.00 seconds.
+
+Normalizing trajectory time...
+→ Time normalization completed in 1.69 seconds.
+
+Converting trajectory data to Traj objects...
+Converting 0% done...
+Converting 9% done...
+Converting 19% done...
+Converting 29% done...
+Converting 39% done...
+Converting 49% done...
+Converting 59% done...
+Converting 69% done...
+Converting 79% done...
+Converting 89% done...
+Converting 99% done...
+Converting 99% done...
+→ Trajectory conversion completed in 4.15 seconds.
+
+Simplifying trajectories...
+Simplifying 0% done...
+Simplifying 9% done...
+Simplifying 19% done...
+Simplifying 29% done...
+Simplifying 39% done...
+Simplifying 49% done...
+Simplifying 59% done...
+Simplifying 69% done...
+Simplifying 79% done...
+Simplifying 89% done...
+Simplifying 99% done...
+Simplifying 99% done...
+→ Simplification completed in 11.00 seconds.
+
+QRLSTC Preprocessing finished in 46.79 seconds.
+Encoding full trajectories (candidate centers)...
+→ Encoded 1000 centers in 0.09s.
+Encoding subtrajectories (members)...
+→ Encoded 78103 subtrajs in 1.03s.
+
+Initializing centers via q-means++ (quantum distance)...
+→ q-means++ init done in 0.19s.
+
+Assigning subtrajectories to centers...
+→ Assignment done in 0.88s.
+
+Clustering 0% done... (step 0.00s)
+Clustering 4% done... (step 0.00s)
+Clustering 9% done... (step 0.00s)
+Clustering 14% done... (step 0.00s)
+Clustering 19% done... (step 0.00s)
+Clustering 24% done... (step 0.00s)
+Clustering 29% done... (step 0.00s)
+Clustering 34% done... (step 0.00s)
+Clustering 39% done... (step 0.00s)
+Clustering 44% done... (step 0.00s)
+Clustering 49% done... (step 0.00s)
+Clustering 54% done... (step 0.00s)
+Clustering 59% done... (step 0.00s)
+Clustering 64% done... (step 0.00s)
+Clustering 69% done... (step 0.00s)
+Clustering 74% done... (step 0.00s)
+Clustering 79% done... (step 0.00s)
+Clustering 84% done... (step 0.00s)
+Clustering 89% done... (step 0.00s)
+Clustering 94% done... (step 0.00s)
+Clustering 99% done... (step 0.00s)
+Clustering 99% done... (step 0.00s)
+QRLSTC (q-means++ / quantum-inspired) clustering completed in 2.22 seconds.
+QRLSTC Goodness of fit (SSE): 2845399999998918668582912.0000
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython3 RLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KMM[20D[K[1B[K[1B[KMM[36Cppython3 qrlstc/quantum_initcenters.py[?2004l[1B
+Encoding full trajectories (candidate centers)...
+→ Encoded 1000 centers in 0.08s.
+Encoding subtrajectories (members)...
+→ Encoded 78103 subtrajs in 0.94s.
+
+Computing quantum distance matrix (this can take a while)...
+Traceback (most recent call last):
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/qrlstc/quantum_initcenters.py"[0m, line [35m1055[0m, in [35m<module>[0m
+    [31mmain[0m[1;31m()[0m
+    [31m~~~~[0m[1;31m^^[0m
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/qrlstc/quantum_initcenters.py"[0m, line [35m1025[0m, in [35mmain[0m
+    res = quantum_saveclus(
+        k=args.k,
+    ...<13 lines>...
+        seed=args.seed,
+    )
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/qrlstc/quantum_initcenters.py"[0m, line [35m906[0m, in [35mquantum_saveclus[0m
+    D_all = compute_distance_matrix_quantum(
+        sub_embeds, center_embeds,
+    ...<2 lines>...
+        progress_label="Distances"
+    )
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/qrlstc/quantum_initcenters.py"[0m, line [35m650[0m, in [35mcompute_distance_matrix_quantum[0m
+    sampler_v2 = AerSamplerV2(options={"simulator": sim})
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/venv/lib/python3.13/site-packages/qiskit_aer/primitives/sampler_v2.py"[0m, line [35m93[0m, in [35m__init__[0m
+    self._options = [31mOptions[0m[1;31m(**options)[0m if options else Options()
+                    [31m~~~~~~~[0m[1;31m^^^^^^^^^^^[0m
+[1;35mTypeError[0m: [35mOptions.__init__() got an unexpected keyword argument 'simulator'[0m
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004h[?2004l
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hppython quantum_initcenters.py -subtrajsfile  [Kddata/traclus_subtrajs \[?2004l
+[0m[23m[24m[J> [K[?2004h   -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 \[?2004l
+[0m[23m[24m[J> [K[?2004h   -centerfile data/tdrive_clustercenter_QRLSTC --sampler none[?2004l
+/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/wilsebbis/School GitHub/QRLSTC/quantum_initcenters.py': [Errno 2] No such file or directory
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hppython QLRSTC/quantum_initcenters.py -subtra [Kjjsfile data/traclus_subtrajs \[?2004l
+[0m[23m[24m[J> [K[?2004h   -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 \[?2004l
+[0m[23m[24m[J> [K[?2004h   -centerfile data/tdrive_clustercenter_QRLSTC --sampler none[?2004l
+/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/wilsebbis/School GitHub/QRLSTC/QLRSTC/quantum_initcenters.py': [Errno 2] No such file or directory
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hppython3 QLRSTC/quantum_initcenters.py -subtr [Kaajsfile data/traclus_subtrajs \[?2004l
+[0m[23m[24m[J> [K[?2004h   -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 \[?2004l
+[0m[23m[24m[J> [K[?2004h   -centerfile data/tdrive_clustercenter_QRLSTC --sampler none[?2004l
+/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/wilsebbis/School GitHub/QRLSTC/QLRSTC/quantum_initcenters.py': [Errno 2] No such file or directory
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython3 QLRSTC/quantum_initcenters.py -subtrajsfile data/traclus_subtrajs \[K
+  -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 \[K
+  -centerfile data/tdrive_clustercenter_QRLSTC --sampler none[K[?2004l
+/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/wilsebbis/School GitHub/QRLSTC/QLRSTC/quantum_initcenters.py': [Errno 2] No such file or directory
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hppython3 QLRSTC/quantum_initcenters.py[?2004l
+/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/wilsebbis/School GitHub/QRLSTC/QLRSTC/quantum_initcenters.py': [Errno 2] No such file or directory
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython3 QLRSTC/quantum_initcenters.py[?2004l
+/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/wilsebbis/School GitHub/QRLSTC/QLRSTC/quantum_initcenters.py': [Errno 2] No such file or directory
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython3 QLRSTC/quantum_initcenters.py -subtrajsfile data/traclus_subtrajs \[K
+  -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 \[K
+  -centerfile data/tdrive_clustercenter_QRLSTC --sampler none[KMMM[36C[8Cqrlstc[24C[K[1B[K[1B[K[1B[KMMM[73C[29DRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KMM[12Dqrlstc/preprocessing.py; python3 qrlstc/quantum_[38P[14C[K[1B[KM[26CM[18CRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KMM[12D-m venv .venv[K[1B[K[1B[KMM[57C[10Dhttp.server 8000[16Dpip install npm [15Dvenv .venv     notes      venv[1Bsource venv/bin/activate[K[1Bpip install -U ipykernel[KMM[36C[1B[1BMM[52C    [1B[K[1B[KMM[51C notes.venv[10Dpip install npm[15Dhttp.server 8000[16Dvenv .venv      [13DRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KMM[12Dqrlstc/preprocessing.py; python3 qrlstc/quantum_[38P[14C[K[1B[KM[26CM[18CRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KMM[12Dqrlstc/quantum_initcenters.py[K[1B[K[1B[KMM[73C[29DQLRSTC[23C -subtrajsfile data/traclus_subtrajs \[K[1B  -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 \[K[1B  -centerfile data/tdrive_clustercenter_QRLSTC --sampler none[KMMM[13C[K[1B[K[1B[K[1B[KMMM[73C -subtrajsfile data/traclus_subtrajs \[K[1B  -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 \[K[1B  -centerfile data/tdrive_clustercenter_QRLSTC --sampler none[KMMM[13C[K[1B[K[1B[K[1B[KMMM[73C[?2004l[1B/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/wilsebbis/School GitHub/QRLSTC/QLRSTC/quantum_initcenters.py': [Errno 2] No such file or directory
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython3 QLRSTC/quantum_initcenters.py[?2004l
+/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/wilsebbis/School GitHub/QRLSTC/QLRSTC/quantum_initcenters.py': [Errno 2] No such file or directory
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython3 QLRSTC/quantum_initcenters.py[?2004l
+/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/wilsebbis/School GitHub/QRLSTC/QLRSTC/quantum_initcenters.py': [Errno 2] No such file or directory
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython3 QLRSTC/quantum_initcenters.py[P[29C [30D[P[29C [30D QLRSTC/quantum_initcenters.py[29D[?2004l
+/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/wilsebbis/School GitHub/QRLSTC/QLRSTC/quantum_initcenters.py': [Errno 2] No such file or directory
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython QLRSTC/quantum_initcenters.py                      preprocessing.py[?2004l
+/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/wilsebbis/School GitHub/QRLSTC/QLRSTC/preprocessing.py': [Errno 2] No such file or directory
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython QLRSTC/preprocessing.py[1C[1C3 QLRSTC/preprocessing.py[24D[?2004l
+/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/wilsebbis/School GitHub/QRLSTC/QLRSTC/preprocessing.py': [Errno 2] No such file or directory
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hccd .[?2004l
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004h  cd    ccd ..[?2004l
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro School GitHub % [K[?2004hccd GR  QRLSTC[?2004l
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hppython3 QRLSTC/preprocessing.py[?2004l
+Starting QRLSTC Preprocessing...
+Starting to process trajectories...
+Processing 0% done...
+Processing 9% done...
+Processing 19% done...
+Processing 29% done...
+Processing 39% done...
+Processing 49% done...
+Processing 59% done...
+Processing 69% done...
+Processing 79% done...
+^[OA^[OA^[OA^[OA^[OAProcessing 89% done...
+^[OA^[OA^[OA^[OA^[OA^[OAProcessing 99% done...
+Processing 99% done...
+→ Trajectories processed in 1.73 seconds.
+
+Processing trajectory lengths...
+Processing 0% done...
+^[OA^[OAProcessing 9% done...
+Processing 19% done...
+Processing 29% done...
+Processing 39% done...
+Processing 49% done...
+Processing 59% done...
+Processing 69% done...
+Processing 79% done...
+Processing 89% done...
+Processing 99% done...
+Processing 99% done...
+→ Trajectory length processing completed in 1.91 seconds.
+
+Normalizing trajectory time...
+→ Time normalization completed in 1.57 seconds.
+
+Converting trajectory data to Traj objects...
+Converting 0% done...
+Converting 9% done...
+Converting 19% done...
+Converting 29% done...
+Converting 39% done...
+Converting 49% done...
+Converting 59% done...
+Converting 69% done...
+Converting 79% done...
+Converting 89% done...
+Converting 99% done...
+Converting 99% done...
+→ Trajectory conversion completed in 3.93 seconds.
+
+Simplifying trajectories...
+Simplifying 0% done...
+Simplifying 9% done...
+Simplifying 19% done...
+Simplifying 29% done...
+Simplifying 39% done...
+Simplifying 49% done...
+Simplifying 59% done...
+Simplifying 69% done...
+Simplifying 79% done...
+Simplifying 89% done...
+Simplifying 99% done...
+Simplifying 99% done...
+→ Simplification completed in 10.08 seconds.
+
+QRLSTC Preprocessing finished in 44.04 seconds.
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython3 QRLSTC/preprocessing.py[31Dcd QRLSTC                      [22D..     python3 QLRSTC/preprocessing.py[25D[P[24C [16Dquantum_initcenters.py[30D3 QLRSTC/quantum_initcenters.py -subtrajsfile data/traclus_subtrajs \[K
+  -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 \[K
+  -centerfile data/tdrive_clustercenter_QRLSTC --sampler none[KMMM[36C[8Cqrlstc[24C[K[1B[K[1B[K[1B[KMMM[73C[29DRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KMM[12Dqrlstc/quantum_initcenters.py[K[1B[K[1B[KMM[73Cpython3 [K  QRLSTC/quantum_initcenters.py -subtrajsfile data/traclus_subtrajs -trajsfile da [Ktta/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 -centerfile data/tdrive_clustercen [Ktter_QRLSTC --sampler aer --init-sampler aer --shots 8192 --batch-size 32 --itera [Kttions 4 --gpu 1 --enforce-overlap[?2004l
+/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/wilsebbis/School GitHub/QRLSTC/qrlstc/quantum_initcenters.pypython3': [Errno 2] No such file or directory
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hppython3 QRLSTC/quantum_initcenters.py -subtr [Kaajsfile data/traclus_subtrajs -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amo [Kuunt 1000 -centerfile data/tdrive_clustercenter_QRLSTC --sampler aer --init-sampl [Keer aer --shots 8192 --batch-size 32 --iterations 4 --gpu 1 --enforce-overlap[?2004l
+usage: quantum_initcenters.py [-h] [-subtrajsfile SUBTRAJSFILE]
+                              [-trajsfile TRAJSFILE] [-k K] [-amount AMOUNT]
+                              [-centerfile CENTERFILE]
+                              [--sampler {aer,statevector,none}]
+                              [-shots SHOTS] [--gpu GPU]
+                              [--batch-size BATCH_SIZE] [--init {q-means++}]
+                              [--initial-center {random,far}]
+                              [--init-sampler {aer,statevector,none}]
+                              [--n-local-trials N_LOCAL_TRIALS]
+                              [--iterations ITERATIONS] [--enforce-overlap]
+                              [--seed SEED]
+quantum_initcenters.py: error: unrecognized arguments: --shots 8192
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004h[?2004l
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hppython3 QRLSTC/quantum_initcenters.py -subtr [Kaajsfile data/traclus_subtrajs -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amo [Kuunt 1000 -centerfile data/tdrive_clustercenter_QRLSTC --sampler aer [?2004l
+
+Encoding full trajectories (candidate centers)...
+→ Encoded 1000 centers in 0.09s.
+Encoding subtrajectories (members)...
+→ Encoded 78103 subtrajs in 1.00s.
+
+Computing quantum distance matrix (this can take a while)...
+Traceback (most recent call last):
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/quantum_initcenters.py"[0m, line [35m1064[0m, in [35m<module>[0m
+    [31mmain[0m[1;31m()[0m
+    [31m~~~~[0m[1;31m^^[0m
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/quantum_initcenters.py"[0m, line [35m1034[0m, in [35mmain[0m
+    res = quantum_saveclus(
+        k=args.k,
+    ...<13 lines>...
+        seed=args.seed,
+    )
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/quantum_initcenters.py"[0m, line [35m915[0m, in [35mquantum_saveclus[0m
+    D_all = compute_distance_matrix_quantum(
+        sub_embeds, center_embeds,
+    ...<2 lines>...
+        progress_label="Distances"
+    )
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/quantum_initcenters.py"[0m, line [35m659[0m, in [35mcompute_distance_matrix_quantum[0m
+    sampler_v2 = AerSamplerV2(options={"simulator": sim})
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/venv/lib/python3.13/site-packages/qiskit_aer/primitives/sampler_v2.py"[0m, line [35m93[0m, in [35m__init__[0m
+    self._options = [31mOptions[0m[1;31m(**options)[0m if options else Options()
+                    [31m~~~~~~~[0m[1;31m^^^^^^^^^^^[0m
+[1;35mTypeError[0m: [35mOptions.__init__() got an unexpected keyword argument 'simulator'[0m
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004h[?2004l
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython3 QRLSTC/quantum_initcenters.py -subtrajsfile data/traclus_subtrajs -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 -centerfile data/tdrive_clustercenter_QRLSTC --sampler aer[K[1C[?2004l
+Encoding full trajectories (candidate centers)...
+→ Encoded 1000 centers in 0.09s.
+Encoding subtrajectories (members)...
+→ Encoded 78103 subtrajs in 0.90s.
+
+Seeding centers via q-means++ (subsampled)…
+→ Init centers chosen: [197, 787, 787, 787, 787, 787, 787, 787, 787, 787]
+
+[Iter 1/2] Streaming quantum assignment (topL=16)…
+Traceback (most recent call last):
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/quantum_initcenters.py"[0m, line [35m1796[0m, in [35m<module>[0m
+    [31mmain[0m[1;31m()[0m
+    [31m~~~~[0m[1;31m^^[0m
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/quantum_initcenters.py"[0m, line [35m1765[0m, in [35mmain[0m
+    res = quantum_saveclus(
+        k=args.k,
+    ...<14 lines>...
+        seed=args.seed,
+    )
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/quantum_initcenters.py"[0m, line [35m1656[0m, in [35mquantum_saveclus[0m
+    assignments, dists = [31massign_streaming_quantum[0m[1;31m([0m
+                         [31m~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31msub_embeds, subtrajs,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^[0m
+    ...<2 lines>...
+        [1;31mbatch_size=batch_size, topL=topL, enforce_overlap=enforce_overlap[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/quantum_initcenters.py"[0m, line [35m1342[0m, in [35massign_streaming_quantum[0m
+    sampler = [31m_build_sampler[0m[1;31m(sampler_kind, gpu=gpu)[0m if sampler_kind != "none" else None
+              [31m~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/quantum_initcenters.py"[0m, line [35m1235[0m, in [35m_build_sampler[0m
+    sim = AerSimulator(method=method)
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/venv/lib/python3.13/site-packages/qiskit_aer/backends/aer_simulator.py"[0m, line [35m747[0m, in [35m__init__[0m
+    [31msuper().__init__[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31mconfiguration,[0m
+        [1;31m^^^^^^^^^^^^^^[0m
+    ...<3 lines>...
+        [1;31mbackend_options=backend_options,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/venv/lib/python3.13/site-packages/qiskit_aer/backends/aerbackend.py"[0m, line [35m90[0m, in [35m__init__[0m
+    [31mself.set_options[0m[1;31m(**backend_options)[0m
+    [31m~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/venv/lib/python3.13/site-packages/qiskit_aer/backends/aerbackend.py"[0m, line [35m659[0m, in [35mset_options[0m
+    [31mself.set_option[0m[1;31m(key, value)[0m
+    [31m~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^[0m
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/venv/lib/python3.13/site-packages/qiskit_aer/backends/aer_simulator.py"[0m, line [35m915[0m, in [35mset_option[0m
+    raise AerError(
+    ...<2 lines>...
+    )
+[1;35mqiskit_aer.aererror.AerError[0m: [35m"Invalid simulation method statevector_gpu. Available methods are: ('automatic', 'statevector', 'density_matrix', 'stabilizer', 'matrix_product_state', 'extended_stabilizer', 'unitary', 'superop')"[0m
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython3 QRLSTC/quantum_initcenters.py -subtrajsfile data/traclus_subtrajs -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 -centerfile data/tdrive_clustercenter_QRLSTC --sampler aer[K[1C                                                       [?2004l
+Encoding full trajectories (candidate centers)...
+→ Encoded 1000 centers in 0.08s.
+Encoding subtrajectories (members)...
+→ Encoded 78103 subtrajs in 0.88s.
+
+Seeding centers via q-means++ (subsampled)…
+→ Init centers chosen: [197, 787, 787, 787, 787, 787, 787, 787, 787, 787]
+
+[Iter 1/2] Streaming quantum assignment (topL=16)…
+Traceback (most recent call last):
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/quantum_initcenters.py"[0m, line [35m1796[0m, in [35m<module>[0m
+    [31mmain[0m[1;31m()[0m
+    [31m~~~~[0m[1;31m^^[0m
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/quantum_initcenters.py"[0m, line [35m1765[0m, in [35mmain[0m
+    res = quantum_saveclus(
+        k=args.k,
+    ...<14 lines>...
+        seed=args.seed,
+    )
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/quantum_initcenters.py"[0m, line [35m1656[0m, in [35mquantum_saveclus[0m
+    assignments, dists = [31massign_streaming_quantum[0m[1;31m([0m
+                         [31m~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31msub_embeds, subtrajs,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^[0m
+    ...<2 lines>...
+        [1;31mbatch_size=batch_size, topL=topL, enforce_overlap=enforce_overlap[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/quantum_initcenters.py"[0m, line [35m1342[0m, in [35massign_streaming_quantum[0m
+    sampler = [31m_build_sampler[0m[1;31m(sampler_kind, gpu=gpu)[0m if sampler_kind != "none" else None
+              [31m~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/quantum_initcenters.py"[0m, line [35m1235[0m, in [35m_build_sampler[0m
+    sim = AerSimulator(method=method)
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/venv/lib/python3.13/site-packages/qiskit_aer/backends/aer_simulator.py"[0m, line [35m747[0m, in [35m__init__[0m
+    [31msuper().__init__[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31mconfiguration,[0m
+        [1;31m^^^^^^^^^^^^^^[0m
+    ...<3 lines>...
+        [1;31mbackend_options=backend_options,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/venv/lib/python3.13/site-packages/qiskit_aer/backends/aerbackend.py"[0m, line [35m90[0m, in [35m__init__[0m
+    [31mself.set_options[0m[1;31m(**backend_options)[0m
+    [31m~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/venv/lib/python3.13/site-packages/qiskit_aer/backends/aerbackend.py"[0m, line [35m659[0m, in [35mset_options[0m
+    [31mself.set_option[0m[1;31m(key, value)[0m
+    [31m~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^[0m
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/venv/lib/python3.13/site-packages/qiskit_aer/backends/aer_simulator.py"[0m, line [35m915[0m, in [35mset_option[0m
+    raise AerError(
+    ...<2 lines>...
+    )
+[1;35mqiskit_aer.aererror.AerError[0m: [35m"Invalid simulation method statevector_gpu. Available methods are: ('automatic', 'statevector', 'density_matrix', 'stabilizer', 'matrix_product_state', 'extended_stabilizer', 'unitary', 'superop')"[0m
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython3 QRLSTC/quantum_initcenters.py -subtrajsfile data/traclus_subtrajs -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000[KMM[28C[K[1B[K[1B[KMM[36Cppython3 QRLSTC/ciruit   cuit_builder       runner.py[?2004l[1B================================================================================
+[ORIGINAL CIRCUIT]  qubits=6  clbits=12  depth=19  size=39
+--------------------------------------------------------------------------------
+        ┌───────────┐ ░                           ░ ┌───────────┐ ░           »
+   q_0: ┤ Ry(θ_0_0) ├─░───■───────────────────────░─┤ Ry(θ_0_1) ├─░───■───────»
+        ├───────────┤ ░ ┌─┴─┐                     ░ ├───────────┤ ░ ┌─┴─┐     »
+   q_1: ┤ Ry(θ_1_0) ├─░─┤ X ├──■──────────────────░─┤ Ry(θ_1_1) ├─░─┤ X ├──■──»
+        ├───────────┤ ░ └───┘┌─┴─┐                ░ ├───────────┤ ░ └───┘┌─┴─┐»
+   q_2: ┤ Ry(θ_2_0) ├─░──────┤ X ├──■─────────────░─┤ Ry(θ_2_1) ├─░──────┤ X ├»
+        ├───────────┤ ░      └───┘┌─┴─┐           ░ ├───────────┤ ░      └───┘»
+   q_3: ┤ Ry(θ_3_0) ├─░───────────┤ X ├──■────────░─┤ Ry(θ_3_1) ├─░───────────»
+        ├───────────┤ ░           └───┘┌─┴─┐      ░ ├───────────┤ ░           »
+   q_4: ┤ Ry(θ_4_0) ├─░────────────────┤ X ├──■───░─┤ Ry(θ_4_1) ├─░───────────»
+        ├───────────┤ ░                └───┘┌─┴─┐ ░ ├───────────┤ ░           »
+   q_5: ┤ Ry(θ_5_0) ├─░─────────────────────┤ X ├─░─┤ Ry(θ_5_1) ├─░───────────»
+        └───────────┘ ░                     └───┘ ░ └───────────┘ ░           »
+   c: 6/══════════════════════════════════════════════════════════════════════»
+                                                                              »
+meas: 6/══════════════════════════════════════════════════════════════════════»
+                                                                              »
+«                        ░ ┌───────────┐ ░                           ░  ░ ┌─┐»
+«   q_0: ────────────────░─┤ Ry(θ_0_2) ├─░───■───────────────────────░──░─┤M├»
+«                        ░ ├───────────┤ ░ ┌─┴─┐                     ░  ░ └╥┘»
+«   q_1: ────────────────░─┤ Ry(θ_1_2) ├─░─┤ X ├──■──────────────────░──░──╫─»
+«                        ░ ├───────────┤ ░ └───┘┌─┴─┐                ░  ░  ║ »
+«   q_2: ──■─────────────░─┤ Ry(θ_2_2) ├─░──────┤ X ├──■─────────────░──░──╫─»
+«        ┌─┴─┐           ░ ├───────────┤ ░      └───┘┌─┴─┐           ░  ░  ║ »
+«   q_3: ┤ X ├──■────────░─┤ Ry(θ_3_2) ├─░───────────┤ X ├──■────────░──░──╫─»
+«        └───┘┌─┴─┐      ░ ├───────────┤ ░           └───┘┌─┴─┐      ░  ░  ║ »
+«   q_4: ─────┤ X ├──■───░─┤ Ry(θ_4_2) ├─░────────────────┤ X ├──■───░──░──╫─»
+«             └───┘┌─┴─┐ ░ ├───────────┤ ░                └───┘┌─┴─┐ ░  ░  ║ »
+«   q_5: ──────────┤ X ├─░─┤ Ry(θ_5_2) ├─░─────────────────────┤ X ├─░──░──╫─»
+«                  └───┘ ░ └───────────┘ ░                     └───┘ ░  ░  ║ »
+«   c: 6/══════════════════════════════════════════════════════════════════╬═»
+«                                                                          ║ »
+«meas: 6/══════════════════════════════════════════════════════════════════╩═»
+«                                                                          0 »
+«                       
+«   q_0: ───────────────
+«        ┌─┐            
+«   q_1: ┤M├────────────
+«        └╥┘┌─┐         
+«   q_2: ─╫─┤M├─────────
+«         ║ └╥┘┌─┐      
+«   q_3: ─╫──╫─┤M├──────
+«         ║  ║ └╥┘┌─┐   
+«   q_4: ─╫──╫──╫─┤M├───
+«         ║  ║  ║ └╥┘┌─┐
+«   q_5: ─╫──╫──╫──╫─┤M├
+«         ║  ║  ║  ║ └╥┘
+«   c: 6/═╬══╬══╬══╬══╬═
+«         ║  ║  ║  ║  ║ 
+«meas: 6/═╩══╩══╩══╩══╩═
+«         1  2  3  4  5 
+--------------------------------------------------------------------------------
+/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/circuit_runner.py:125: DeprecationWarning: Treating CircuitInstruction as an iterable is deprecated legacy behavior since Qiskit 1.2, and will be removed in Qiskit 2.0. Instead, use the `operation`, `qubits` and `clbits` named attributes.
+  for idx, (inst, qargs, cargs) in enumerate(qc.data):
+Traceback (most recent call last):
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/circuit_runner.py"[0m, line [35m229[0m, in [35m<module>[0m
+    [31mprint_circuit_report[0m[1;31m("ORIGINAL CIRCUIT", qc, show_qasm=False, max_trace=120)[0m
+    [31m~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/circuit_runner.py"[0m, line [35m163[0m, in [35mprint_circuit_report[0m
+    info = summarize_ops(qc)
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/circuit_runner.py"[0m, line [35m128[0m, in [35msummarize_ops[0m
+    qids = [[1;31mq.index[0m for q in qargs]  # type: ignore[attr-defined]
+            [1;31m^^^^^^^[0m
+[1;35mAttributeError[0m: [35m'Qubit' object has no attribute 'index'[0m
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython3 QRLSTC/circuit_runner.py[17Dquantum_initcenters.py -subtrajsfile data/traclus_subtrajs -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000[K[1C-centerfile data/tdrive_clustercenter_QRLSTC --sampler aer[1C--init-sampler aer --shots 8192 --batch-size 32 --iterations 4 --gpu 1 --enforce-overlap[KMMM[32Dqrlstc[23Cpython3 QRLSTC/quantum_initcenters.py -subtrajsfile data/traclus_subtrajs -trajsfile data/Tdrive_norm_traj[27P[9Ck 10 -amount 1000 -centerfile data/tdrive_clustercenter_QRLSTC --sampler aer --init-sampler aer --shots 8192 --batch-size 32 --iterations 4 --gpu 1 --enforce-overlap[K[4A[11CQRLSTC/preprocessing.py[K[1B[K[1B[K[1B[K[1B[K[4A[67C[31Dcd QRLSTC                      [22D..     python3 QLRSTC/preprocessing.py[25D[P[24C [16Dquantum_initcenters.py[30D3 QLRSTC/quantum_initcenters.py -subtrajsfile data/traclus_subtrajs \[K[1B  -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 \[K[1B  -centerfile data/tdrive_clustercenter_QRLSTC --sampler none[KMMM[36C[8Cqrlstc[24C[K[1B[K[1B[K[1B[KMMM[73C[29DRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KMM[12Dqrlstc/preprocessing.py; python3 qrlstc/quantum_[38P[14C[K[1B[KM[26CM[18CRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KMM[12D-m venv .venv[K[1B[K[1B[KMM[57C[10Dhttp.server 8000[16Dpip install npm [15Dvenv .venv     notes      venv[1Bsource venv/bin/activate[K[1Bpip install -U ipykernel[KMM[36C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate
+pip install -U ipykernelMM[12C[1B[?2004l[1B
+Collecting ipykernel
+  Downloading ipykernel-6.30.1-py3-none-any.whl.metadata (6.2 kB)
+Collecting appnope>=0.1.2 (from ipykernel)
+  Using cached appnope-0.1.4-py2.py3-none-any.whl.metadata (908 bytes)
+Collecting comm>=0.1.1 (from ipykernel)
+  Downloading comm-0.2.3-py3-none-any.whl.metadata (3.7 kB)
+Collecting debugpy>=1.6.5 (from ipykernel)
+  Downloading debugpy-1.8.16-cp313-cp313-macosx_14_0_universal2.whl.metadata (1.3 kB)
+Collecting ipython>=7.23.1 (from ipykernel)
+  Downloading ipython-9.4.0-py3-none-any.whl.metadata (4.4 kB)
+Collecting jupyter-client>=8.0.0 (from ipykernel)
+  Using cached jupyter_client-8.6.3-py3-none-any.whl.metadata (8.3 kB)
+Collecting jupyter-core!=5.0.*,>=4.12 (from ipykernel)
+  Using cached jupyter_core-5.8.1-py3-none-any.whl.metadata (1.6 kB)
+Collecting matplotlib-inline>=0.1 (from ipykernel)
+  Using cached matplotlib_inline-0.1.7-py3-none-any.whl.metadata (3.9 kB)
+Collecting nest-asyncio>=1.4 (from ipykernel)
+  Using cached nest_asyncio-1.6.0-py3-none-any.whl.metadata (2.8 kB)
+Requirement already satisfied: packaging>=22 in ./venv/lib/python3.13/site-packages (from ipykernel) (25.0)
+Requirement already satisfied: psutil>=5.7 in ./venv/lib/python3.13/site-packages (from ipykernel) (7.0.0)
+Collecting pyzmq>=25 (from ipykernel)
+  Downloading pyzmq-27.0.1-cp312-abi3-macosx_10_15_universal2.whl.metadata (6.0 kB)
+Collecting tornado>=6.2 (from ipykernel)
+  Downloading tornado-6.5.2-cp39-abi3-macosx_10_9_universal2.whl.metadata (2.8 kB)
+Collecting traitlets>=5.4.0 (from ipykernel)
+  Using cached traitlets-5.14.3-py3-none-any.whl.metadata (10 kB)
+Collecting decorator (from ipython>=7.23.1->ipykernel)
+  Using cached decorator-5.2.1-py3-none-any.whl.metadata (3.9 kB)
+Collecting ipython-pygments-lexers (from ipython>=7.23.1->ipykernel)
+  Using cached ipython_pygments_lexers-1.1.1-py3-none-any.whl.metadata (1.1 kB)
+Collecting jedi>=0.16 (from ipython>=7.23.1->ipykernel)
+  Using cached jedi-0.19.2-py2.py3-none-any.whl.metadata (22 kB)
+Collecting pexpect>4.3 (from ipython>=7.23.1->ipykernel)
+  Using cached pexpect-4.9.0-py2.py3-none-any.whl.metadata (2.5 kB)
+Collecting prompt_toolkit<3.1.0,>=3.0.41 (from ipython>=7.23.1->ipykernel)
+  Using cached prompt_toolkit-3.0.51-py3-none-any.whl.metadata (6.4 kB)
+Requirement already satisfied: pygments>=2.4.0 in ./venv/lib/python3.13/site-packages (from ipython>=7.23.1->ipykernel) (2.19.2)
+Collecting stack_data (from ipython>=7.23.1->ipykernel)
+  Using cached stack_data-0.6.3-py3-none-any.whl.metadata (18 kB)
+Collecting wcwidth (from prompt_toolkit<3.1.0,>=3.0.41->ipython>=7.23.1->ipykernel)
+  Using cached wcwidth-0.2.13-py2.py3-none-any.whl.metadata (14 kB)
+Collecting parso<0.9.0,>=0.8.4 (from jedi>=0.16->ipython>=7.23.1->ipykernel)
+  Using cached parso-0.8.4-py2.py3-none-any.whl.metadata (7.7 kB)
+Requirement already satisfied: python-dateutil>=2.8.2 in ./venv/lib/python3.13/site-packages (from jupyter-client>=8.0.0->ipykernel) (2.9.0.post0)
+Requirement already satisfied: platformdirs>=2.5 in ./venv/lib/python3.13/site-packages (from jupyter-core!=5.0.*,>=4.12->ipykernel) (4.3.8)
+Collecting ptyprocess>=0.5 (from pexpect>4.3->ipython>=7.23.1->ipykernel)
+  Using cached ptyprocess-0.7.0-py2.py3-none-any.whl.metadata (1.3 kB)
+Requirement already satisfied: six>=1.5 in ./venv/lib/python3.13/site-packages (from python-dateutil>=2.8.2->jupyter-client>=8.0.0->ipykernel) (1.17.0)
+Collecting executing>=1.2.0 (from stack_data->ipython>=7.23.1->ipykernel)
+  Using cached executing-2.2.0-py2.py3-none-any.whl.metadata (8.9 kB)
+Collecting asttokens>=2.1.0 (from stack_data->ipython>=7.23.1->ipykernel)
+  Using cached asttokens-3.0.0-py3-none-any.whl.metadata (4.7 kB)
+Collecting pure-eval (from stack_data->ipython>=7.23.1->ipykernel)
+  Using cached pure_eval-0.2.3-py3-none-any.whl.metadata (6.3 kB)
+Downloading ipykernel-6.30.1-py3-none-any.whl (117 kB)
+Using cached appnope-0.1.4-py2.py3-none-any.whl (4.3 kB)
+Downloading comm-0.2.3-py3-none-any.whl (7.3 kB)
+Downloading debugpy-1.8.16-cp313-cp313-macosx_14_0_universal2.whl (2.5 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/2.5 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m2.5/2.5 MB[0m [31m19.3 MB/s[0m  [33m0:00:00[0m
+[?25hDownloading ipython-9.4.0-py3-none-any.whl (611 kB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/611.0 kB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m611.0/611.0 kB[0m [31m13.4 MB/s[0m  [33m0:00:00[0m
+[?25hUsing cached prompt_toolkit-3.0.51-py3-none-any.whl (387 kB)
+Using cached jedi-0.19.2-py2.py3-none-any.whl (1.6 MB)
+Using cached parso-0.8.4-py2.py3-none-any.whl (103 kB)
+Using cached jupyter_client-8.6.3-py3-none-any.whl (106 kB)
+Using cached jupyter_core-5.8.1-py3-none-any.whl (28 kB)
+Using cached matplotlib_inline-0.1.7-py3-none-any.whl (9.9 kB)
+Using cached nest_asyncio-1.6.0-py3-none-any.whl (5.2 kB)
+Using cached pexpect-4.9.0-py2.py3-none-any.whl (63 kB)
+Using cached ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)
+Downloading pyzmq-27.0.1-cp312-abi3-macosx_10_15_universal2.whl (1.3 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/1.3 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.3/1.3 MB[0m [31m7.5 MB/s[0m  [33m0:00:00[0m
+[?25hDownloading tornado-6.5.2-cp39-abi3-macosx_10_9_universal2.whl (442 kB)
+Using cached traitlets-5.14.3-py3-none-any.whl (85 kB)
+Using cached decorator-5.2.1-py3-none-any.whl (9.2 kB)
+Using cached ipython_pygments_lexers-1.1.1-py3-none-any.whl (8.1 kB)
+Using cached stack_data-0.6.3-py3-none-any.whl (24 kB)
+Using cached asttokens-3.0.0-py3-none-any.whl (26 kB)
+Using cached executing-2.2.0-py2.py3-none-any.whl (26 kB)
+Using cached pure_eval-0.2.3-py3-none-any.whl (11 kB)
+Using cached wcwidth-0.2.13-py2.py3-none-any.whl (34 kB)
+Installing collected packages: wcwidth, pure-eval, ptyprocess, traitlets, tornado, pyzmq, prompt_toolkit, pexpect, parso, nest-asyncio, ipython-pygments-lexers, executing, decorator, debugpy, comm, asttokens, appnope, stack_data, matplotlib-inline, jupyter-core, jedi, jupyter-client, ipython, ipykernel
+[?25l[2K   [91m━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 5/24[0m [pyzmq][2K   [91m━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 8/24[0m [parso][2K   [91m━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━[0m [32m13/24[0m [debugpy][2K   [91m━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━[0m [32m13/24[0m [debugpy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━[0m [32m20/24[0m [jedi][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━[0m [32m22/24[0m [ipython][2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m24/24[0m [ipykernel]
+[?25h[1A[2KSuccessfully installed appnope-0.1.4 asttokens-3.0.0 comm-0.2.3 debugpy-1.8.16 decorator-5.2.1 executing-2.2.0 ipykernel-6.30.1 ipython-9.4.0 ipython-pygments-lexers-1.1.1 jedi-0.19.2 jupyter-client-8.6.3 jupyter-core-5.8.1 matplotlib-inline-0.1.7 nest-asyncio-1.6.0 parso-0.8.4 pexpect-4.9.0 prompt_toolkit-3.0.51 ptyprocess-0.7.0 pure-eval-0.2.3 pyzmq-27.0.1 stack_data-0.6.3 tornado-6.5.2 traitlets-5.14.3 wcwidth-0.2.13
+[1m[3m%[23m[1m[0m                                                                                                                             ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[J(venv) wilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython3 -m venv venv
+source venv/bin/activate[K
+pip install -U ipykernel[KMM[43C[8CQRLSTC/circuit_runner.py[1B[K[1B[KMM[75C[17Dquantum_initcenters.py -subtrajsfile data/traclus_subtrajs -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000[K[1C-centerfile data/tdrive_clustercenter_QRLSTC --sampler aer[1C--init-sampler aer --shots 8192 --batch-size 32 --iterations 4 --gpu 1 --enforce-overlap[KMM[22Dqrlstc[23Cpython3 QRLSTC/quantum_initcenters.py -subtrajs[56P[11Craclus_subtrajs -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 -centerfile data/tdrive_clustercenter_QRLSTC --sampler aer --init-sampler aer --shots 8192 --batch-size 32 --iterations 4 --gpu 1 --enforce-overlapMM[59DQRLSTC/preprocessing.py[K[1B[K[1B[KMM[74C[22DLR[20C[16Dquantum_initcenters.py -subtrajsfile data/traclus_subtrajs \[1B  -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 \[K[1B  -centerfile data/tdrive_clustercenter_QRLSTC --sampler none[KMM[43C[8Cqrlstc[24C                                     [1B[K[1B[KMM[80C[29DRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KM[47Dqrlstc[23P[27Cqrlstc/quantum_initcenters.py[K[1B[KM[113C[62DRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KM[47D-m venv .venv[K[1B[KM[64C[10Dhttp.server 8000[16Dpip install npm [15Dvenv .venv     notes      venv[1Bsource venv/bin/activate[K[1Bpip install -U ipykernel[KMM[43C[1B[1BMM[59C    [1B[K[1B[KMM[58C notes.venv[10Dpip install npm[15Dhttp.server 8000[16Dvenv .venv      [13DRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KM[47Dqrlstc[23P[27Cqrlstc/quantum_initcenters.py[K[1B[KM[113C[62DRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KM[47Dqrlstc/quantum_initcenters.py[K[1B[KM[80C[29DQLRSTC[23C -subtrajsfile data/traclus_subtrajs \[1B  -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 \[K[1B  -centerfile data/tdrive_clustercenter_QRLSTC --sampler none[KMM[20C                                     [1B[K[1B[KMM[80C[22Dpreprocessing.py      [22DRL[20C[23Dqrlstc/quantum_initcenters.pypython3 QRLSTC/quantum_initcenters.py -subtrajsfile data/traclus_subtrajs -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 -centerfile data/tdrive_clustercenter_QRLSTC --sampler aer --init-sampler aer --shots 8192 --batch-size 32 --iterations 4 --gpu 1 --enforce-overlap[KMM[59D[37P[37Cjsfile data/traclus_subtrajs -trajsfil[37P[87C_QRLSTC --sampler aer --init-sampler a[37P[87C[K[15DM[37C[K[1B[KM[110C[59D                                                          [59DM[8Ccircuit_runner.py[K[1B[KM[75C[24D-m venv venv            [1Bsource venv/bin/activate[K[1Bpip install -U ipykernel[KMM[43C[8CQRLSTC/circuit_runner.py[1B[K[1B[KMM[75C[?2004l[1B================================================================================
+[ORIGINAL CIRCUIT]  qubits=6  clbits=12  depth=19  size=39
+--------------------------------------------------------------------------------
+        ┌───────────┐ ░                           ░ ┌───────────┐ ░                           ░ ┌───────────┐ ░           »
+   q_0: ┤ Ry(θ_0_0) ├─░───■───────────────────────░─┤ Ry(θ_0_1) ├─░───■───────────────────────░─┤ Ry(θ_0_2) ├─░───■───────»
+        ├───────────┤ ░ ┌─┴─┐                     ░ ├───────────┤ ░ ┌─┴─┐                     ░ ├───────────┤ ░ ┌─┴─┐     »
+   q_1: ┤ Ry(θ_1_0) ├─░─┤ X ├──■──────────────────░─┤ Ry(θ_1_1) ├─░─┤ X ├──■──────────────────░─┤ Ry(θ_1_2) ├─░─┤ X ├──■──»
+        ├───────────┤ ░ └───┘┌─┴─┐                ░ ├───────────┤ ░ └───┘┌─┴─┐                ░ ├───────────┤ ░ └───┘┌─┴─┐»
+   q_2: ┤ Ry(θ_2_0) ├─░──────┤ X ├──■─────────────░─┤ Ry(θ_2_1) ├─░──────┤ X ├──■─────────────░─┤ Ry(θ_2_2) ├─░──────┤ X ├»
+        ├───────────┤ ░      └───┘┌─┴─┐           ░ ├───────────┤ ░      └───┘┌─┴─┐           ░ ├───────────┤ ░      └───┘»
+   q_3: ┤ Ry(θ_3_0) ├─░───────────┤ X ├──■────────░─┤ Ry(θ_3_1) ├─░───────────┤ X ├──■────────░─┤ Ry(θ_3_2) ├─░───────────»
+        ├───────────┤ ░           └───┘┌─┴─┐      ░ ├───────────┤ ░           └───┘┌─┴─┐      ░ ├───────────┤ ░           »
+   q_4: ┤ Ry(θ_4_0) ├─░────────────────┤ X ├──■───░─┤ Ry(θ_4_1) ├─░────────────────┤ X ├──■───░─┤ Ry(θ_4_2) ├─░───────────»
+        ├───────────┤ ░                └───┘┌─┴─┐ ░ ├───────────┤ ░                └───┘┌─┴─┐ ░ ├───────────┤ ░           »
+   q_5: ┤ Ry(θ_5_0) ├─░─────────────────────┤ X ├─░─┤ Ry(θ_5_1) ├─░─────────────────────┤ X ├─░─┤ Ry(θ_5_2) ├─░───────────»
+        └───────────┘ ░                     └───┘ ░ └───────────┘ ░                     └───┘ ░ └───────────┘ ░           »
+   c: 6/══════════════════════════════════════════════════════════════════════════════════════════════════════════════════»
+                                                                                                                          »
+meas: 6/══════════════════════════════════════════════════════════════════════════════════════════════════════════════════»
+                                                                                                                          »
+«                        ░  ░ ┌─┐               
+«   q_0: ────────────────░──░─┤M├───────────────
+«                        ░  ░ └╥┘┌─┐            
+«   q_1: ────────────────░──░──╫─┤M├────────────
+«                        ░  ░  ║ └╥┘┌─┐         
+«   q_2: ──■─────────────░──░──╫──╫─┤M├─────────
+«        ┌─┴─┐           ░  ░  ║  ║ └╥┘┌─┐      
+«   q_3: ┤ X ├──■────────░──░──╫──╫──╫─┤M├──────
+«        └───┘┌─┴─┐      ░  ░  ║  ║  ║ └╥┘┌─┐   
+«   q_4: ─────┤ X ├──■───░──░──╫──╫──╫──╫─┤M├───
+«             └───┘┌─┴─┐ ░  ░  ║  ║  ║  ║ └╥┘┌─┐
+«   q_5: ──────────┤ X ├─░──░──╫──╫──╫──╫──╫─┤M├
+«                  └───┘ ░  ░  ║  ║  ║  ║  ║ └╥┘
+«   c: 6/══════════════════════╬══╬══╬══╬══╬══╬═
+«                              ║  ║  ║  ║  ║  ║ 
+«meas: 6/══════════════════════╩══╩══╩══╩══╩══╩═
+«                              0  1  2  3  4  5 
+--------------------------------------------------------------------------------
+/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/circuit_runner.py:146: DeprecationWarning: Treating CircuitInstruction as an iterable is deprecated legacy behavior since Qiskit 1.2, and will be removed in Qiskit 2.0. Instead, use the `operation`, `qubits` and `clbits` named attributes.
+  for idx, (inst, qargs, cargs) in enumerate(qc.data):
+Gate set (unitary only): cx, ry
+Operation counts (all):
+                ry : 18
+                cx : 15
+           barrier : 7
+           measure : 6
+Non-unitary ops:
+           barrier : 7
+           measure : 6
+--------------------------------------------------------------------------------
+Ordered op trace (first 120):
+  [0000] ry                 q=[0] c=[] params=[θ_0_0]
+  [0001] ry                 q=[1] c=[] params=[θ_1_0]
+  [0002] ry                 q=[2] c=[] params=[θ_2_0]
+  [0003] ry                 q=[3] c=[] params=[θ_3_0]
+  [0004] ry                 q=[4] c=[] params=[θ_4_0]
+  [0005] ry                 q=[5] c=[] params=[θ_5_0]
+  [0006] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0007] cx                 q=[0, 1] c=[]
+  [0008] cx                 q=[1, 2] c=[]
+  [0009] cx                 q=[2, 3] c=[]
+  [0010] cx                 q=[3, 4] c=[]
+  [0011] cx                 q=[4, 5] c=[]
+  [0012] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0013] ry                 q=[0] c=[] params=[θ_0_1]
+  [0014] ry                 q=[1] c=[] params=[θ_1_1]
+  [0015] ry                 q=[2] c=[] params=[θ_2_1]
+  [0016] ry                 q=[3] c=[] params=[θ_3_1]
+  [0017] ry                 q=[4] c=[] params=[θ_4_1]
+  [0018] ry                 q=[5] c=[] params=[θ_5_1]
+  [0019] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0020] cx                 q=[0, 1] c=[]
+  [0021] cx                 q=[1, 2] c=[]
+  [0022] cx                 q=[2, 3] c=[]
+  [0023] cx                 q=[3, 4] c=[]
+  [0024] cx                 q=[4, 5] c=[]
+  [0025] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0026] ry                 q=[0] c=[] params=[θ_0_2]
+  [0027] ry                 q=[1] c=[] params=[θ_1_2]
+  [0028] ry                 q=[2] c=[] params=[θ_2_2]
+  [0029] ry                 q=[3] c=[] params=[θ_3_2]
+  [0030] ry                 q=[4] c=[] params=[θ_4_2]
+  [0031] ry                 q=[5] c=[] params=[θ_5_2]
+  [0032] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0033] cx                 q=[0, 1] c=[]
+  [0034] cx                 q=[1, 2] c=[]
+  [0035] cx                 q=[2, 3] c=[]
+  [0036] cx                 q=[3, 4] c=[]
+  [0037] cx                 q=[4, 5] c=[]
+  [0038] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0039] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0040] measure            q=[0] c=[6]
+  [0041] measure            q=[1] c=[7]
+  [0042] measure            q=[2] c=[8]
+  [0043] measure            q=[3] c=[9]
+  [0044] measure            q=[4] c=[10]
+  [0045] measure            q=[5] c=[11]
+================================================================================
+[TRANSPILED FOR AER]  qubits=6  clbits=12  depth=19  size=39
+--------------------------------------------------------------------------------
+        ┌───────────┐ ░                           ░ ┌───────────┐ ░                           ░ ┌───────────┐ ░           »
+   q_0: ┤ Ry(θ_0_0) ├─░───■───────────────────────░─┤ Ry(θ_0_1) ├─░───■───────────────────────░─┤ Ry(θ_0_2) ├─░───■───────»
+        ├───────────┤ ░ ┌─┴─┐                     ░ ├───────────┤ ░ ┌─┴─┐                     ░ ├───────────┤ ░ ┌─┴─┐     »
+   q_1: ┤ Ry(θ_1_0) ├─░─┤ X ├──■──────────────────░─┤ Ry(θ_1_1) ├─░─┤ X ├──■──────────────────░─┤ Ry(θ_1_2) ├─░─┤ X ├──■──»
+        ├───────────┤ ░ └───┘┌─┴─┐                ░ ├───────────┤ ░ └───┘┌─┴─┐                ░ ├───────────┤ ░ └───┘┌─┴─┐»
+   q_2: ┤ Ry(θ_2_0) ├─░──────┤ X ├──■─────────────░─┤ Ry(θ_2_1) ├─░──────┤ X ├──■─────────────░─┤ Ry(θ_2_2) ├─░──────┤ X ├»
+        ├───────────┤ ░      └───┘┌─┴─┐           ░ ├───────────┤ ░      └───┘┌─┴─┐           ░ ├───────────┤ ░      └───┘»
+   q_3: ┤ Ry(θ_3_0) ├─░───────────┤ X ├──■────────░─┤ Ry(θ_3_1) ├─░───────────┤ X ├──■────────░─┤ Ry(θ_3_2) ├─░───────────»
+        ├───────────┤ ░           └───┘┌─┴─┐      ░ ├───────────┤ ░           └───┘┌─┴─┐      ░ ├───────────┤ ░           »
+   q_4: ┤ Ry(θ_4_0) ├─░────────────────┤ X ├──■───░─┤ Ry(θ_4_1) ├─░────────────────┤ X ├──■───░─┤ Ry(θ_4_2) ├─░───────────»
+        ├───────────┤ ░                └───┘┌─┴─┐ ░ ├───────────┤ ░                └───┘┌─┴─┐ ░ ├───────────┤ ░           »
+   q_5: ┤ Ry(θ_5_0) ├─░─────────────────────┤ X ├─░─┤ Ry(θ_5_1) ├─░─────────────────────┤ X ├─░─┤ Ry(θ_5_2) ├─░───────────»
+        └───────────┘ ░                     └───┘ ░ └───────────┘ ░                     └───┘ ░ └───────────┘ ░           »
+   c: 6/══════════════════════════════════════════════════════════════════════════════════════════════════════════════════»
+                                                                                                                          »
+meas: 6/══════════════════════════════════════════════════════════════════════════════════════════════════════════════════»
+                                                                                                                          »
+«                        ░  ░ ┌─┐               
+«   q_0: ────────────────░──░─┤M├───────────────
+«                        ░  ░ └╥┘┌─┐            
+«   q_1: ────────────────░──░──╫─┤M├────────────
+«                        ░  ░  ║ └╥┘┌─┐         
+«   q_2: ──■─────────────░──░──╫──╫─┤M├─────────
+«        ┌─┴─┐           ░  ░  ║  ║ └╥┘┌─┐      
+«   q_3: ┤ X ├──■────────░──░──╫──╫──╫─┤M├──────
+«        └───┘┌─┴─┐      ░  ░  ║  ║  ║ └╥┘┌─┐   
+«   q_4: ─────┤ X ├──■───░──░──╫──╫──╫──╫─┤M├───
+«             └───┘┌─┴─┐ ░  ░  ║  ║  ║  ║ └╥┘┌─┐
+«   q_5: ──────────┤ X ├─░──░──╫──╫──╫──╫──╫─┤M├
+«                  └───┘ ░  ░  ║  ║  ║  ║  ║ └╥┘
+«   c: 6/══════════════════════╬══╬══╬══╬══╬══╬═
+«                              ║  ║  ║  ║  ║  ║ 
+«meas: 6/══════════════════════╩══╩══╩══╩══╩══╩═
+«                              0  1  2  3  4  5 
+--------------------------------------------------------------------------------
+/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/circuit_runner.py:146: DeprecationWarning: Treating CircuitInstruction as an iterable is deprecated legacy behavior since Qiskit 1.2, and will be removed in Qiskit 2.0. Instead, use the `operation`, `qubits` and `clbits` named attributes.
+  for idx, (inst, qargs, cargs) in enumerate(qc.data):
+Gate set (unitary only): cx, ry
+Operation counts (all):
+                ry : 18
+                cx : 15
+           barrier : 7
+           measure : 6
+Non-unitary ops:
+           barrier : 7
+           measure : 6
+--------------------------------------------------------------------------------
+Ordered op trace (first 120):
+  [0000] ry                 q=[0] c=[] params=[θ_0_0]
+  [0001] ry                 q=[1] c=[] params=[θ_1_0]
+  [0002] ry                 q=[2] c=[] params=[θ_2_0]
+  [0003] ry                 q=[3] c=[] params=[θ_3_0]
+  [0004] ry                 q=[4] c=[] params=[θ_4_0]
+  [0005] ry                 q=[5] c=[] params=[θ_5_0]
+  [0006] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0007] cx                 q=[0, 1] c=[]
+  [0008] cx                 q=[1, 2] c=[]
+  [0009] cx                 q=[2, 3] c=[]
+  [0010] cx                 q=[3, 4] c=[]
+  [0011] cx                 q=[4, 5] c=[]
+  [0012] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0013] ry                 q=[0] c=[] params=[θ_0_1]
+  [0014] ry                 q=[1] c=[] params=[θ_1_1]
+  [0015] ry                 q=[2] c=[] params=[θ_2_1]
+  [0016] ry                 q=[3] c=[] params=[θ_3_1]
+  [0017] ry                 q=[4] c=[] params=[θ_4_1]
+  [0018] ry                 q=[5] c=[] params=[θ_5_1]
+  [0019] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0020] cx                 q=[0, 1] c=[]
+  [0021] cx                 q=[1, 2] c=[]
+  [0022] cx                 q=[2, 3] c=[]
+  [0023] cx                 q=[3, 4] c=[]
+  [0024] cx                 q=[4, 5] c=[]
+  [0025] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0026] ry                 q=[0] c=[] params=[θ_0_2]
+  [0027] ry                 q=[1] c=[] params=[θ_1_2]
+  [0028] ry                 q=[2] c=[] params=[θ_2_2]
+  [0029] ry                 q=[3] c=[] params=[θ_3_2]
+  [0030] ry                 q=[4] c=[] params=[θ_4_2]
+  [0031] ry                 q=[5] c=[] params=[θ_5_2]
+  [0032] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0033] cx                 q=[0, 1] c=[]
+  [0034] cx                 q=[1, 2] c=[]
+  [0035] cx                 q=[2, 3] c=[]
+  [0036] cx                 q=[3, 4] c=[]
+  [0037] cx                 q=[4, 5] c=[]
+  [0038] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0039] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0040] measure            q=[0] c=[6]
+  [0041] measure            q=[1] c=[7]
+  [0042] measure            q=[2] c=[8]
+  [0043] measure            q=[3] c=[9]
+  [0044] measure            q=[4] c=[10]
+  [0045] measure            q=[5] c=[11]
+Traceback (most recent call last):
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/circuit_runner.py"[0m, line [35m262[0m, in [35m<module>[0m
+    tqc = [1;31mtqc.bind_parameters[0m(params)
+          [1;31m^^^^^^^^^^^^^^^^^^^[0m
+[1;35mAttributeError[0m: [35m'QuantumCircuit' object has no attribute 'bind_parameters'. Did you mean: 'num_parameters'?[0m
+[1m[3m%[23m[1m[0m                                                                                                                             ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[J(venv) wilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004h≈≈≈≈  python3 QRLSTC/circuit_runner.py[?2004l
+================================================================================
+[ORIGINAL CIRCUIT]  qubits=6  clbits=12  depth=19  size=39
+--------------------------------------------------------------------------------
+        ┌───────────┐ ░                           ░ ┌───────────┐ ░                           ░ ┌───────────┐ ░           »
+   q_0: ┤ Ry(θ_0_0) ├─░───■───────────────────────░─┤ Ry(θ_0_1) ├─░───■───────────────────────░─┤ Ry(θ_0_2) ├─░───■───────»
+        ├───────────┤ ░ ┌─┴─┐                     ░ ├───────────┤ ░ ┌─┴─┐                     ░ ├───────────┤ ░ ┌─┴─┐     »
+   q_1: ┤ Ry(θ_1_0) ├─░─┤ X ├──■──────────────────░─┤ Ry(θ_1_1) ├─░─┤ X ├──■──────────────────░─┤ Ry(θ_1_2) ├─░─┤ X ├──■──»
+        ├───────────┤ ░ └───┘┌─┴─┐                ░ ├───────────┤ ░ └───┘┌─┴─┐                ░ ├───────────┤ ░ └───┘┌─┴─┐»
+   q_2: ┤ Ry(θ_2_0) ├─░──────┤ X ├──■─────────────░─┤ Ry(θ_2_1) ├─░──────┤ X ├──■─────────────░─┤ Ry(θ_2_2) ├─░──────┤ X ├»
+        ├───────────┤ ░      └───┘┌─┴─┐           ░ ├───────────┤ ░      └───┘┌─┴─┐           ░ ├───────────┤ ░      └───┘»
+   q_3: ┤ Ry(θ_3_0) ├─░───────────┤ X ├──■────────░─┤ Ry(θ_3_1) ├─░───────────┤ X ├──■────────░─┤ Ry(θ_3_2) ├─░───────────»
+        ├───────────┤ ░           └───┘┌─┴─┐      ░ ├───────────┤ ░           └───┘┌─┴─┐      ░ ├───────────┤ ░           »
+   q_4: ┤ Ry(θ_4_0) ├─░────────────────┤ X ├──■───░─┤ Ry(θ_4_1) ├─░────────────────┤ X ├──■───░─┤ Ry(θ_4_2) ├─░───────────»
+        ├───────────┤ ░                └───┘┌─┴─┐ ░ ├───────────┤ ░                └───┘┌─┴─┐ ░ ├───────────┤ ░           »
+   q_5: ┤ Ry(θ_5_0) ├─░─────────────────────┤ X ├─░─┤ Ry(θ_5_1) ├─░─────────────────────┤ X ├─░─┤ Ry(θ_5_2) ├─░───────────»
+        └───────────┘ ░                     └───┘ ░ └───────────┘ ░                     └───┘ ░ └───────────┘ ░           »
+   c: 6/══════════════════════════════════════════════════════════════════════════════════════════════════════════════════»
+                                                                                                                          »
+meas: 6/══════════════════════════════════════════════════════════════════════════════════════════════════════════════════»
+                                                                                                                          »
+«                        ░  ░ ┌─┐               
+«   q_0: ────────────────░──░─┤M├───────────────
+«                        ░  ░ └╥┘┌─┐            
+«   q_1: ────────────────░──░──╫─┤M├────────────
+«                        ░  ░  ║ └╥┘┌─┐         
+«   q_2: ──■─────────────░──░──╫──╫─┤M├─────────
+«        ┌─┴─┐           ░  ░  ║  ║ └╥┘┌─┐      
+«   q_3: ┤ X ├──■────────░──░──╫──╫──╫─┤M├──────
+«        └───┘┌─┴─┐      ░  ░  ║  ║  ║ └╥┘┌─┐   
+«   q_4: ─────┤ X ├──■───░──░──╫──╫──╫──╫─┤M├───
+«             └───┘┌─┴─┐ ░  ░  ║  ║  ║  ║ └╥┘┌─┐
+«   q_5: ──────────┤ X ├─░──░──╫──╫──╫──╫──╫─┤M├
+«                  └───┘ ░  ░  ║  ║  ║  ║  ║ └╥┘
+«   c: 6/══════════════════════╬══╬══╬══╬══╬══╬═
+«                              ║  ║  ║  ║  ║  ║ 
+«meas: 6/══════════════════════╩══╩══╩══╩══╩══╩═
+«                              0  1  2  3  4  5 
+--------------------------------------------------------------------------------
+/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/circuit_runner.py:146: DeprecationWarning: Treating CircuitInstruction as an iterable is deprecated legacy behavior since Qiskit 1.2, and will be removed in Qiskit 2.0. Instead, use the `operation`, `qubits` and `clbits` named attributes.
+  for idx, (inst, qargs, cargs) in enumerate(qc.data):
+Gate set (unitary only): cx, ry
+Operation counts (all):
+                ry : 18
+                cx : 15
+           barrier : 7
+           measure : 6
+Non-unitary ops:
+           barrier : 7
+           measure : 6
+--------------------------------------------------------------------------------
+Ordered op trace (first 120):
+  [0000] ry                 q=[0] c=[] params=[θ_0_0]
+  [0001] ry                 q=[1] c=[] params=[θ_1_0]
+  [0002] ry                 q=[2] c=[] params=[θ_2_0]
+  [0003] ry                 q=[3] c=[] params=[θ_3_0]
+  [0004] ry                 q=[4] c=[] params=[θ_4_0]
+  [0005] ry                 q=[5] c=[] params=[θ_5_0]
+  [0006] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0007] cx                 q=[0, 1] c=[]
+  [0008] cx                 q=[1, 2] c=[]
+  [0009] cx                 q=[2, 3] c=[]
+  [0010] cx                 q=[3, 4] c=[]
+  [0011] cx                 q=[4, 5] c=[]
+  [0012] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0013] ry                 q=[0] c=[] params=[θ_0_1]
+  [0014] ry                 q=[1] c=[] params=[θ_1_1]
+  [0015] ry                 q=[2] c=[] params=[θ_2_1]
+  [0016] ry                 q=[3] c=[] params=[θ_3_1]
+  [0017] ry                 q=[4] c=[] params=[θ_4_1]
+  [0018] ry                 q=[5] c=[] params=[θ_5_1]
+  [0019] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0020] cx                 q=[0, 1] c=[]
+  [0021] cx                 q=[1, 2] c=[]
+  [0022] cx                 q=[2, 3] c=[]
+  [0023] cx                 q=[3, 4] c=[]
+  [0024] cx                 q=[4, 5] c=[]
+  [0025] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0026] ry                 q=[0] c=[] params=[θ_0_2]
+  [0027] ry                 q=[1] c=[] params=[θ_1_2]
+  [0028] ry                 q=[2] c=[] params=[θ_2_2]
+  [0029] ry                 q=[3] c=[] params=[θ_3_2]
+  [0030] ry                 q=[4] c=[] params=[θ_4_2]
+  [0031] ry                 q=[5] c=[] params=[θ_5_2]
+  [0032] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0033] cx                 q=[0, 1] c=[]
+  [0034] cx                 q=[1, 2] c=[]
+  [0035] cx                 q=[2, 3] c=[]
+  [0036] cx                 q=[3, 4] c=[]
+  [0037] cx                 q=[4, 5] c=[]
+  [0038] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0039] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0040] measure            q=[0] c=[6]
+  [0041] measure            q=[1] c=[7]
+  [0042] measure            q=[2] c=[8]
+  [0043] measure            q=[3] c=[9]
+  [0044] measure            q=[4] c=[10]
+  [0045] measure            q=[5] c=[11]
+================================================================================
+[TRANSPILED FOR AER]  qubits=6  clbits=12  depth=19  size=39
+--------------------------------------------------------------------------------
+        ┌───────────┐ ░                           ░ ┌───────────┐ ░                           ░ ┌───────────┐ ░           »
+   q_0: ┤ Ry(θ_0_0) ├─░───■───────────────────────░─┤ Ry(θ_0_1) ├─░───■───────────────────────░─┤ Ry(θ_0_2) ├─░───■───────»
+        ├───────────┤ ░ ┌─┴─┐                     ░ ├───────────┤ ░ ┌─┴─┐                     ░ ├───────────┤ ░ ┌─┴─┐     »
+   q_1: ┤ Ry(θ_1_0) ├─░─┤ X ├──■──────────────────░─┤ Ry(θ_1_1) ├─░─┤ X ├──■──────────────────░─┤ Ry(θ_1_2) ├─░─┤ X ├──■──»
+        ├───────────┤ ░ └───┘┌─┴─┐                ░ ├───────────┤ ░ └───┘┌─┴─┐                ░ ├───────────┤ ░ └───┘┌─┴─┐»
+   q_2: ┤ Ry(θ_2_0) ├─░──────┤ X ├──■─────────────░─┤ Ry(θ_2_1) ├─░──────┤ X ├──■─────────────░─┤ Ry(θ_2_2) ├─░──────┤ X ├»
+        ├───────────┤ ░      └───┘┌─┴─┐           ░ ├───────────┤ ░      └───┘┌─┴─┐           ░ ├───────────┤ ░      └───┘»
+   q_3: ┤ Ry(θ_3_0) ├─░───────────┤ X ├──■────────░─┤ Ry(θ_3_1) ├─░───────────┤ X ├──■────────░─┤ Ry(θ_3_2) ├─░───────────»
+        ├───────────┤ ░           └───┘┌─┴─┐      ░ ├───────────┤ ░           └───┘┌─┴─┐      ░ ├───────────┤ ░           »
+   q_4: ┤ Ry(θ_4_0) ├─░────────────────┤ X ├──■───░─┤ Ry(θ_4_1) ├─░────────────────┤ X ├──■───░─┤ Ry(θ_4_2) ├─░───────────»
+        ├───────────┤ ░                └───┘┌─┴─┐ ░ ├───────────┤ ░                └───┘┌─┴─┐ ░ ├───────────┤ ░           »
+   q_5: ┤ Ry(θ_5_0) ├─░─────────────────────┤ X ├─░─┤ Ry(θ_5_1) ├─░─────────────────────┤ X ├─░─┤ Ry(θ_5_2) ├─░───────────»
+        └───────────┘ ░                     └───┘ ░ └───────────┘ ░                     └───┘ ░ └───────────┘ ░           »
+   c: 6/══════════════════════════════════════════════════════════════════════════════════════════════════════════════════»
+                                                                                                                          »
+meas: 6/══════════════════════════════════════════════════════════════════════════════════════════════════════════════════»
+                                                                                                                          »
+«                        ░  ░ ┌─┐               
+«   q_0: ────────────────░──░─┤M├───────────────
+«                        ░  ░ └╥┘┌─┐            
+«   q_1: ────────────────░──░──╫─┤M├────────────
+«                        ░  ░  ║ └╥┘┌─┐         
+«   q_2: ──■─────────────░──░──╫──╫─┤M├─────────
+«        ┌─┴─┐           ░  ░  ║  ║ └╥┘┌─┐      
+«   q_3: ┤ X ├──■────────░──░──╫──╫──╫─┤M├──────
+«        └───┘┌─┴─┐      ░  ░  ║  ║  ║ └╥┘┌─┐   
+«   q_4: ─────┤ X ├──■───░──░──╫──╫──╫──╫─┤M├───
+«             └───┘┌─┴─┐ ░  ░  ║  ║  ║  ║ └╥┘┌─┐
+«   q_5: ──────────┤ X ├─░──░──╫──╫──╫──╫──╫─┤M├
+«                  └───┘ ░  ░  ║  ║  ║  ║  ║ └╥┘
+«   c: 6/══════════════════════╬══╬══╬══╬══╬══╬═
+«                              ║  ║  ║  ║  ║  ║ 
+«meas: 6/══════════════════════╩══╩══╩══╩══╩══╩═
+«                              0  1  2  3  4  5 
+--------------------------------------------------------------------------------
+/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/circuit_runner.py:146: DeprecationWarning: Treating CircuitInstruction as an iterable is deprecated legacy behavior since Qiskit 1.2, and will be removed in Qiskit 2.0. Instead, use the `operation`, `qubits` and `clbits` named attributes.
+  for idx, (inst, qargs, cargs) in enumerate(qc.data):
+Gate set (unitary only): cx, ry
+Operation counts (all):
+                ry : 18
+                cx : 15
+           barrier : 7
+           measure : 6
+Non-unitary ops:
+           barrier : 7
+           measure : 6
+--------------------------------------------------------------------------------
+Ordered op trace (first 120):
+  [0000] ry                 q=[0] c=[] params=[θ_0_0]
+  [0001] ry                 q=[1] c=[] params=[θ_1_0]
+  [0002] ry                 q=[2] c=[] params=[θ_2_0]
+  [0003] ry                 q=[3] c=[] params=[θ_3_0]
+  [0004] ry                 q=[4] c=[] params=[θ_4_0]
+  [0005] ry                 q=[5] c=[] params=[θ_5_0]
+  [0006] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0007] cx                 q=[0, 1] c=[]
+  [0008] cx                 q=[1, 2] c=[]
+  [0009] cx                 q=[2, 3] c=[]
+  [0010] cx                 q=[3, 4] c=[]
+  [0011] cx                 q=[4, 5] c=[]
+  [0012] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0013] ry                 q=[0] c=[] params=[θ_0_1]
+  [0014] ry                 q=[1] c=[] params=[θ_1_1]
+  [0015] ry                 q=[2] c=[] params=[θ_2_1]
+  [0016] ry                 q=[3] c=[] params=[θ_3_1]
+  [0017] ry                 q=[4] c=[] params=[θ_4_1]
+  [0018] ry                 q=[5] c=[] params=[θ_5_1]
+  [0019] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0020] cx                 q=[0, 1] c=[]
+  [0021] cx                 q=[1, 2] c=[]
+  [0022] cx                 q=[2, 3] c=[]
+  [0023] cx                 q=[3, 4] c=[]
+  [0024] cx                 q=[4, 5] c=[]
+  [0025] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0026] ry                 q=[0] c=[] params=[θ_0_2]
+  [0027] ry                 q=[1] c=[] params=[θ_1_2]
+  [0028] ry                 q=[2] c=[] params=[θ_2_2]
+  [0029] ry                 q=[3] c=[] params=[θ_3_2]
+  [0030] ry                 q=[4] c=[] params=[θ_4_2]
+  [0031] ry                 q=[5] c=[] params=[θ_5_2]
+  [0032] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0033] cx                 q=[0, 1] c=[]
+  [0034] cx                 q=[1, 2] c=[]
+  [0035] cx                 q=[2, 3] c=[]
+  [0036] cx                 q=[3, 4] c=[]
+  [0037] cx                 q=[4, 5] c=[]
+  [0038] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0039] barrier            q=[0, 1, 2, 3, 4, 5] c=[]
+  [0040] measure            q=[0] c=[6]
+  [0041] measure            q=[1] c=[7]
+  [0042] measure            q=[2] c=[8]
+  [0043] measure            q=[3] c=[9]
+  [0044] measure            q=[4] c=[10]
+  [0045] measure            q=[5] c=[11]
+--------------------------------------------------------------------------------
+Result (sample of measurement outcomes):
+  000000 000000 : 2049
+  100000 000000 : 387
+  110000 000000 : 237
+  010101 000000 : 142
+  110011 000000 : 138
+  010000 000000 : 125
+  001100 000000 : 116
+  011000 000000 : 105
+  101010 000000 : 104
+  101000 000000 : 102
+[1m[3m%[23m[1m[0m                                                                                                                             ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[J(venv) wilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython3 QRLSTC/circuit_runner.py[24D-m venv venv            
+source venv/bin/activate[K
+pip install -U ipykernel[KMM[43C[8CQRLSTC/circuit_runner.py[1B[K[1B[KMM[75C[17Dquantum_initcenters.py -subtrajsfile data/traclus_subtrajs -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000[K[1C-centerfile data/tdrive_clustercenter_QRLSTC --sampler aer[1C--init-sampler aer --shots 8192 --batch-size 32 --iterations 4 --gpu 1 --enforce-overlap[KMM[22Dqrlstc[23Cpython3 QRLSTC/quantum_initcenters.py -subtrajs[56P[11Craclus_subtrajs -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 -centerfile data/tdrive_clustercenter_QRLSTC --sampler aer --init-sampler aer --shots 8192 --batch-size 32 --iterations 4 --gpu 1 --enforce-overlapMM[59DQRLSTC/preprocessing.py[K[1B[K[1B[KMM[74C[22DLR[20C[16Dquantum_initcenters.py -subtrajsfile data/traclus_subtrajs \[1B  -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 \[K[1B  -centerfile data/tdrive_clustercenter_QRLSTC --sampler none[KMM[43C[8Cqrlstc[24C                                     [1B[K[1B[KMM[80C[29DRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KM[47Dqrlstc[23P[27Cqrlstc/quantum_initcenters.py[K[1B[KM[113C[62DRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KM[47D-m venv .venv[K[1B[KM[64C[10Dhttp.server 8000[16Dpip install npm [15Dvenv .venv     notes      venv[1Bsource venv/bin/activate[K[1Bpip install -U ipykernel[KMM[43C[1C[1B[43D[1BMM[58C    [1B[K[1B[KMM[58C notes.venv[10Dpip install npm[15Dhttp.server 8000[16Dvenv .venv      [13DRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KM[47Dqrlstc[23P[27Cqrlstc/quantum_initcenters.py[K[1B[KM[113C[62DRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KM[47Dqrlstc/quantum_initcenters.py[K[1B[KM[80C[29DQLRSTC[23C -subtrajsfile data/traclus_subtrajs \[1B  -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 \[K[1B  -centerfile data/tdrive_clustercenter_QRLSTC --sampler none[KMM[20C                                     [1B[K[1B[KMM[80C[22Dpreprocessing.py      [22DRL[20C[23Dqrlstc/quantum_initcenters.pypython3 QRLSTC/quantum_initcenters.py -subtrajsfile data/traclus_subtrajs -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 -centerfile data/tdrive_clustercenter_QRLSTC --sampler aer --init-sampler aer --shots 8192 --batch-size 32 --iterations 4 --gpu 1 --enforce-overlap[KMM[59D[37P[37Cjsfile data/traclus_subtrajs -trajsfil[37P[87C_QRLSTC --sampler aer --init-sampler a[37P[87C[K[15DM[37C[K[1B[KM[110C[59D                                                          [59DM[8Ccircuit_runner.py[K[1B[KM[75C[24D-m venv venv            [1Bsource venv/bin/activate[K[1Bpip install -U ipykernel[KMM[27CQRLSTC/circuit_runner.py[1B[K[1B[KMM[75C                             p  python3 -m venv venv[1Bsource venv/bin/activate[K[1Bpip install -U ipykernel[KMM[43C[8CQRLSTC/circuit_runner.py[1B[K[1B[KMM[75C[17Dquantum_initcenters.py -subtrajsfile data/traclus_subtrajs -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000[K[1C-centerfile data/tdrive_clustercenter_QRLSTC --sampler aer[1C--init-sampler aer --shots 8192 --batch-size 32 --iterations 4 --gpu 1 --enforce-overlap[KM[37C[K[1B[KM[110C[59D                                                          [59DM[8Ccircuit_runner.py[K[1B[KM[75C[24D-m venv venv            [1Bsource venv/bin/activate[K[1Bpip install -U ipykernel[KMM[27CQRLSTC/circuit_runner.py[1B[K[1B[KMM[75C                             p  [0m[23m[24m[J(venv) wilsebbis@Wils-MacBook-Pro QRLSTC % python3 -m venv venv
+source venv/bin/activate[K
+pip install -U ipykernel[KMM[43C[8CQRLSTC/circuit_runner.py[1B[K[1B[KMM[75C[17Dquantum_initcenters.py -subtrajsfile data/traclus_subtrajs -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000[K[1C-centerfile data/tdrive_clustercenter_QRLSTC --sampler aer[1C--init-sampler aer --shots 8192 --batch-size 32 --iterations 4 --gpu 1 --enforce-overlap[KMM[20Dqrlstc[23Cpython3 QRLSTC/quantum_initcenters.py -subtrajs[56P[11Craclus_subtrajs -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 -centerfile data/tdrive_clustercenter_QRLSTC --sampler aer --init-sampler aer --shots 8192 --batch-size 32 --iterations 4 --gpu 1 --enforce-overlapMM[57DQRLSTC/preprocessing.py[K[1B[K[1B[KMM[74C[22DLR[20C[16Dquantum_initcenters.py -subtrajsfile data/traclus_subtrajs \[1B  -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 \[K[1B  -centerfile data/tdrive_clustercenter_QRLSTC --sampler none[KMM[43C[8Cqrlstc[24C                                     [1B[K[1B[KMM[80C[29DRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KM[46Dqrlstc[23P[27Cqrlstc/quantum_initcenters.py[K[1B[KM[113C[62DRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KM[46D-m venv .venv[K[1B[KM[64C[10Dhttp.server 8000[16Dpip install npm [15Dvenv .venv     notes      venv[1Bsource venv/bin/activate[K[1Bpip install -U ipykernel[KMM[43C[1B[1BMM[59C    [1B[K[1B[KMM[58C notes.venv[10Dpip install npm[15Dhttp.server 8000[16Dvenv .venv      [13DRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KM[46Dqrlstc[23P[27Cqrlstc/quantum_initcenters.py[K[1B[KM[113C[62DRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KM[46Dqrlstc/quantum_initcenters.py[K[1B[KM[80C[29DQLRSTC[23C -subtrajsfile data/traclus_subtrajs \[1B  -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 \[K[1B  -centerfile data/tdrive_clustercenter_QRLSTC --sampler none[KMM[20C                                     [1B[K[1B[KMM[80C[22Dpreprocessing.py      [22DRL[20C[23Dqrlstc/quantum_initcenters.pypython3 QRLSTC/quantum_initcenters.py -subtrajsfile data/traclus_subtrajs -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 -centerfile data/tdrive_clustercenter_QRLSTC --sampler aer --init-sampler aer --shots 8192 --batch-size 32 --iterations 4 --gpu 1 --enforce-overlap[KMM[57D[37P[38Csfile data/traclus_subtrajs -trajsfile[37P[88CRLSTC --sampler aer --init-sampler aer[37P[88C[K[18DM[38C[K[1B[KM[109C[59D                                                          [59DM[9Ccircuit_runner.py[K[1B[KM[75C[24D-m venv venv            [1Bsource venv/bin/activate[K[1Bpip install -U ipykernel[KMM[43C[8CQRLSTC/circuit_runner.py[1B[K[1B[KMM[75C[17Dquantum_initcenters.py -subtrajsfile data/traclus_subtrajs -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000[K[1C-centerfile data/tdrive_clustercenter_QRLSTC --sampler aer[1C--init-sampler aer --shots 8192 --batch-size 32 --iterations 4 --gpu 1 --enforce-overlap[KMM[20Dqrlstc[23Cpython3 QRLSTC/quantum_initcenters.py -subtrajs[56P[11Craclus_subtrajs -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 -centerfile data/tdrive_clustercenter_QRLSTC --sampler aer --init-sampler aer --shots 8192 --batch-size 32 --iterations 4 --gpu 1 --enforce-overlapMM[57DQRLSTC/preprocessing.py[K[1B[K[1B[KMM[74C[22DLR[20C[16Dquantum_initcenters.py -subtrajsfile data/traclus_subtrajs \[1B  -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 \[K[1B  -centerfile data/tdrive_clustercenter_QRLSTC --sampler none[KMM[43C[8Cqrlstc[24C                                     [1B[K[1B[KMM[80C[29DRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KM[46Dqrlstc[23P[27Cqrlstc/quantum_initcenters.py[K[1B[KM[113C[62DRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KM[46D-m venv .venv[K[1B[KM[64C[10Dhttp.server 8000[16Dpip install npm [15Dvenv .venv     notes      venv[1Bsource venv/bin/activate[K[1Bpip install -U ipykernel[KMM[43C[1B[1BMM[59C    [1B[K[1B[KMM[58C notes.venv[10Dpip install npm[15Dhttp.server 8000[16Dvenv .venv      [13DRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KM[46Dqrlstc[23P[27Cqrlstc/quantum_initcenters.py[K[1B[KM[113C[62DRLSTCcode-main/subtrajcluster/preprocessing.py; python3 RLSTCcode-main/subtrajcluster/initcenters.py; python3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KM[46Dqrlstc/quantum_initcenters.py[K[1B[KM[80C[29DQLRSTC[23C -subtrajsfile data/traclus_subtrajs \[1B  -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 \[K[1B  -centerfile data/tdrive_clustercenter_QRLSTC --sampler none[KMM[20C                                     [1B[K[1B[KMM[80C[22Dpreprocessing.py      [22DRL[20C[23Dqrlstc/quantum_initcenters.pypython3 QRLSTC/quantum_initcenters.py -subtrajsfile data/traclus_subtrajs -trajsfile data/Tdrive_norm_traj_QRLSTC -k 10 -amount 1000 -centerfile data/tdrive_clustercenter_QRLSTC --sampler aer --init-sampler aer --shots 8192 --batch-size 32 --iterations 4 --gpu 1 --enforce-overlap[KMM[57D[37P[38Csfile data/traclus_subtrajs -trajsfile[37P[88CRLSTC --sampler aer --init-sampler aer[37P[88C[K[18DM[38C[K[1B[KM[109C[59D                                                          [59DM[9Ccircuit_runner.py[K[1B[KM[75C[24D-m venv venv            [1Bsource venv/bin/activate[K[1Bpip install -U ipykernel[K                   p [K[KM[24C                     s [K[KM[63C               p  [0m[23m[24m[J(venv) wilsebbis@Wils-MacBook-Pro QRLSTC % [1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hppython3 qrlstc/preprocessing.py; python3 qrl [Ksstc/quantum_initcenters.py[?2004l
+Starting QRLSTC Preprocessing...
+Starting to process trajectories...
+Processing 0% done...
+Processing 9% done...
+Processing 19% done...
+Processing 29% done...
+Processing 39% done...
+Processing 49% done...
+Processing 59% done...
+Processing 69% done...
+Processing 79% done...
+Processing 89% done...
+Processing 99% done...
+Processing 99% done...
+→ Trajectories processed in 1.84 seconds.
+
+Processing trajectory lengths...
+Processing 0% done...
+Processing 9% done...
+Processing 19% done...
+Processing 29% done...
+Processing 39% done...
+Processing 49% done...
+Processing 59% done...
+Processing 69% done...
+Processing 79% done...
+Processing 89% done...
+Processing 99% done...
+Processing 99% done...
+→ Trajectory length processing completed in 1.91 seconds.
+
+Normalizing trajectory time...
+→ Time normalization completed in 1.60 seconds.
+
+Converting trajectory data to Traj objects...
+Converting 0% done...
+Converting 9% done...
+Converting 19% done...
+Converting 29% done...
+Converting 39% done...
+Converting 49% done...
+Converting 59% done...
+Converting 69% done...
+Converting 79% done...
+Converting 89% done...
+Converting 99% done...
+Converting 99% done...
+→ Trajectory conversion completed in 3.91 seconds.
+
+Simplifying trajectories...
+Simplifying 0% done...
+Simplifying 9% done...
+Simplifying 19% done...
+Simplifying 29% done...
+Simplifying 39% done...
+Simplifying 49% done...
+Simplifying 59% done...
+Simplifying 69% done...
+Simplifying 79% done...
+Simplifying 89% done...
+Simplifying 99% done...
+Simplifying 99% done...
+→ Simplification completed in 10.11 seconds.
+
+QRLSTC Preprocessing finished in 48.24 seconds.
+Encoding full trajectories (candidate centers)...
+→ Encoded 1000 centers in 0.09s.
+Encoding subtrajectories (members)...
+→ Encoded 78103 subtrajs in 1.09s.
+
+Seeding centers via q-means++ (subsampled)…
+→ Init centers chosen: [197, 787, 787, 787, 787, 787, 787, 787, 787, 787]
+
+[Iter 1/2] Streaming quantum assignment (topL=16)…
+Traceback (most recent call last):
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/qrlstc/quantum_initcenters.py"[0m, line [35m1796[0m, in [35m<module>[0m
+    [31mmain[0m[1;31m()[0m
+    [31m~~~~[0m[1;31m^^[0m
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/qrlstc/quantum_initcenters.py"[0m, line [35m1765[0m, in [35mmain[0m
+    res = quantum_saveclus(
+        k=args.k,
+    ...<14 lines>...
+        seed=args.seed,
+    )
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/qrlstc/quantum_initcenters.py"[0m, line [35m1656[0m, in [35mquantum_saveclus[0m
+    assignments, dists = [31massign_streaming_quantum[0m[1;31m([0m
+                         [31m~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31msub_embeds, subtrajs,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^[0m
+    ...<2 lines>...
+        [1;31mbatch_size=batch_size, topL=topL, enforce_overlap=enforce_overlap[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/qrlstc/quantum_initcenters.py"[0m, line [35m1342[0m, in [35massign_streaming_quantum[0m
+    sampler = [31m_build_sampler[0m[1;31m(sampler_kind, gpu=gpu)[0m if sampler_kind != "none" else None
+              [31m~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/qrlstc/quantum_initcenters.py"[0m, line [35m1235[0m, in [35m_build_sampler[0m
+    sim = AerSimulator(method=method)
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/venv/lib/python3.13/site-packages/qiskit_aer/backends/aer_simulator.py"[0m, line [35m747[0m, in [35m__init__[0m
+    [31msuper().__init__[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31mconfiguration,[0m
+        [1;31m^^^^^^^^^^^^^^[0m
+    ...<3 lines>...
+        [1;31mbackend_options=backend_options,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/venv/lib/python3.13/site-packages/qiskit_aer/backends/aerbackend.py"[0m, line [35m90[0m, in [35m__init__[0m
+    [31mself.set_options[0m[1;31m(**backend_options)[0m
+    [31m~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/venv/lib/python3.13/site-packages/qiskit_aer/backends/aerbackend.py"[0m, line [35m659[0m, in [35mset_options[0m
+    [31mself.set_option[0m[1;31m(key, value)[0m
+    [31m~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^[0m
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/venv/lib/python3.13/site-packages/qiskit_aer/backends/aer_simulator.py"[0m, line [35m915[0m, in [35mset_option[0m
+    raise AerError(
+    ...<2 lines>...
+    )
+[1;35mqiskit_aer.aererror.AerError[0m: [35m"Invalid simulation method statevector_gpu. Available methods are: ('automatic', 'statevector', 'density_matrix', 'stabilizer', 'matrix_product_state', 'extended_stabilizer', 'unitary', 'superop')"[0m
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[K[?2004l
+Starting QRLSTC Preprocessing...
+Starting to process trajectories...
+Processing 0% done...
+Processing 9% done...
+Processing 19% done...
+Processing 29% done...
+Processing 39% done...
+Processing 49% done...
+Processing 59% done...
+Processing 69% done...
+Processing 79% done...
+Processing 89% done...
+Processing 99% done...
+Processing 99% done...
+→ Trajectories processed in 1.75 seconds.
+
+Processing trajectory lengths...
+Processing 0% done...
+Processing 9% done...
+Processing 19% done...
+Processing 29% done...
+Processing 39% done...
+Processing 49% done...
+Processing 59% done...
+Processing 69% done...
+Processing 79% done...
+Processing 89% done...
+Processing 99% done...
+Processing 99% done...
+→ Trajectory length processing completed in 1.94 seconds.
+
+Normalizing trajectory time...
+→ Time normalization completed in 1.62 seconds.
+
+Converting trajectory data to Traj objects...
+Converting 0% done...
+Converting 9% done...
+Converting 19% done...
+Converting 29% done...
+Converting 39% done...
+Converting 49% done...
+Converting 59% done...
+Converting 69% done...
+Converting 79% done...
+Converting 89% done...
+Converting 99% done...
+Converting 99% done...
+→ Trajectory conversion completed in 3.96 seconds.
+
+Simplifying trajectories...
+Simplifying 0% done...
+Simplifying 9% done...
+Simplifying 19% done...
+Simplifying 29% done...
+Simplifying 39% done...
+Simplifying 49% done...
+Simplifying 59% done...
+Simplifying 69% done...
+Simplifying 79% done...
+Simplifying 89% done...
+Simplifying 99% done...
+Simplifying 99% done...
+→ Simplification completed in 10.33 seconds.
+
+QRLSTC Preprocessing finished in 45.23 seconds.
+Traceback (most recent call last):
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/qrlstc/quantum_initcenters.py"[0m, line [35m1861[0m, in [35m<module>[0m
+    from q_distance import distance_centroids_parallel
+[1;35mModuleNotFoundError[0m: [35mNo module named 'q_distance'[0m
+[1m[3m%[23m[1m[0m                                                                                ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[K[?2004l
+Starting QRLSTC Preprocessing...
+Starting to process trajectories...
+Processing 0% done...
+Processing 9% done...
+Processing 19% done...
+Processing 29% done...
+Processing 39% done...
+Processing 49% done...
+Processing 59% done...
+Processing 69% done...
+Processing 79% done...
+Processing 89% done...
+Processing 99% done...
+Processing 99% done...
+→ Trajectories processed in 1.74 seconds.
+
+Processing trajectory lengths...
+Processing 0% done...
+Processing 9% done...
+Processing 19% done...
+Processing 29% done...
+Processing 39% done...
+Processing 49% done...
+Processing 59% done...
+Processing 69% done...
+Processing 79% done...
+Processing 89% done...
+Processing 99% done...
+Processing 99% done...
+→ Trajectory length processing completed in 1.91 seconds.
+
+Normalizing trajectory time...
+→ Time normalization completed in 1.62 seconds.
+
+Converting trajectory data to Traj objects...
+Converting 0% done...
+Converting 9% done...
+Converting 19% done...
+Converting 29% done...
+Converting 39% done...
+Converting 49% done...
+Converting 59% done...
+Converting 69% done...
+Converting 79% done...
+Converting 89% done...
+Converting 99% done...
+Converting 99% done...
+→ Trajectory conversion completed in 3.95 seconds.
+
+Simplifying trajectories...
+Simplifying 0% done...
+Simplifying 9% done...
+Simplifying 19% done...
+Simplifying 29% done...
+Simplifying 39% done...
+Simplifying 49% done...
+Simplifying 59% done...
+Simplifying 69% done...
+Simplifying 79% done...
+Simplifying 89% done...
+Simplifying 99% done...
+Simplifying 99% done...
+→ Simplification completed in 10.27 seconds.
+
+QRLSTC Preprocessing finished in 47.17 seconds.
+/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/q_distance.py:10: SyntaxWarning: invalid escape sequence '\p'
+  We map data feature values to \theta and \phi values using this equation:
+Traceback (most recent call last):
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/qrlstc/quantum_initcenters.py"[0m, line [35m61[0m, in [35m<module>[0m
+    from q_distance import distance_centroids_parallel
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/q_distance.py"[0m, line [35m3[0m, in [35m<module>[0m
+    from qiskit import Aer, execute
+[1;35mImportError[0m: [35mcannot import name 'Aer' from 'qiskit' (/Users/wilsebbis/School GitHub/QRLSTC/venv/lib/python3.13/site-packages/qiskit/__init__.py)[0m
+[1m[3m%[23m[1m[0m                                                                                               ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[K[?2004l
+Starting QRLSTC Preprocessing...
+Starting to process trajectories...
+Processing 0% done...
+Processing 9% done...
+Processing 19% done...
+^CTraceback (most recent call last):
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/qrlstc/preprocessing.py"[0m, line [35m201[0m, in [35m<module>[0m
+    trajslist = processtrajs(trajs)
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/qrlstc/preprocessing.py"[0m, line [35m25[0m, in [35mprocesstrajs[0m
+    [31mtemptraj.append[0m[1;31m(trajs[i][j])[0m
+    [31m~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^[0m
+[1;35mKeyboardInterrupt[0m
+
+[1m[3m%[23m[1m[0m                                                                                               ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KM[25C[K[1B[KM[36Cpython3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.py[KM[25Cscreen -L -S initcenters_run[K[1B[KM[36Cexport TERM=xterm           [1BM[36Cecho "TERM"      [1B[KM[47CTERM  term[9Dpython3 -m pip install -r requirements.txt[1B[K[KM[36C[24C-upgrade pip      [1BM[60Cr requirements.txt[1BM[36Cecho term                                 [1B[KM[45CTERM"TERM"[11Dexport TERM=xterm[1B[KM[36Cscreen -L -S initcenters_run[1B[KM[36Cpython3 qrlstc/preprocessing.py; python3 qrlstc/quantum_initcenters.pyM[25C[K[1B[KM[36Cppython3 qrlstc/quantum_initcenters.py[?2004l[1BStarting q-means++ center initialization...
+Traceback (most recent call last):
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/qrlstc/quantum_initcenters.py"[0m, line [35m190[0m, in [35m_q_point_to_centers_distances[0m
+    from qiskit import Aer
+[1;35mImportError[0m: [35mcannot import name 'Aer' from 'qiskit' (/Users/wilsebbis/School GitHub/QRLSTC/venv/lib/python3.13/site-packages/qiskit/__init__.py)[0m
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/qrlstc/quantum_initcenters.py"[0m, line [35m493[0m, in [35m<module>[0m
+    [31mmain[0m[1;31m()[0m
+    [31m~~~~[0m[1;31m^^[0m
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/qrlstc/quantum_initcenters.py"[0m, line [35m474[0m, in [35mmain[0m
+    res = saveclus_q(args.k, subtrajs, trajs, args.amount,
+                     backend_name=args.backend, shots=args.shots,
+                     feature_mode=args.feature_mode, init_mode=args.init)
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/qrlstc/quantum_initcenters.py"[0m, line [35m373[0m, in [35msaveclus_q[0m
+    cluster_dict = getbaseclus_q(trajs, k, subtrajs,
+                                 feats_trajs_xy, feats_sub_xy,
+                                 backend_name=backend_name, shots=shots,
+                                 init_mode=init_mode)
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/qrlstc/quantum_initcenters.py"[0m, line [35m275[0m, in [35mgetbaseclus_q[0m
+    centers_idx = qmeanspp_initialize_centers(trajs, k, feats_trajs_xy,
+                                              backend_name=backend_name,
+                                              shots=shots,
+                                              initial=init_mode)
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/qrlstc/quantum_initcenters.py"[0m, line [35m238[0m, in [35mqmeanspp_initialize_centers[0m
+    p1_list = _q_point_to_centers_distances(feats_trajs_xy[i], chosen_feats,
+                                            backend_name, shots)
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/qrlstc/quantum_initcenters.py"[0m, line [35m194[0m, in [35m_q_point_to_centers_distances[0m
+    from qiskit import Aer
+[1;35mImportError[0m: [35mcannot import name 'Aer' from 'qiskit' (/Users/wilsebbis/School GitHub/QRLSTC/venv/lib/python3.13/site-packages/qiskit/__init__.py)[0m
+[1m[3m%[23m[1m[0m                                                                                               ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython3 qrlstc/quantum_initcenters.py[?2004l
+Starting q-means++ center initialization...
+^CInterrupted.
+[1m[3m%[23m[1m[0m                                                                                               ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hppython quantum_initcenters.py \[?2004l
+[0m[23m[24m[J> [K[?2004h   -subtrajsfile data/traclus_subtrajs \[?2004l
+[0m[23m[24m[J> [K[?2004h   -trajsfile    data/Tdrive_norm_traj_QRLSTC \[?2004l
+[0m[23m[24m[J> [K[?2004h   -k 3 -amount 50 \[?2004l
+[0m[23m[24m[J> [K[?2004h   --shots 128 --init random --feature-mode mean --backend qasm_simulator[?2004l
+/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/wilsebbis/School GitHub/QRLSTC/quantum_initcenters.py': [Errno 2] No such file or directory
+[1m[3m%[23m[1m[0m                                                                                               ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython quantum_initcenters.py \
+  -subtrajsfile data/traclus_subtrajs \[K
+  -trajsfile    data/Tdrive_norm_traj_QRLSTC \[K
+  -k 3 -amount 50 \[K
+  --shots 128 --init random --feature-mode mean --backend qasm_simulator[K[4A[26D                               [1B[K[1B[K[1B[K[1B[K[4A[36Cppython3 qrlstc/quantum_initcenters.py \[?2004l[1B[0m[23m[24m[J> [K[?2004h>>   -subtrajsfile data/traclus_subtrajs \[?2004l
+[0m[23m[24m[J> [K[?2004h>>   -trajsfile    data/Tdrive_norm_traj_QRLSTC \[?2004l
+[0m[23m[24m[J> [K[?2004h>>   -k 3 -amount 50 \[?2004l
+[0m[23m[24m[J> [K[?2004h>>   --shots 128 --init random --feature-mode mean --backend qasm_simulator[?2004l
+usage: quantum_initcenters.py [-h] [-subtrajsfile SUBTRAJSFILE]
+                              [-trajsfile TRAJSFILE] [-k K] [-amount AMOUNT]
+                              [-centerfile CENTERFILE] [--backend BACKEND]
+                              [--shots SHOTS] [--init {random,far}]
+                              [--feature-mode {mean,start,end,bbox}]
+                              [--seed SEED]
+quantum_initcenters.py: error: unrecognized arguments: data/traclus_subtrajs data/Tdrive_norm_traj_QRLSTC 3 128
+[1m[3m%[23m[1m[0m                                                                                               ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hppython3 qrlstc/quantum_initcenters.py \[?2004l
+[0m[23m[24m[J> [K[?2004h   --subtrajsfile data/traclus_subtrajs \[?2004l
+[0m[23m[24m[J> [K[?2004h   --trajsfile    data/Tdrive_norm_traj_QRLSTC \[?2004l
+[0m[23m[24m[J> [K[?2004h   --k 3 --amount 50 \[?2004l
+[0m[23m[24m[J> [K[?2004h   --shots 128 --init random --feature-mode mean --backend qasm_simulator[?2004l
+Starting q-means++ center initialization...
+→ Center initialization done in 2.62 seconds.
+
+Clustering 0% done... (step took 0.00 seconds)
+Clustering 4% done... (step took 103.75 seconds)
+Clustering 9% done... (step took 104.06 seconds)
+Clustering 14% done... (step took 103.83 seconds)
+Clustering 19% done... (step took 103.85 seconds)
+Clustering 24% done... (step took 103.52 seconds)
+Clustering 29% done... (step took 104.04 seconds)
+^[[B^[[B^[[B^[[B^[[B^[[B^[[A^X^CInterrupted.
+[1m[3m%[23m[1m[0m                                                                                               ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hppython3 RLSTCcode-main/preprocessing.py; \[?2004l
+[0m[23m[24m[J> [K[?2004hppython3 RLSTCcode-main/initcenters.py \[?2004l
+[0m[23m[24m[J> [K[?2004h   -subtrajsfile data/traclus_subtrajs \[?2004l
+[0m[23m[24m[J> [K[?2004h   -trajsfile    data/Tdrive_norm_traj_RLSTC \[?2004l
+[0m[23m[24m[J> [K[?2004h   -k 3 -amount 200 \[?2004l
+[0m[23m[24m[J> [K[?2004h   -centerfile   out/classical_k3_a200.pkl; \[?2004l
+[0m[23m[24m[J> [K[?2004hppython3 QRLSTC/preprocessing.py; \[?2004l
+[0m[23m[24m[J> [K[?2004hppython3 qrlstc/quantum_initcenters.py \[?2004l
+[0m[23m[24m[J> [K[?2004h   --subtrajsfile data/traclus_subtrajs \[?2004l
+[0m[23m[24m[J> [K[?2004h   --trajsfile    data/Tdrive_norm_traj_QRLSTC \[?2004l
+[0m[23m[24m[J> [K[?2004h   --k 3 --amount 200 \[?2004l
+[0m[23m[24m[J> [K[?2004h   --shots 128 --init far --feature-mode mean \[?2004l
+[0m[23m[24m[J> [K[?2004h   --backend qasm_simulator --seed 0 \[?2004l
+[0m[23m[24m[J> [K[?2004h   --centerfile out/quantum_k3_a200.pkl[?2004l
+/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/wilsebbis/School GitHub/QRLSTC/RLSTCcode-main/preprocessing.py': [Errno 2] No such file or directory
+/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/wilsebbis/School GitHub/QRLSTC/RLSTCcode-main/initcenters.py': [Errno 2] No such file or directory
+Starting QRLSTC Preprocessing...
+Starting to process trajectories...
+Processing 0% done...
+Processing 9% done...
+Processing 19% done...
+Processing 29% done...
+Processing 39% done...
+Processing 49% done...
+Processing 59% done...
+Processing 69% done...
+Processing 79% done...
+Processing 89% done...
+Processing 99% done...
+Processing 99% done...
+→ Trajectories processed in 1.85 seconds.
+
+Processing trajectory lengths...
+Processing 0% done...
+Processing 9% done...
+Processing 19% done...
+Processing 29% done...
+Processing 39% done...
+Processing 49% done...
+Processing 59% done...
+Processing 69% done...
+Processing 79% done...
+Processing 89% done...
+Processing 99% done...
+Processing 99% done...
+→ Trajectory length processing completed in 1.96 seconds.
+
+Normalizing trajectory time...
+x→ Time normalization completed in 1.64 seconds.
+
+Converting trajectory data to Traj objects...
+Converting 0% done...
+Converting 9% done...
+Converting 19% done...
+Converting 29% done...
+Converting 39% done...
+^CTraceback (most recent call last):
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/preprocessing.py"[0m, line [35m204[0m, in [35m<module>[0m
+    trajlists = convert2traj(norm_trajs)
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/preprocessing.py"[0m, line [35m135[0m, in [35mconvert2traj[0m
+    p = Point(trajdata[i][j][0], trajdata[i][j][1], trajdata[i][j][2])
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/QRLSTC/point.py"[0m, line [35m5[0m, in [35m__init__[0m
+    def __init__(self, x, y, t):
+    
+[1;35mKeyboardInterrupt[0m
+^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A        
+
+[1m[3m%[23m[1m[0m                                                                                               ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hpython3 RLSTCcode-main/preprocessing.py; \
+python3 RLSTCcode-main/initcenters.py \[K
+  -subtrajsfile data/traclus_subtrajs \[K
+  -trajsfile    data/Tdrive_norm_traj_RLSTC \[K
+  -k 3 -amount 200 \[K
+  -centerfile   out/classical_k3_a200.pkl; \[K
+python3 QRLSTC/preprocessing.py; \[K
+python3 qrlstc/quantum_initcenters.py \[K
+  --subtrajsfile data/traclus_subtrajs \[K
+  --trajsfile    data/Tdrive_norm_traj_QRLSTC \[K
+  --k 3 --amount 200 \[K
+  --shots 128 --init far --feature-mode mean \[K
+  --backend qasm_simulator --seed 0 \[K
+  --centerfile out/quantum_k3_a200.pkl[KMMMMMMMMMMMMM[36C[8Cqrlstc/quantum_initcenters.py \   [1B  --subtrajsfile data/traclus_subtrajs \[1B[37D-[P[P[10C   data/Tdrive_norm_traj_QRLSTC \[1B[44D-k 3 --amount 50 \                        [1B[42D-shots 128 --init random --feature-mode mean --backend qasm_simulator[1B[K[1B[K[1B[K[1B[K[1B[K[1B[K[1B[K[1B[K[1B[K[9A[72C[?2004l[1B^[[B^[[B^[[B^[[A^[[A^[[A^[[A^[[A^[[B^[[B^[[B^CInterrupted.
+[1m[3m%[23m[1m[0m                                                                                               ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004h[?2004l
+[1m[3m%[23m[1m[0m                                                                                               ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004h[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % ppython3 RLSTCcode-main/preprocessing.py[?2004l
+/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/wilsebbis/School GitHub/QRLSTC/RLSTCcode-main/preprocessing.py': [Errno 2] No such file or directory
+[1m[3m%[23m[1m[0m                                                                                                       ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004hppython3 RLSTCcode-main/subtrajcluster/preprocessing.py; \[?2004l
+[0m[23m[24m[J> [K[?2004hppython3 RLSTCcode-main/subtrajcluster/initcenters.py \[?2004l
+[0m[23m[24m[J> [K[?2004h   -subtrajsfile data/traclus_subtrajs \[?2004l
+[0m[23m[24m[J> [K[?2004h   -trajsfile    data/Tdrive_norm_traj_RLSTC \[?2004l
+[0m[23m[24m[J> [K[?2004h   -k 3 -amount 200 \[?2004l
+[0m[23m[24m[J> [K[?2004h   -centerfile   out/classical_k3_a200.pkl; \[?2004l
+[0m[23m[24m[J> [K[?2004hppython3 QRLSTC/preprocessing.py; \[?2004l
+[0m[23m[24m[J> [K[?2004hppython3 qrlstc/quantum_initcenters.py \[?2004l
+[0m[23m[24m[J> [K[?2004h   --subtrajsfile data/traclus_subtrajs \[?2004l
+[0m[23m[24m[J> [K[?2004h   --trajsfile    data/Tdrive_norm_traj_QRLSTC \[?2004l
+[0m[23m[24m[J> [K[?2004h   --k 3 --amount 200 \[?2004l
+[0m[23m[24m[J> [K[?2004h   --shots 128 --init far --feature-mode mean \[?2004l
+[0m[23m[24m[J> [K[?2004h   --backend qasm_simulator --seed 0 \[?2004l
+[0m[23m[24m[J> [K[?2004h   --centerfile out/quantum_k3_a200.pkl[?2004l
+Starting RLSTC Preprocessing...
+Starting to process trajectories...
+Processing 0% done...
+Processing 9% done...
+Processing 19% done...
+Processing 29% done...
+Processing 39% done...
+Processing 49% done...
+Processing 59% done...
+Processing 69% done...
+Processing 79% done...
+Processing 89% done...
+Processing 99% done...
+Processing 99% done...
+→ Trajectories processed in 1.78 seconds.
+
+Processing trajectory lengths...
+Processing 0% done...
+Processing 9% done...
+Processing 19% done...
+Processing 29% done...
+Processing 39% done...
+Processing 49% done...
+Processing 59% done...
+Processing 69% done...
+Processing 79% done...
+Processing 89% done...
+Processing 99% done...
+Processing 99% done...
+→ Trajectory length processing completed in 1.95 seconds.
+
+Normalizing trajectory time...
+→ Time normalization completed in 1.64 seconds.
+
+Converting trajectory data to Traj objects...
+Converting 0% done...
+Converting 9% done...
+Converting 19% done...
+Converting 29% done...
+Converting 39% done...
+Converting 49% done...
+Converting 59% done...
+Converting 69% done...
+Converting 79% done...
+Converting 89% done...
+Converting 99% done...
+Converting 99% done...
+→ Trajectory conversion completed in 4.11 seconds.
+
+Simplifying trajectories...
+Simplifying 0% done...
+Simplifying 9% done...
+Simplifying 19% done...
+Simplifying 29% done...
+Simplifying 39% done...
+Simplifying 49% done...
+Simplifying 59% done...
+Simplifying 69% done...
+Simplifying 79% done...
+Simplifying 89% done...
+Simplifying 99% done...
+Simplifying 99% done...
+→ Simplification completed in 10.55 seconds.
+
+RLSTC Preprocessing finished in 49.72 seconds.
+Starting center initialization...
+→ Center initialization done in 0.60 seconds.
+
+Clustering 0% done... (step took 0.00 seconds)
+Clustering 4% done... (step took 2.31 seconds)
+Clustering 9% done... (step took 2.39 seconds)
+Clustering 14% done... (step took 2.36 seconds)
+Clustering 19% done... (step took 2.34 seconds)
+Clustering 24% done... (step took 2.36 seconds)
+Clustering 29% done... (step took 2.36 seconds)
+Clustering 34% done... (step took 2.43 seconds)
+Clustering 39% done... (step took 2.38 seconds)
+Clustering 44% done... (step took 2.38 seconds)
+Clustering 49% done... (step took 2.38 seconds)
+Clustering 54% done... (step took 2.41 seconds)
+Clustering 59% done... (step took 2.40 seconds)
+Clustering 64% done... (step took 2.35 seconds)
+Clustering 69% done... (step took 2.36 seconds)
+Clustering 74% done... (step took 2.32 seconds)
+Clustering 79% done... (step took 2.37 seconds)
+Clustering 84% done... (step took 2.35 seconds)
+Clustering 89% done... (step took 2.34 seconds)
+Clustering 94% done... (step took 2.38 seconds)
+Clustering 99% done... (step took 2.36 seconds)
+Clustering 99% done... (step took 0.00 seconds)
+Clustering 100% done.
+RLSTC Clustering completed in 47.92 seconds.
+Traceback (most recent call last):
+  File [35m"/Users/wilsebbis/School GitHub/QRLSTC/RLSTCcode-main/subtrajcluster/initcenters.py"[0m, line [35m204[0m, in [35m<module>[0m
+    pickle.dump(res, [31mopen[0m[1;31m(args.centerfile, 'wb')[0m, protocol=2)
+                     [31m~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^[0m
+[1;35mFileNotFoundError[0m: [35m[Errno 2] No such file or directory: 'out/classical_k3_a200.pkl'[0m
+Starting QRLSTC Preprocessing...
+Starting to process trajectories...
+Processing 0% done...
+Processing 9% done...
+Processing 19% done...
+Processing 29% done...
+Processing 39% done...
+Processing 49% done...
+Processing 59% done...
+Processing 69% done...
+Processing 79% done...
+Processing 89% done...
+Processing 99% done...
+Processing 99% done...
+→ Trajectories processed in 1.88 seconds.
+
+Processing trajectory lengths...
+Processing 0% done...
+Processing 9% done...
+Processing 19% done...
+Processing 29% done...
+Processing 39% done...
+Processing 49% done...
+Processing 59% done...
+Processing 69% done...
+Processing 79% done...
+Processing 89% done...
+Processing 99% done...
+Processing 99% done...
+→ Trajectory length processing completed in 2.05 seconds.
+
+Normalizing trajectory time...
+→ Time normalization completed in 1.73 seconds.
+
+Converting trajectory data to Traj objects...
+Converting 0% done...
+Converting 9% done...
+Converting 19% done...
+Converting 29% done...
+Converting 39% done...
+Converting 49% done...
+Converting 59% done...
+Converting 69% done...
+Converting 79% done...
+Converting 89% done...
+Converting 99% done...
+Converting 99% done...
+→ Trajectory conversion completed in 4.13 seconds.
+
+Simplifying trajectories...
+Simplifying 0% done...
+Simplifying 9% done...
+Simplifying 19% done...
+Simplifying 29% done...
+Simplifying 39% done...
+Simplifying 49% done...
+Simplifying 59% done...
+Simplifying 69% done...
+Simplifying 79% done...
+Simplifying 89% done...
+Simplifying 99% done...
+Simplifying 99% done...
+→ Simplification completed in 11.02 seconds.
+
+QRLSTC Preprocessing finished in 53.06 seconds.
+Starting q-means++ center initialization...
+→ Center initialization done in 10.41 seconds.
+
+Clustering 0% done... (step took 0.00 seconds)
+Clustering 4% done... (step took 103.60 seconds)
+^CInterrupted.
+[1m[3m%[23m[1m[0m                                                                                                                                                                     ]7;file://Wils-MacBook-Pro.local/Users/wilsebbis/School%20GitHub/QRLSTC[0m[23m[24m[Jwilsebbis@Wils-MacBook-Pro QRLSTC % [K[?2004h

@@ -1,4 +1,9 @@
 
+
+# Preprocessing module for trajectory data
+# This script provides functions to clean, normalize, and simplify trajectory data for clustering and analysis.
+# Each step is documented below to explain its purpose and rationale.
+
 import pickle
 import numpy as np
 from datetime import datetime
@@ -9,6 +14,8 @@ import random
 import argparse
 import time
 
+# Step 1: Filter trajectories to a specific geographic region
+# This removes points outside the area of interest (e.g., Beijing), reducing noise and focusing analysis.
 def processtrajs(trajs):
     print("Starting to process trajectories...")
     start_time = time.time()
@@ -22,6 +29,7 @@ def processtrajs(trajs):
 
         temptraj = []
         for j in range(len(trajs[i])):
+            # Only keep points within the bounding box
             if trajs[i][j][1] >= 39.4 and trajs[i][j][1] <= 41.6 and trajs[i][j][0] >= 115.4 and trajs[i][j][0] <= 117.5:
                 temptraj.append(trajs[i][j])
         if len(temptraj) != 0:
@@ -31,6 +39,9 @@ def processtrajs(trajs):
     print(f"→ Trajectories processed in {end_time - start_time:.2f} seconds.\n")
     return trajslist
 
+# Step 2: Standardize trajectory lengths
+# This ensures all trajectories are within a specified length range, which is important for algorithms that expect uniform input size.
+# Long trajectories are downsampled, short ones are filtered out.
 def processlength(trajs, max_length, min_length):
     print("Processing trajectory lengths...")
     start_time = time.time()
@@ -44,6 +55,7 @@ def processlength(trajs, max_length, min_length):
 
         length = len(trajs[i])
         if length > max_length:
+            # Downsample long trajectories to max_length
             temp_traj = []
             length_list = [i for i in range(length)]
             random_sample = random.sample(length_list, max_length)
@@ -58,6 +70,8 @@ def processlength(trajs, max_length, min_length):
     print(f"→ Trajectory length processing completed in {end_time - start_time:.2f} seconds.\n")
     return trajdata
 
+# Step 3: Split long trajectories into smaller sub-trajectories
+# This helps in handling long trajectories and allows for finer-grained analysis.
 def split_traj(traj, max_length, min_length):
     print("Splitting trajectories...")
     start_time = time.time()
@@ -76,6 +90,12 @@ def split_traj(traj, max_length, min_length):
     print(f"→ Splitting done in {end_time - start_time:.2f} seconds.\n")
     return sub_trajs
 
+# Step 4: Normalize trajectory locations
+# Why normalize?
+# - Normalization (subtract mean, divide by std) removes scale and offset effects, making trajectories comparable regardless of their absolute location.
+# - This is useful for clustering and pattern recognition, where the shape and movement pattern matter more than the absolute position.
+# - If the goal is to compare trajectories in their real-world context (e.g., for map-based analysis), normalization may not be desired.
+# - In this code, normalization is used to focus on trajectory patterns rather than their specific geographic locations.
 def normloctrajs(trajs):
     print("Normalizing trajectory locations...")
     start_time = time.time()
@@ -99,6 +119,11 @@ def normloctrajs(trajs):
     print(f"→ Location normalization completed in {end_time - start_time:.2f} seconds.\n")
     return norm_trajs
 
+# Step 5: Normalize trajectory timestamps
+# Why normalize?
+# - Normalizing time removes effects of absolute timing, focusing on relative timing and patterns.
+# - This is useful for comparing trajectories that may have started at different times but have similar temporal patterns.
+# - If absolute time is important (e.g., for event detection), normalization may not be appropriate.
 def normtimetrajs(trajs):
     print("Normalizing trajectory time...")
     start_time = time.time()
@@ -120,6 +145,8 @@ def normtimetrajs(trajs):
     print(f"→ Time normalization completed in {end_time - start_time:.2f} seconds.\n")
     return norm_trajs
 
+# Step 6: Convert raw trajectory data to Traj objects
+# This step wraps the data in a class for easier manipulation and further processing.
 def convert2traj(trajdata):
     print("Converting trajectory data to Traj objects...")
     start_time = time.time()
@@ -144,6 +171,9 @@ def convert2traj(trajdata):
     print(f"→ Trajectory conversion completed in {end_time - start_time:.2f} seconds.\n")
     return trajlists
 
+# Step 7: Trajectory simplification using MDL (Minimum Description Length)
+# This reduces the number of points in a trajectory while preserving its essential shape.
+# Useful for speeding up downstream processing and reducing noise.
 def simplify(points, traj_id):
     simp_points = []
     start_index = 0
@@ -168,6 +198,7 @@ def simplify(points, traj_id):
     simp_traj = Traj(simp_points, size, ts, te, traj_id)
     return simp_traj
 
+# Step 8: Apply simplification to all trajectories
 def getsimptrajs(trajs):
     print("Simplifying trajectories...")
     start_time = time.time()
@@ -186,6 +217,9 @@ def getsimptrajs(trajs):
     print(f"→ Simplification completed in {end_time - start_time:.2f} seconds.\n")
     return simptrajs
 
+# Main script: orchestrates the preprocessing steps
+# Note: The normalization steps are included to make trajectory patterns comparable for clustering and machine learning.
+# If you want to compare trajectories in their real-world locations, you may skip normalization.
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Preprocess trajectories")
     parser.add_argument("-trajfile", default='data/Tdrive', help="Input trajectory file")
@@ -198,11 +232,17 @@ if __name__ == "__main__":
     print("Starting RLSTC Preprocessing...")
     start_time = time.time()
 
+    # Load raw trajectories
     trajs = pickle.load(open(args.trajfile, 'rb'))
+    # Filter to region of interest
     trajslist = processtrajs(trajs)
+    # Standardize lengths
     trajs = processlength(trajslist, args.maxlen, args.minlen)
+    # Normalize time (for pattern comparison)
     norm_trajs = normtimetrajs(trajs)
+    # Convert to Traj objects
     trajlists = convert2traj(norm_trajs)
+    # Simplify trajectories
     simpletrajs = getsimptrajs(trajlists)
 
     # Save the simplified trajectories to the specified output file

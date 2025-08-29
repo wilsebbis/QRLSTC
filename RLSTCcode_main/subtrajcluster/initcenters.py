@@ -168,5 +168,41 @@ if __name__ == "__main__":
                 sse += dist ** 2
         return sse
 
+
     sse = compute_sse(res)
     print(f"RLSTC Goodness of fit (SSE): {sse:.4f}")
+
+
+# --- Cluster Visualization ---
+import matplotlib.pyplot as plt
+
+def plot_clusters(cluster_dict, out_png):
+    """
+    Plot each subtrajectory point color-coded by cluster assignment, and cluster centers.
+    Args:
+        cluster_dict: dict, output from getbaseclus (or res[0][2])
+        out_png: save plot to file
+    """
+    colors = plt.cm.get_cmap('tab10', len(cluster_dict))
+    plt.figure(figsize=(10, 8))
+    for i, cluster in cluster_dict.items():
+        subtrajs = cluster[3]
+        for traj in subtrajs:
+            xs = [p.x for p in traj.points]
+            ys = [p.y for p in traj.points]
+            plt.scatter(xs, ys, s=5, color=colors(i), label=f"Cluster {i}" if i not in plt.gca().get_legend_handles_labels()[1] else "")
+        # Plot cluster center trajectory (optional, as a star)
+        center_traj = cluster[1]
+        xs = [p.x for p in center_traj.points]
+        ys = [p.y for p in center_traj.points]
+        plt.plot(xs, ys, color=colors(i), linewidth=2, marker='*', markersize=10, label=f"Center {i}")
+    plt.xlabel('Longitude')
+    plt.ylabel('Latitude')
+    plt.title('Subtrajectory Clusters')
+    plt.legend()
+    plt.savefig(out_png)
+    print(f"Cluster plot saved to {out_png}")
+
+# Save plot after clustering
+    print("Plotting clusters and saving to file...")
+    plot_clusters(res[0][2], out_png=args.centerfile + '.png')

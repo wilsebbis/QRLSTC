@@ -1,20 +1,38 @@
-psycopg[binary]
-torch
+# Core scientific computing
 numpy>=1.22
+scipy
 matplotlib
-gymnasium
+pandas
 
-# Qiskit Stack
+# Machine learning frameworks
+torch
+tensorflow>=2.0
+keras
+scikit-learn
+
+# Quantum computing
 qiskit>=0.44.0
 qiskit-aer>=0.12.0
 qiskit[visualization]>=0.44.0
 qiskit-machine-learning>=0.6.0
 qiskit-algorithms>=0.2.0
 
-tqdm
-psycopg2-binary
-mock
-wandb
-tensorflow
+# Hardware acceleration (optional)
+mlx  # For Apple Silicon
+# cupy  # For NVIDIA CUDA (uncomment if using CUDA)
 
-mlx
+# Reinforcement learning
+gymnasium
+
+# Database connectivity
+psycopg[binary]
+psycopg2-binary
+
+# Utilities and progress tracking
+tqdm
+
+# Testing and development
+mock
+
+# Experiment tracking
+wandb

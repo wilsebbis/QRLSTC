@@ -28,10 +28,10 @@ from point import Point
 from segment import Segment
 from traj import Traj
 from collections import defaultdict
-from trajdistance import traj2trajIED
 import argparse
 import time
 import json
+from trajdistance import traj2trajIED
 
 def initialize_centers(data, K):
     """

@@ -1,0 +1,605 @@
+Subtrajectory Clustering with Machine Learning on Quantum
+Computers
+Wil Bishop
+
+Eleazar Leal
+
+Le Gruenwald
+
+University of Minnesota Duluth
+bisho210@umn.edu
+
+University of Minnesota Duluth
+eleal@d.umn.edu
+
+The University of Oklahoma
+ggruendwald@ou.edu
+
+Abstract
+
+1
+
+Subtrajectory clustering is vital for real-world applications such
+as traffic bottleneck detection, public transportation optimization,
+and play pattern discovery in sports analytics. This problem is NPhard and computationally intensive for large-scale applications, and
+many existing classical implementations struggle with scalability
+and generalizability. While machine learning-based approaches
+allow for greater generalizability than existing rule-based methods,
+they still struggle with scalability. Quantum computing offers a
+compelling promise of superior scalability as hardware matures
+and more fault-tolerant systems become available. In particular,
+as quantum hardware reaches the threshold of practical quantum
+advantage, it may outperform classical systems in high-dimensional
+optimization and pattern discovery tasks. Furthermore, combining
+quantum computing with machine learning may enable solutions
+that are both scalable and generalizable. This paper discusses the
+drawbacks of current subtrajectory clustering approaches within
+the classical computing paradigm, the challenges associated with
+solving the problem using quantum computing, and a vision for the
+conversion of a state-of-the-art classical subtrajectory clustering
+algorithm to a hybrid quantum-classical version.
+
+With the pervasive use of GPS-enabled devices and location-based
+services, an unprecedented volume of trajectory data is being continuously generated. Trajectories are time-ordered sequences of
+spatial points that can be collected using location sensors. The
+unique challenges associated with mining this type of data require
+different solutions from those used for point data. A key task in
+trajectory analytics is trajectory clustering, where similar trajectories are grouped together. This task has numerous real-world
+applications, such as traffic monitoring, urban planning, and sports
+analytics [33, 51, 52]. Subtrajectory clustering is a technique that
+segments trajectories into smaller, meaningful subtrajectories and
+groups similar ones together. Unlike full-trajectory clustering, this
+technique enables the discovery of local patterns that may be obscured due to variations in trajectory length, duration, or sampling
+rate. One example use case is reconstructing a map based on raw
+trajectory data [12, 13].
+Subtrajectory clustering is computationally intensive, being NPhard [4]. Many classical algorithms such as TRACLUS [29] rely on
+rule-based heuristic methods that can be sensitive to input parameters which are computationally intensive to calibrate [24, 35] and
+scale poorly with dataset size [37]. RLSTC [30] has proposed reinforcement learning (RL) approaches to address these limitations.
+It uses a Deep Q-Network (DQN) to learn policies that identify
+optimal segmentation points. This approach is more scalable than
+rule-based methods, though the repeated calculation of trajectory
+distance is still a bottleneck. It learns directly from the dataset for
+greater generalizability than a hand-crafted rules approach.
+One promising solution to the problem of scalability is quantum
+computing, which is gaining momentum, as evidenced by the popularity of IBM’s Qiskit language and the development of Microsoft’s
+Majorana 1 chip [3, 38]. The quantum paradigm has several features that make it uniquely suited for scalability, such as quantum
+parallelism, superposition, and entanglement, which are described
+in more detail in Section 2.2. Current quantum hardware is limited,
+but maturing technology may enable quantum computers to solve
+problems like subtrajectory clustering more quickly than classical
+counterparts. Quantum methods for combinatorial optimization
+problems have shown up to a ∼6,561× speedup over state-of-the-art
+classical algorithms [26], and similar results could be possible for
+subtrajectory clustering as well.
+Quantum computers are expensive to use (access to an IBM quantum computer starts at $96 per minute [2]) and simulating quantum
+states and transformations in a classical machine’s memory becomes prohibitively computationally expensive [56]. It is therefore
+reasonable to adapt only those algorithms which benefit most from
+quantum speedups. In a hybrid classical-quantum algorithm, only
+the components that can take advantage of quantum computing
+
+CCS Concepts
+• Information systems → Geographic information systems; •
+Computer systems organization → Quantum computing; •
+Computing methodologies → Reinforcement learning.
+
+Keywords
+Quantum Computing, Subtrajectory Clustering, Quantum Machine
+Learning
+ACM Reference Format:
+Wil Bishop, Eleazar Leal, and Le Gruenwald. 2025. Subtrajectory Clustering with Machine Learning on Quantum Computers. In The 33rd ACM
+International Conference on Advances in Geographic Information Systems,
+November 03–06, 2025, Minneapolis, MN . ACM, New York, NY, USA, 6 pages.
+https://doi.org/XXXXXXX.XXXXXXX
+
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page. Copyrights for components of this work owned by others than the
+author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or
+republish, to post on servers or to redistribute to lists, requires prior specific permission
+and/or a fee. Request permissions from permissions@acm.org.
+SIGSPATIAL ’25, Minneapolis, MN
+© 2025 Copyright held by the owner/author(s). Publication rights licensed to ACM.
+ACM ISBN ?
+https://doi.org/XXXXXXX.XXXXXXX
+
+Introduction
+
+SIGSPATIAL ’25, November 03–06, 2025, Minneapolis, MN
+
+are implemented as quantum components, while the other components are implemented as classical ones. This paper presents our
+vision for adapting RLSTC, a state-of-the-art classical subtrajectory
+clustering algorithm, to a hybrid classical-quantum algorithm, QRLSTC (Quantum Reinforcement Learning-based Sub-Trajectory
+Clustering), aiming to harness the unique strengths of quantum
+computing, such as the ability to evaluate multiple candidate solutions in parallel and accelerate combinatorial search processes
+involved in clustering and optimization tasks, while retaining the
+flexibility of Deep Reinforcement Learning (DRL).
+
+2 Related Work
+2.1 Classical Subtrajectory Clustering
+Multiple classical computing algorithms for subtrajectory clustering
+have been proposed, such as [4, 18, 29, 30, 41, 44, 54], aiming to uncover local movement patterns by segmenting trajectories into subtrajectories and grouping those exhibiting similar spatial-temporal
+behavior. Many classical algorithms like TRACLUS [29] adopt a
+partition-and-group paradigm, where trajectories are initially segmented using hand-crafted heuristics, and then the segments are
+clustered using algorithms like DBSCAN [19]. The effectiveness of
+these methods relies on the initial parameters chosen, which can
+be computationally expensive to calibrate [24, 35]. Furthermore,
+similarity metrics such as Fréchet distance [23] and Dynamic Time
+Warping [34] also scale poorly with trajectory length and dataset
+size. To address these issues, RLSTC [30] was recently introduced
+as a Deep Reinforcement Learning (DRL) approach to learn segmentation policies directly from data using a DQN for subtrajectory
+clustering. RLSTC circumvents the need for static rules and provides
+a dynamic way to identify subtrajectory boundaries in different
+classes of trajectory datasets [30]. However, this approach remains
+computationally intensive on classical hardware due to the nature
+of DRL, which requires exploring a large policy space.
+
+2.2
+
+Quantum Computing Background
+
+Quantum computing stems from the principles of quantum mechanics, describing phenomena at atomic and subatomic scales.
+Quantum mechanics introduces concepts like superposition (a particle existing in multiple states simultaneously) and entanglement
+(linked quantum states of particles) that can be exploited for computing [39]. Classical computing uses bits (0 or 1). A quantum bit
+(qubit), used in quantum computing, can be in state 0, state 1, or a
+superposition of both states. When measured, it yields either 0 or 1,
+with the probability of each outcome determined by the qubit’s state
+prior to measurement. This allows quantum computers to process
+vast information via parallelism. A common approach in quantum
+computing for solving a problem is to construct quantum circuits
+using quantum gates, which are basic operations that manipulate
+qubits by changing their quantum states. Qubits are susceptible to
+environmental noise from temperature fluctuations and electromagnetic fields, which can detrimentally affect desired superposition
+states [14]. Quantum systems can also undergo decoherence, which
+is the degradation of superposition and entanglement as quantum
+information is lost [46].
+
+Bishop et al.
+
+3
+
+Research Challenges in Subtrajectory
+Clustering
+3.1 Challenges Common to Both Classical and
+Quantum Computing
+(1) Data Volume: Large-scale data collection from location sensors,
+particularly at high sampling rates, can produce massive datasets,
+as discussed in Chapter 1 (p. 4) of Zheng [61]. This imposes computational burdens on storage and processing systems, especially
+when real-time analysis is required. This can be problematic for
+current quantum hardware which have limited qubits to encode
+the data with. (2) Spatial-Temporal Context: While point data may
+be presented in an arbitrary ordering, trajectory data requires a
+set ordering which puts restrictions on the ways the data can be
+organized and compressed. This is notable in quantum computing
+where it may be difficult to encode all of the spatial-temporal elements into qubits efficiently. (3) Size Variability: Unlike point data
+where each point can be compared easily to another, with trajectories there is a need to compare objects of different sizes. This issue
+is compounded in the quantum paradigm where objects are often
+converted into fixed-length vectors. (4) Noise and Data Cleaning:
+The instruments for obtaining trajectory data, such as GPS, may
+give inaccurate readings that can adversely affect the quality of
+the final clustering. This noise in the data can be compounded by
+the noise inherent to current quantum systems. (5) Streaming Data:
+Many applications require processing trajectories that arrive as
+continuous streams. A limited number of qubits may exacerbate
+this issue, and adding more qubits to the system to encode more
+data may prove difficult.
+
+3.2
+
+Challenges Specific to Quantum Computing
+
+(1) Data Loading and Encoding: Classical trajectory data, stored as
+bit strings, must be efficiently encoded into quantum states while
+minimizing the number of qubits and circuit depth [22]. Choosing an appropriate encoding technique that preserves spatial and
+temporal relationships is vital. Angle encoding [45], for example,
+maps data values to rotation angles of qubits, allowing for a direct,
+intuitive representation of continuous features like coordinates and
+timestamps. This is vital for trajectory clustering because maintaining the relative order and magnitudes of spatial and temporal
+differences between points is crucial for accurate similarity calculations between subtrajectories. Without an encoding method
+that respects this inherent order and structure, the quantum algorithm would lose the very information it needs to distinguish
+and cluster distinct movement patterns. (2) Optimal Circuit Design:
+The design of effective, trainable, and hardware-efficient quantum
+circuits is a formidable challenge. Selecting a circuit depth that
+does not match the problem may result in slow training known as
+a barren plateau [28]. If the circuit is too deep, it may accumulate
+decoherence as mentioned in Section 2.2 and become untrainable
+due to noise. There is an inherent trade-off between a quantum
+circuit’s ability to represent the complex states required for a given
+computation and its efficiency which necessitates intimate domain
+knowledge for optimal circuit design. (3) Hybrid Algorithm Design:
+Due to the still maturing state of quantum computing, it is often
+advisable to only adapt those elements of an algorithm which see
+
+Subtrajectory Clustering with Machine Learning on Quantum Computers
+
+the greatest improvements from a quantum adaptation, and leave
+the other elements as their classical counterparts. Determining the
+optimal division of labor between classical and quantum processors
+is a key design choice. Efficiently managing the communication
+overhead in terms of the frequency of exchanges, the volume of
+data transferred per exchange, and the speed of data transfer and
+encoding/decoding between classical and quantum components is
+vital to ensure that any potential quantum speedup is not nullified
+by classical bottlenecks. (4) Quantum Hardware Restraints: Noisy
+Intermediate-Scale Quantum (NISQ) [43] devices are the most accessible and cost-effective pieces of quantum hardware available
+today for research. They are characterized by a limited number of
+qubits, short coherence times in which each qubit can maintain its
+quantum properties like superposition and entanglement, high gate
+error rates which are the probability that an error occurs while a
+quantum gate is applied to a qubit, and restricted qubit connectivity
+which means that not all qubits can directly interact with each other.
+These hardware limitations severely constrain the size and complexity of quantum algorithms that can be reliably executed, making the
+practical implementation of ambitious Quantum Machine Learning (QML) models for subtrajectory clustering a long-term goal.
+(5) Decoding Quantum Outputs: Quantum algorithms typically yield
+probabilistic outcomes through measurements. Translating these
+measurement statistics back into meaningful classical information
+(e.g., cluster assignments, Q-values, distances) that can be used by
+the classical components of the hybrid algorithm requires robust
+decoding strategies such as expectation-value estimation [27]. This
+is particularly challenging with large or noisy quantum output
+spaces, as it can be with subtrajectory clustering due to its high
+dimensionality.
+
+4
+
+Proposed Quantum Subtrajectory Clustering
+Algorithm
+
+We now describe RLSTC [30], a state-of-the-art subtrajectory clustering algorithm for classical computers. We then describe our
+approach for adapting it to quantum computing (Quantum RLTSC).
+
+4.1
+
+Description of RLSTC
+
+RLSTC clusters subtrajectories with the following steps:
+(1) Preprocessing: Trajectories are simplified by keeping only
+significant points with Minimum Description Length (MDL).
+(2) Computation of Initial Cluster Centers: Cluster centers
+are initially derived using k-means++ [6]. A cluster center is a representative trajectory capturing the collective movement pattern
+of sub-trajectories within that cluster, generated by calculating the
+average coordinate at that timestamp. If the number of trajectories within a specific timestamp meets a threshold 𝑀𝑖𝑛𝑁𝑢𝑚, the
+average coordinate for that timestamp is computed, using linear
+interpolation for trajectories not having a point at that timestamp.
+(3) Learning the Optimal Policy: The reinforcement learning
+model is formulated as a Markov Decision Process (MDP). States:
+Each state consists of five features: 𝑠𝑡 (𝑂𝐷𝑠 ), the overall distance between all points in a subtrajectory and the nearest cluster center to
+that subtrajectory if the trajectory is segmented at the current point
+𝑝𝑡 ; 𝑠𝑡 (𝑂𝐷𝑛 ), the overall distance if a trajectory isn’t segmented at
+the current point 𝑝𝑡 ; 𝑂𝐷𝑏 , the expert knowledge estimate of the
+
+SIGSPATIAL ’25, November 03–06, 2025, Minneapolis, MN
+
+overall distance calculated by TRACLUS, used to make sure the
+RLSTC algorithm doesn’t make a premature partition that fails to
+minimize overall distance; 𝑠𝑡 (𝐿𝑏 ) the relative length of the generated subtrajectory; and 𝑠𝑡 (𝐿 𝑓 ), the relative length of the remaining
+subtrajectory. Actions: Whether or not to segment the trajectory
+at the current point 𝑝𝑡 . Rewards: 𝑠𝑡 (𝑂𝐷) − 𝑠𝑡 +1 (𝑂𝐷) for the immediate reward, and 𝑠 1 (𝑂𝐷) − 𝑠 |𝑇 | (𝑂𝐷) for the cumulative reward,
+where both represent the difference in overall distance between
+states. Initialization: The DQN algorithm [36] initializes a main Qnetwork which takes as input a pair (𝑠𝑡 , 𝑎𝑡 ) and returns 𝑄 (𝑠𝑡 , 𝑎𝑡 ; 𝜃 ),
+and a target network, along with a replay memory 𝑀 storing all
+the experience vectors (𝑠𝑡 , 𝑎𝑡 , 𝑟𝑡 , 𝑠𝑡 +1 ). The goal of the DQN is to
+learn a function 𝑄 and construct a policy for selecting an action
+𝑎𝑡 given a state 𝑠𝑡 . Training is episodic. For each trajectory, points
+are processed sequentially. (3.1) Distance Calculation: The Overall
+Distance (OD) measures are based on the Euclidean distance using
+the Trapezoid approximation [1], which is identified as a bottleneck
+in the paper. (3.2) Action Selection: At each point, an action is chosen
+using an 𝜖-greedy strategy based on the main network [49]. The
+action is executed, leading to a new state 𝑠𝑡 +1 and reward 𝑟𝑡 . This
+experience (𝑠𝑡 , 𝑎𝑡 , 𝑟𝑡 , 𝑠𝑡 +1 ) is stored in the replay memory 𝑀. (3.3)
+Loss Function: A minibatch of experiences is randomly sampled
+from 𝑀 to train the main network by minimizing the Mean Squared
+Error (MSE) loss function using Stochastic Gradient Descent (SGD).
+The target Q-value for the loss calculation is derived from the target
+network and the immediate reward. The target network’s parameters are periodically updated. The learned optimal policy is to select
+the action that maximizes 𝑄 (𝑠𝑡 , 𝑎𝑡 ; 𝜃 ) for a given state 𝑠𝑡 . This is
+done because 𝑄 is the expected long-term reward starting from
+state 𝑠𝑡 after taking action 𝑎𝑡 .
+(4) Classical Segmentation and Clustering Loop: Use the
+cluster centers from Step 2 and rerun segmentation using the
+learned policy. Update the cluster centers by assigning each newly
+generated subtrajectory to its nearest cluster. The maximum distance 𝑚𝑎𝑥𝑑𝑖𝑠𝑡 between the newly updated cluster centers and the
+previous cluster centers is calculated; if 𝑚𝑎𝑥𝑑𝑖𝑠𝑡 is below a threshold 𝜏, the algorithm converges and the 𝑘 clusters are returned,
+which represent the most common shared subtrajectories.
+
+4.2
+
+Quantum RLSTC (Q-RLSTC): Our Vision to
+Transform RLSTC to a Quantum Approach
+
+Utilizing a hybrid quantum-classical approach, we present quantum
+alternatives to existing sub-algorithms of RLSTC, with comments
+on both their near-term feasibility and utility over classical methods.
+Figure 1 illustrates our proposed algorithm, the steps of which are
+discussed below.
+(1) Preprocessing with MDL: Given NISQ hardware limitations, the classical MDL preprocessing step is retained for our framework. We will then use angle encoding to represent the trajectories
+with qubits for Step 2.
+(2) Quantum Initial Clustering: RLSTC utilizes k-means++ [6]
+for the initialization of clusters. There have been multiple quantum
+implementations of the k-means algorithm [17, 25, 40, 42, 53], so
+it seems like the most promising area to hybridize this algorithm.
+In particular, q-means [25] was found to scale polylogarithmically
+with the number of data points, suggesting an exponential speedup
+
+SIGSPATIAL ’25, November 03–06, 2025, Minneapolis, MN
+
+Bishop et al.
+
+Figure 1: Our vision for Q-RLSTC. Boxes with blue borders are classical and boxes with red borders are quantum.
+with respect to the size of the dataset, whereas the simplest version
+of the classical k-means scales linearly with the number of data
+points. This is important with trajectory data which often has many
+data points. Our vision uses q-means++ [25], which replicates the
+superior initial clustering of k-means++ in a quantum environment.
+In addition to k-means [31] and k-means++ [6], RLSTC can work
+with other density clustering algorithms, such as DBSCAN [19],
+BIRCH [59], and OPTICS [5]. Notably, quantum and quantuminspired DBSCAN versions have also been developed [7, 48, 55].
+While this would require further alteration of the RLSTC framework to implement, a DBSCAN-inspired algorithm may be a better
+fit for trajectory clustering than k-means or k-means++, as it can
+find arbitrarily-shaped clusters based on density rather than trying
+to find a set number of clusters [60], but the necessary alterations
+would be substantial due to the move away from centroid-based
+updates to density-based evaluations.
+(3) Quantum Policy Learning: RLSTC uses a DQN with an
+𝜖-greedy strategy to learn a policy. There is a growing corpus of
+research dedicated to studying the use of Variational Quantum Circuits (VQCs) to accomplish this objective [8, 16, 32, 47]. Lokes et
+al. [32] mention the 𝑂 (𝑛) linear complexity where 𝑛 is the number
+of parameters needed in a Variational Quantum Deep Q-Network
+(VQ-DQN) compared to the 𝑂 (𝑛 3 ) parameter complexity of classical Q-Learning and 𝑂 (𝑛 2 ) complexity of a classical DQN. It is also
+notable that Chen et al.’s algorithm [16] is quite robust against the
+noise present in current-day NISQ devices because their action selection mechanism does not need to find the exact expectation value
+of each qubit, but rather only identifying the qubit with the largest
+expectation value. Due to the probabilistic nature of quantum measurements, it would require a large number of measurements, or
+shots, to converge on an exact expectation value. These results are
+promising for more near-term improvements as noise will continue
+to be a major obstacle in quantum computing in the near future.
+(3.1) Quantum Overall Distance Calculation: [1] mentions
+the continued calculation of distances as a bottleneck in RLSTC.
+When a point is scanned, the distance is computed between the cluster center and the current sub-trajectory [30]. Multiple quantum
+approaches are available for distance calculation [11, 57, 58], including the swap test [10], which estimates how much two quantum
+states differ. It scales linearly with the number of qubits whereas
+the classical method scales exponentially [20].
+(3.2) Quantum Action Selection: The 𝜖-greedy strategy can
+be replaced with Grover’s algorithm [21]. Instead of random exploration, Grover’s algorithm probabilistically selects an action
+that is beneficial by increasing the amplitude of the desired items
+in the superposition of all items. With 𝑁 being the database size,
+
+√
+the worst-case time complexity of Grover’s algorithm is 𝑂 ( 𝑁 ),
+improving over unstructured classic search’s 𝑂 (𝑁 ) complexity [9].
+Another approach for action selection is found with VariableTime Amplitude Amplification (VTAA), which extends Grover’s
+algorithm. The algorithm given by Wang et al. cites a quadratic
+speedup compared to the best possible classical results [50]. The
+multi-armed bandit problem [49] that the algorithm is based on has
+enough differences from the 𝜖-greedy strategy that it may require
+additional changes to make it feasible. However, because there are
+only two possible actions per state, it may still be a good fit.
+(3.3) Loss Function: Q-RLSTC can use quantum gradient descent (QGD) [15] instead of SGD to calculate the loss. QGD has a
+complexity of 𝑂 (1) compared with SGD’s 𝑂 (𝑁 ), with 𝑁 the number
+of parameters. We can decode the optimal policy back to classical.
+(4) Classical Segmentation and (5) Clustering: RLSTC uses
+a classical segmentation and clustering loop because of the limited
+number of qubits on NISQ hardware.
+
+5
+
+Conclusions and Future Research
+
+Subtrajectory clustering is a core challenge in spatial data mining,
+limited by the scalability of classical methods like RLSTC. This
+paper introduced Q-RLSTC, a hybrid quantum-classical framework
+designed to overcome these limitations by selectively integrating
+quantum algorithms for distance estimation, policy learning, and
+clustering while retaining classical components where quantum
+advantages are marginal or cost-prohibitive on current NISQ devices. We outlined the architecture, identified key technical hurdles,
+and argued that quantum-enhanced clustering could significantly
+improve spatial-temporal analysis. Advancing this line of research
+may unlock new capabilities in geographic information systems
+and spatial data science.
+For future work, we intend to formalize and implement the proposed quantum algorithm using a open-source quantum software
+development framework such as IBM’s Qiskit [3]. We will then
+empirically evaluate its performance and benchmark the results
+against those of its classical counterpart.
+
+Acknowledgments
+This work is supported in part by the National Science Foundation
+under Grant No. 2425838.
+
+References
+[1] [n. d.]. (PDF) Index-based Most Similar Trajectory Search. In ResearchGate. doi:10.
+1109/ICDE.2007.367927
+[2] [n. d.]. Pricing | IBM Quantum Computing. https://www.ibm.com/quantum/
+pricing
+[3] [n. d.]. Qiskit | IBM Quantum Computing. https://www.ibm.com/quantum/qiskit
+
+Subtrajectory Clustering with Machine Learning on Quantum Computers
+
+[4] Pankaj K. Agarwal, Kyle Fox, Kamesh Munagala, Abhinandan Nath, Jiangwei
+Pan, and Erin Taylor. 2018. Subtrajectory Clustering: Models and Algorithms. In
+Proceedings of the 37th ACM SIGMOD-SIGACT-SIGAI Symposium on Principles of
+Database Systems. ACM, Houston TX USA, 75–87. doi:10.1145/3196959.3196972
+[5] Mihael Ankerst, Markus M. Breunig, Hans-Peter Kriegel, and Jörg Sander. 1999.
+OPTICS: ordering points to identify the clustering structure. SIGMOD Rec. 28, 2
+(June 1999), 49–60. doi:10.1145/304181.304187
+[6] David Arthur and Sergei Vassilvitskii. [n. d.]. k-means++: The Advantages of
+Careful Seeding. ([n. d.]).
+[7] Amit Banerjee. 2023. Robust Density-Based Data Clustering Using a QuantumInspired Genetic Algorithm. In 2023 IEEE Congress on Evolutionary Computation
+(CEC). 01–07. doi:10.1109/CEC53210.2023.10253967
+[8] Niyazi Furkan Bar, Hasan Yetis, and Mehmet Karakose. 2023. An efficient and
+scalable variational quantum circuits approach for deep reinforcement learning.
+Quantum Information Processing 22, 8 (Aug. 2023), 300. doi:10.1007/s11128-02304051-9
+[9] Diogo Barbosa, Le Gruenwald, Laurent D’Orazio, and Jorge Bernardino. 2024.
+QRLIT: Quantum Reinforcement Learning for Database Index Tuning. Future
+Internet 16, 12 (Dec. 2024), 439. doi:10.3390/fi16120439 Number: 12 Publisher:
+Multidisciplinary Digital Publishing Institute.
+[10] Adriano Barenco, André Berthiaume, David Deutsch, Artur Ekert, Richard Jozsa,
+and Chiara Macchiavello. 1997. Stabilization of Quantum Computations by
+Symmetrization. SIAM J. Comput. 26, 5 (Oct. 1997), 1541–1557. doi:10.1137/
+S0097539796302452
+[11] Alessandro Berti, Anna Bernasconi, Gianna M. Del Corso, and Riccardo Guidotti.
+2024. The role of encodings and distance metrics for the quantum nearest
+neighbor. Quantum Machine Intelligence 6, 2 (Sept. 2024), 62. doi:10.1007/s42484024-00197-6
+[12] Kevin Buchin, Maike Buchin, David Duran, Brittany Terese Fasy, Roel Jacobs, Vera
+Sacristan, Rodrigo I. Silveira, Frank Staals, and Carola Wenk. 2017. Clustering
+Trajectories for Map Construction. In Proceedings of the 25th ACM SIGSPATIAL
+International Conference on Advances in Geographic Information Systems (SIGSPATIAL ’17). Association for Computing Machinery, New York, NY, USA, 1–10.
+doi:10.1145/3139958.3139964
+[13] Kevin Buchin, Maike Buchin, Joachim Gudmundsson, Jorren Hendriks, Erfan Hosseini Sereshgi, Vera Sacristán, Rodrigo I. Silveira, Jorrick Sleijster, Frank Staals,
+and Carola Wenk. 2020. Improved Map Construction using Subtrajectory Clustering. In Proceedings of the 4th ACM SIGSPATIAL Workshop on Location-Based Recommendations, Geosocial Networks, and Geoadvertising (LocalRec’20). Association
+for Computing Machinery, New York, NY, USA, 1–4. doi:10.1145/3423334.3431451
+[14] Eunmi Chae, Joonhee Choi, and Junki Kim. 2024. An elementary review on basic
+principles and developments of qubits for quantum computing. Nano Convergence
+11 (March 2024), 11. doi:10.1186/s40580-024-00418-5
+[15] Ronghang Chen, Zhou Guang, Cong Guo, Guanru Feng, and Shi-Yao Hou. 2023.
+Pure quantum gradient descent algorithm and full quantum variational eigensolver. Frontiers of Physics 19, 2 (Dec. 2023), 21202. doi:10.1007/s11467-023-1346-7
+[16] Samuel Yen-Chi Chen, Chao-Han Huck Yang, Jun Qi, Pin-Yu Chen, Xiaoli Ma,
+and Hsi-Sheng Goan. 2020. Variational Quantum Circuits for Deep Reinforcement Learning. IEEE Access 8 (2020), 141007–141024. doi:10.1109/ACCESS.2020.
+3010470
+[17] Stephen DiAdamo, Corey O’Meara, Giorgio Cortiana, and Juan Bernabé-Moreno.
+2022. Practical Quantum K-Means Clustering: Performance Analysis and Applications in Energy Grid Classification. IEEE Transactions on Quantum Engineering
+3 (2022), 1–16. doi:10.1109/TQE.2022.3185505
+[18] Sumanto Dutta, Animesh Das, and Bidyut Kr. Patra. 2022. CLUSTMOSA: Clustering for GPS trajectory data based on multi-objective simulated annealing to
+develop mobility application. Applied Soft Computing 130 (Nov. 2022), 109655.
+doi:10.1016/j.asoc.2022.109655
+[19] Martin Ester, Hans-Peter Kriegel, Jörg Sander, and Xiaowei Xu. 1996. A densitybased algorithm for discovering clusters in large spatial databases with noise. In
+Proceedings of the Second International Conference on Knowledge Discovery and
+Data Mining (KDD’96). AAAI Press, Portland, Oregon, 226–231.
+[20] Xavier Gitiaux, Ian Morris, Maria Emelianenko, and Mingzhen Tian. 2022. SWAP
+test for an arbitrary number of quantum states. Quantum Information Processing
+21, 10 (Oct. 2022), 344. doi:10.1007/s11128-022-03643-1
+[21] Lov K. Grover. 1996. A fast quantum mechanical algorithm for database search.
+In Proceedings of the Twenty-Eighth Annual ACM Symposium on Theory of Computing (Philadelphia, Pennsylvania, USA) (STOC ’96). Association for Computing
+Machinery, New York, NY, USA, 212–219. doi:10.1145/237814.237866
+[22] Le Gruenwald, Tobias Winker, Umut Çalıkyılmaz, Jinghua Groppe, and Sven
+Groppe. [n. d.]. Index Tuning with Machine Learning on Quantum Computers
+for Large-Scale Database Applications. ([n. d.]).
+[23] Joachim Gudmundsson, Michael Horton, John Pfeifer, and Martin P. Seybold.
+2021. A Practical Index Structure Supporting Fréchet Proximity Queries among
+Trajectories. ACM Trans. Spatial Algorithms Syst. 7, 3 (June 2021), 15:1–15:33.
+doi:10.1145/3460121
+[24] Chen Jiashun. 2012. A new trajectory clustering algorithm based on TRACLUS. In
+Proceedings of 2012 2nd International Conference on Computer Science and Network
+
+SIGSPATIAL ’25, November 03–06, 2025, Minneapolis, MN
+
+Technology. 783–787. doi:10.1109/ICCSNT.2012.6526048
+[25] Iordanis Kerenidis, Jonas Landman, Alessandro Luongo, and Anupam Prakash.
+2019. q-means: a quantum algorithm for unsupervised machine learning. In
+Proceedings of the 33rd International Conference on Neural Information Processing
+Systems. Number 372. Curran Associates Inc., Red Hook, NY, USA, 4134–4144.
+[26] Seongmin Kim, Sang-Woo Ahn, In-Saeng Suh, Alexander W. Dowling, Eungkyu
+Lee, and Tengfei Luo. 2025. Quantum annealing for combinatorial optimization:
+a benchmarking study. npj Quantum Information 11, 1 (May 2025), 1–8. doi:10.
+1038/s41534-025-01020-1 Publisher: Nature Publishing Group.
+[27] Masaya Kohda, Ryosuke Imai, Keita Kanno, Kosuke Mitarai, Wataru Mizukami,
+and Yuya O. Nakagawa. 2022. Quantum expectation-value estimation by
+computational basis sampling. Phys. Rev. Res. 4 (Sep 2022), 033173. Issue 3.
+doi:10.1103/PhysRevResearch.4.033173
+[28] Martín Larocca, Supanut Thanasilp, Samson Wang, Kunal Sharma, Jacob Biamonte, Patrick J. Coles, Lukasz Cincio, Jarrod R. McClean, Zoë Holmes, and M.
+Cerezo. 2025. Barren plateaus in variational quantum computing. Nature Reviews
+Physics 7, 4 (April 2025), 174–189. doi:10.1038/s42254-025-00813-9 Publisher:
+Nature Publishing Group.
+[29] Jae-Gil Lee, Jiawei Han, and Kyu-Young Whang. 2007. Trajectory clustering: a
+partition-and-group framework. In Proceedings of the 2007 ACM SIGMOD international conference on Management of data (SIGMOD ’07). Association for Computing Machinery, New York, NY, USA, 593–604. doi:10.1145/1247480.1247546
+[30] Anqi Liang, Bin Yao, Bo Wang, Yinpei Liu, Zhida Chen, Jiong Xie, and Feifei Li.
+2024. Sub-trajectory clustering with deep reinforcement learning. The VLDB
+Journal 33, 3 (May 2024), 685–702. doi:10.1007/s00778-023-00833-w
+[31] S. Lloyd. 1982. Least squares quantization in PCM. IEEE Transactions on Information Theory 28, 2 (March 1982), 129–137. doi:10.1109/TIT.1982.1056489
+[32] S Lokes, C Sakthi Jay Mahenthar, S Parvatha Kumaran, Palaniyappan
+Sathyaprakash, and Vaithiyashankar Jayakumar. 2022. Implementation of Quantum Deep Reinforcement Learning Using Variational Quantum Circuits. In 2022
+International Conference on Trends in Quantum Computing and Emerging Business
+Technologies (TQCEBT). 1–4. doi:10.1109/TQCEBT54229.2022.10041479
+[33] Hui Luo, Zhifeng Bao, Gao Cong, J. Culpepper, and Khoa Nguyen. 2022. Let
+Trajectories Speak Out the Traffic Bottlenecks. ACM Transactions on Intelligent
+Systems and Technology 13 (Feb. 2022), 1–21. doi:10.1145/3465058
+[34] Yuqi Luo, Xinyi Fang, Wei Ke, Chan-Tong Lam, Sio-Kei Im, and Luís Paquete.
+2025. An algorithm for improving lower bounds in dynamic time warping. Expert
+Systems with Applications 279 (June 2025), 127405. doi:10.1016/j.eswa.2025.127405
+[35] Yingchi Mao, Haishi Zhong, Hai Qi, Ping Ping, and Xiaofang Li. 2017. An
+Adaptive Trajectory Clustering Method Based on Grid and Density in Mobile
+Pattern Analysis. Sensors 17, 9 (Sept. 2017), 2013. doi:10.3390/s17092013 Number:
+9 Publisher: Multidisciplinary Digital Publishing Institute.
+[36] Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Andrei A. Rusu, Joel Veness,
+Marc G. Bellemare, Alex Graves, Martin Riedmiller, Andreas K. Fidjeland, Georg
+Ostrovski, Stig Petersen, Charles Beattie, Amir Sadik, Ioannis Antonoglou, Helen
+King, Dharshan Kumaran, Daan Wierstra, Shane Legg, and Demis Hassabis. 2015.
+Human-level control through deep reinforcement learning. Nature 518, 7540 (Feb.
+2015), 529–533. doi:10.1038/nature14236 Publisher: Nature Publishing Group.
+[37] Hamza Mustafa, Clark Barrus, Eleazar Leal, and Le Gruenwald. 2021. GTraclus:
+A Local Trajectory Clustering Algorithm for GPUs. In 2021 IEEE 37th International Conference on Data Engineering Workshops (ICDEW). 30–35. doi:10.1109/
+ICDEW53142.2021.00013 ISSN: 2473-3490.
+[38] Chetan Nayak. 2025. Microsoft unveils Majorana 1, the world’s first quantum
+processor powered by topological qubits. https://azure.microsoft.com/enus/blog/quantum/2025/02/19/microsoft-unveils-majorana-1-the-worlds-firstquantum-processor-powered-by-topological-qubits/
+[39] Michael A. Nielsen and Isaac L. Chuang. 2010. Quantum Computation and
+Quantum Information: 10th Anniversary Edition. doi:10.1017/CBO9780511976667
+ISBN: 9780511976667 Publisher: Cambridge University Press.
+[40] Hiroshi Ohno. 2022. A quantum algorithm of K-means toward practical use.
+Quantum Information Processing 21, 4 (April 2022), 146. doi:10.1007/s11128-02203485-x
+[41] Nikos Pelekis, Panagiotis Tampakis, Marios Vodas, Costas Panagiotakis, and
+Yannis Theodoridis. 2017. In-DBMS Sampling-based Sub-trajectory Clustering.
+doi:10.5441/002/EDBT.2017.84
+[42] Alessandro Poggiali, Alessandro Berti, Anna Bernasconi, Gianna M. Del Corso,
+and Riccardo Guidotti. 2024. Quantum clustering with k-Means: A hybrid approach. Theoretical Computer Science 992 (April 2024), 114466. doi:10.1016/j.tcs.
+2024.114466
+[43] John Preskill. 2018. Quantum Computing in the NISQ era and beyond. Quantum
+2 (Aug. 2018), 79. doi:10.22331/q-2018-08-06-79
+[44] Dianfeng Qiao, Xinyu Yang, Yan Liang, and Xiaohui Hao. 2022. Rapid trajectory
+clustering based on neighbor spatial analysis. Pattern Recognition Letters 156
+(April 2022), 167–173. doi:10.1016/j.patrec.2022.03.010
+[45] Minati Rath and Hema Date. 2024. Quantum data encoding: a comparative analysis of classical-to-quantum mapping techniques and their impact on
+machine learning accuracy. EPJ Quantum Technology 11, 1 (Dec. 2024), 72.
+doi:10.1140/epjqt/s40507-024-00285-3 Number: 1 Publisher: Springer Berlin
+
+SIGSPATIAL ’25, November 03–06, 2025, Minneapolis, MN
+
+Heidelberg.
+[46] Maximilian Schlosshauer. 2019. Quantum decoherence. Physics Reports 831 (Oct.
+2019), 1–57. doi:10.1016/j.physrep.2019.10.001
+[47] André Sequeira, Luis Paulo Santos, and Luis Soares Barbosa. 2023. Policy gradients using variational quantum circuits. Quantum Machine Intelligence 5, 1 (April
+2023), 18. doi:10.1007/s42484-023-00101-8
+[48] Kodai Shiba, Chih-Chieh Chen, Masaru Sogabe, Katsuyoshi Sakamoto, and
+Tomah Sogabe. 2021. Quantum-Inspired Classification Algorithm from DBSCAN–Deutsch–Jozsa Support Vectors and Ising Prediction Model. Applied
+Sciences 11, 23 (Jan. 2021), 11386. doi:10.3390/app112311386 Number: 23 Publisher: Multidisciplinary Digital Publishing Institute.
+[49] Richard S Sutton and Andrew G Barto. [n. d.]. Reinforcement Learning: An
+Introduction. ([n. d.]).
+[50] Daochen Wang, Xuchen You, Tongyang Li, and Andrew M. Childs. 2021. Quantum Exploration Algorithms for Multi-Armed Bandits. Proceedings of the
+AAAI Conference on Artificial Intelligence 35, 11 (May 2021), 10102–10110.
+doi:10.1609/aaai.v35i11.17212
+[51] Yujia Wang, Yuan Tian, Binyu Yang, Jian Wang, Xiaowei Hu, and Shi An. 2023.
+Planning Flexible Bus Service as an Alternative to Suspended Bicycle-Sharing
+Service: A Data-Driven Approach. Journal of Advanced Transportation 2023 (Jan.
+2023), 1–15. doi:10.1155/2023/3187654
+[52] Zheng Wang, Cheng Long, Gao Cong, and Ce Ju. 2019. Effective and Efficient
+Sports Play Retrieval with Deep Representation Learning. In Proceedings of the
+25th ACM SIGKDD International Conference on Knowledge Discovery & Data
+Mining. ACM, Anchorage AK USA, 499–509. doi:10.1145/3292500.3330927
+
+Bishop et al.
+
+[53] Zhihao Wu, Tingting Song, and Yanbing Zhang. 2021. Quantum k-means algorithm based on Manhattan distance. Quantum Information Processing 21, 1 (Dec.
+2021), 19. doi:10.1007/s11128-021-03384-7
+[54] Yingying Xia and Liang Zhou. 2022. Improved Clustering Algorithm Based on
+Hypercube. 32–37. doi:10.1109/MLCR57210.2022.00015
+[55] Xuming Xie, Longzhen Duan, Taorong Qiu, and Junru Li. 2021. Quantum algorithm for MMNG-based DBSCAN. Scientific Reports 11, 1 (July 2021), 1–8.
+doi:10.1038/s41598-021-95156-7 Publisher: Nature Publishing Group.
+[56] Kieran Young, Marcus Scese, and Ali Ebnenasir. 2023. Simulating Quantum
+Computations on Classical Machines: A Survey. (Nov. 2023). _eprint: 2311.16505.
+[57] Kai Yu, Gong-De Guo, Jing Li, and Song Lin. 2020. Quantum Algorithms for
+Similarity Measurement Based on Euclidean Distance. International Journal of
+Theoretical Physics 59, 10 (Oct. 2020), 3134–3144. doi:10.1007/s10773-020-04567-1
+[58] Alessandro Andrea Zecchi, Claudio Sanavio, Simona Perotto, and Sauro Succi.
+2025. Improved amplitude amplification strategies for the quantum simulation
+of classical transport problems. Quantum Science and Technology (2025). doi:10.
+1088/2058-9565/addeea
+[59] Tian Zhang, Raghu Ramakrishnan, and Miron Livny. 1996. BIRCH: an efficient
+data clustering method for very large databases. SIGMOD Rec. 25, 2 (June 1996),
+103–114. doi:10.1145/235968.233324
+[60] Zhiyuan Zhang, Guoxin Ni, and Yanguo Xu. 2020. Comparison of Trajectory
+Clustering Methods based on K-means and DBSCAN. In 2020 IEEE International
+Conference on Information Technology,Big Data and Artificial Intelligence (ICIBA),
+Vol. 1. 557–561. doi:10.1109/ICIBA50161.2020.9277214
+[61] Yu Zheng and Xiaofang Zhou (Eds.). 2011. Computing with Spatial Trajectories.
+Springer, New York, NY. doi:10.1007/978-1-4614-1629-6
+
+

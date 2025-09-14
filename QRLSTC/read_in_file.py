@@ -1,7 +1,7 @@
 import pandas as pd
 import torch
 from encoder import StateEncoder
-from qmeans import QMeans
+from q_means import QMeans
 
 # Read the txt file
 with open('1.txt') as f:

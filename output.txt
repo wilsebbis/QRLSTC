@@ -1,0 +1,1175 @@
+(venv) wilsebbis@Mac QRLSTC % python3 RLSTCcode_main/subtrajcluster/initcenters.py -k 3 4 5 6 7 8 9 10 -amount 10 \
+    --alpha 0.3 \
+    --center-alpha 0.8 \
+    --sample 40 ; \
+python QRLSTC/updated_quant_initcenter.py -k 3 4 5 6 7 8 9 10 -amount 10 \
+    --alpha 0.3 \
+    --center-alpha 0.8 \
+    --sample 40 \
+    --shots 128 \
+    --feature-mode mean \
+    --init random \
+    --save-circuit;
+
+
+Starting clustering process for all k values...
+
+Clustering with k=3...
+Starting center initialization...
+→ Center initialization done in 0.03 seconds.
+
+Clustering 0% done... (step took 0.00 seconds)
+Clustering 4% done... (step took 2.67 seconds)
+Clustering 9% done... (step took 2.63 seconds)
+Clustering 14% done... (step took 2.67 seconds)
+Clustering 19% done... (step took 2.67 seconds)
+Clustering 24% done... (step took 2.65 seconds)
+Clustering 29% done... (step took 2.64 seconds)
+Clustering 34% done... (step took 2.62 seconds)
+Clustering 39% done... (step took 2.66 seconds)
+Clustering 44% done... (step took 2.63 seconds)
+Clustering 49% done... (step took 2.65 seconds)
+Clustering 54% done... (step took 2.65 seconds)
+Clustering 59% done... (step took 2.64 seconds)
+Clustering 64% done... (step took 2.65 seconds)
+Clustering 69% done... (step took 2.63 seconds)
+Clustering 74% done... (step took 2.64 seconds)
+Clustering 79% done... (step took 2.62 seconds)
+Clustering 84% done... (step took 2.62 seconds)
+Clustering 89% done... (step took 2.64 seconds)
+Clustering 94% done... (step took 2.63 seconds)
+Clustering 99% done... (step took 2.67 seconds)
+Clustering 99% done... (step took 0.00 seconds)
+Clustering 100% done.
+RLSTC Clustering for k=3 completed in 52.92 seconds.
+
+Computing silhouette coefficient...
+Silhouette computation: 0% complete
+Silhouette computation: 1% complete
+Silhouette computation: 2% complete
+Silhouette computation: 3% complete
+Silhouette computation: 4% complete
+Silhouette computation: 5% complete
+Silhouette computation: 6% complete
+Silhouette computation: 7% complete
+Silhouette computation: 8% complete
+Silhouette computation: 9% complete
+Silhouette computation: 10% complete
+Silhouette computation: 11% complete
+Silhouette computation: 12% complete
+Silhouette computation: 13% complete
+Silhouette computation: 14% complete
+Silhouette computation: 15% complete
+Silhouette computation: 16% complete
+Silhouette computation: 17% complete
+Silhouette computation: 18% complete
+Silhouette computation: 19% complete
+Silhouette computation: 20% complete
+Silhouette computation: 21% complete
+Silhouette computation: 22% complete
+Silhouette computation: 23% complete
+Silhouette computation: 24% complete
+Silhouette computation: 25% complete
+Silhouette computation: 26% complete
+Silhouette computation: 27% complete
+Silhouette computation: 28% complete
+Silhouette computation: 29% complete
+Silhouette computation: 30% complete
+Silhouette computation: 31% complete
+Silhouette computation: 32% complete
+Silhouette computation: 33% complete
+Silhouette computation: 34% complete
+Silhouette computation: 35% complete
+Silhouette computation: 36% complete
+Silhouette computation: 37% complete
+Silhouette computation: 38% complete
+Silhouette computation: 39% complete
+Silhouette computation: 40% complete
+Silhouette computation: 41% complete
+Silhouette computation: 42% complete
+Silhouette computation: 43% complete
+Silhouette computation: 44% complete
+Silhouette computation: 45% complete
+Silhouette computation: 46% complete
+Silhouette computation: 47% complete
+Silhouette computation: 48% complete
+Silhouette computation: 49% complete
+Silhouette computation: 50% complete
+Silhouette computation: 51% complete
+Silhouette computation: 52% complete
+Silhouette computation: 53% complete
+Silhouette computation: 54% complete
+Silhouette computation: 55% complete
+Silhouette computation: 56% complete
+Silhouette computation: 57% complete
+Silhouette computation: 58% complete
+Silhouette computation: 59% complete
+Silhouette computation: 60% complete
+Silhouette computation: 61% complete
+Silhouette computation: 62% complete
+Silhouette computation: 63% complete
+Silhouette computation: 64% complete
+Silhouette computation: 65% complete
+Silhouette computation: 66% complete
+Silhouette computation: 67% complete
+Silhouette computation: 68% complete
+Silhouette computation: 69% complete
+Silhouette computation: 70% complete
+Silhouette computation: 71% complete
+Silhouette computation: 72% complete
+Silhouette computation: 73% complete
+Silhouette computation: 74% complete
+Silhouette computation: 75% complete
+Silhouette computation: 76% complete
+Silhouette computation: 77% complete
+Silhouette computation: 78% complete
+Silhouette computation: 79% complete
+Silhouette computation: 80% complete
+Silhouette computation: 81% complete
+Silhouette computation: 82% complete
+Silhouette computation: 83% complete
+Silhouette computation: 84% complete
+Silhouette computation: 85% complete
+Silhouette computation: 86% complete
+Silhouette computation: 87% complete
+Silhouette computation: 88% complete
+Silhouette computation: 89% complete
+Silhouette computation: 90% complete
+Silhouette computation: 91% complete
+Silhouette computation: 92% complete
+Silhouette computation: 93% complete
+Silhouette computation: 94% complete
+Silhouette computation: 95% complete
+Silhouette computation: 96% complete
+Silhouette computation: 97% complete
+Silhouette computation: 98% complete
+Silhouette computation: 99% complete
+Silhouette computation: 100% complete
+Silhouette computation: 100% complete
+RLSTC Clustering metrics for k=3:
+  - SSE: 35416.8366
+  - Valid assignments (N): 77932
+  - SSE/N: 0.4545
+  - Silhouette coefficient: 0.5059
+Results for k=3 saved to out/classical_k3_a10.pkl
+
+Clustering with k=4...
+Starting center initialization...
+→ Center initialization done in 0.06 seconds.
+
+Clustering 0% done... (step took 0.00 seconds)
+Clustering 4% done... (step took 3.68 seconds)
+Clustering 9% done... (step took 3.65 seconds)
+Clustering 14% done... (step took 3.60 seconds)
+Clustering 19% done... (step took 3.59 seconds)
+Clustering 24% done... (step took 3.56 seconds)
+Clustering 29% done... (step took 3.58 seconds)
+Clustering 34% done... (step took 3.58 seconds)
+Clustering 39% done... (step took 3.56 seconds)
+Clustering 44% done... (step took 3.58 seconds)
+Clustering 49% done... (step took 3.57 seconds)
+Clustering 54% done... (step took 3.59 seconds)
+Clustering 59% done... (step took 3.57 seconds)
+Clustering 64% done... (step took 3.59 seconds)
+Clustering 69% done... (step took 3.59 seconds)
+Clustering 74% done... (step took 3.55 seconds)
+Clustering 79% done... (step took 3.60 seconds)
+Clustering 84% done... (step took 3.59 seconds)
+Clustering 89% done... (step took 3.60 seconds)
+Clustering 94% done... (step took 3.61 seconds)
+Clustering 99% done... (step took 3.59 seconds)
+Clustering 99% done... (step took 0.00 seconds)
+Clustering 100% done.
+RLSTC Clustering for k=4 completed in 71.89 seconds.
+
+Computing silhouette coefficient...
+Silhouette computation: 0% complete
+Silhouette computation: 1% complete
+Silhouette computation: 2% complete
+Silhouette computation: 3% complete
+Silhouette computation: 4% complete
+Silhouette computation: 5% complete
+Silhouette computation: 6% complete
+Silhouette computation: 7% complete
+Silhouette computation: 8% complete
+Silhouette computation: 9% complete
+Silhouette computation: 10% complete
+Silhouette computation: 11% complete
+Silhouette computation: 12% complete
+Silhouette computation: 13% complete
+Silhouette computation: 14% complete
+Silhouette computation: 15% complete
+Silhouette computation: 16% complete
+Silhouette computation: 17% complete
+Silhouette computation: 18% complete
+Silhouette computation: 19% complete
+Silhouette computation: 20% complete
+Silhouette computation: 21% complete
+Silhouette computation: 22% complete
+Silhouette computation: 23% complete
+Silhouette computation: 24% complete
+Silhouette computation: 25% complete
+Silhouette computation: 26% complete
+Silhouette computation: 27% complete
+Silhouette computation: 28% complete
+Silhouette computation: 29% complete
+Silhouette computation: 30% complete
+Silhouette computation: 31% complete
+Silhouette computation: 32% complete
+Silhouette computation: 33% complete
+Silhouette computation: 34% complete
+Silhouette computation: 35% complete
+Silhouette computation: 36% complete
+Silhouette computation: 37% complete
+Silhouette computation: 38% complete
+Silhouette computation: 39% complete
+Silhouette computation: 40% complete
+Silhouette computation: 41% complete
+Silhouette computation: 42% complete
+Silhouette computation: 43% complete
+Silhouette computation: 44% complete
+Silhouette computation: 45% complete
+Silhouette computation: 46% complete
+Silhouette computation: 47% complete
+Silhouette computation: 48% complete
+Silhouette computation: 49% complete
+Silhouette computation: 50% complete
+Silhouette computation: 51% complete
+Silhouette computation: 52% complete
+Silhouette computation: 53% complete
+Silhouette computation: 54% complete
+Silhouette computation: 55% complete
+Silhouette computation: 56% complete
+Silhouette computation: 57% complete
+Silhouette computation: 58% complete
+Silhouette computation: 59% complete
+Silhouette computation: 60% complete
+Silhouette computation: 61% complete
+Silhouette computation: 62% complete
+Silhouette computation: 63% complete
+Silhouette computation: 64% complete
+Silhouette computation: 65% complete
+Silhouette computation: 66% complete
+Silhouette computation: 67% complete
+Silhouette computation: 68% complete
+Silhouette computation: 69% complete
+Silhouette computation: 70% complete
+Silhouette computation: 71% complete
+Silhouette computation: 72% complete
+Silhouette computation: 73% complete
+Silhouette computation: 74% complete
+Silhouette computation: 75% complete
+Silhouette computation: 76% complete
+Silhouette computation: 77% complete
+Silhouette computation: 78% complete
+Silhouette computation: 79% complete
+Silhouette computation: 80% complete
+Silhouette computation: 81% complete
+Silhouette computation: 82% complete
+Silhouette computation: 83% complete
+Silhouette computation: 84% complete
+Silhouette computation: 85% complete
+Silhouette computation: 86% complete
+Silhouette computation: 87% complete
+Silhouette computation: 88% complete
+Silhouette computation: 89% complete
+Silhouette computation: 90% complete
+Silhouette computation: 91% complete
+Silhouette computation: 92% complete
+Silhouette computation: 93% complete
+Silhouette computation: 94% complete
+Silhouette computation: 95% complete
+Silhouette computation: 96% complete
+Silhouette computation: 97% complete
+Silhouette computation: 98% complete
+Silhouette computation: 99% complete
+Silhouette computation: 100% complete
+Silhouette computation: 100% complete
+RLSTC Clustering metrics for k=4:
+  - SSE: 36680.8630
+  - Valid assignments (N): 77759
+  - SSE/N: 0.4717
+  - Silhouette coefficient: 0.2641
+Results for k=4 saved to out/classical_k4_a10.pkl
+
+Clustering with k=5...
+Starting center initialization...
+→ Center initialization done in 0.10 seconds.
+
+Clustering 0% done... (step took 0.00 seconds)
+Clustering 4% done... (step took 4.61 seconds)
+Clustering 9% done... (step took 4.51 seconds)
+Clustering 14% done... (step took 4.51 seconds)
+Clustering 19% done... (step took 4.46 seconds)
+Clustering 24% done... (step took 4.50 seconds)
+Clustering 29% done... (step took 4.50 seconds)
+Clustering 34% done... (step took 4.50 seconds)
+Clustering 39% done... (step took 4.59 seconds)
+Clustering 44% done... (step took 4.51 seconds)
+Clustering 49% done... (step took 4.50 seconds)
+Clustering 54% done... (step took 4.46 seconds)
+Clustering 59% done... (step took 4.50 seconds)
+Clustering 64% done... (step took 4.49 seconds)
+Clustering 69% done... (step took 4.50 seconds)
+Clustering 74% done... (step took 4.44 seconds)
+Clustering 79% done... (step took 4.48 seconds)
+Clustering 84% done... (step took 4.50 seconds)
+Clustering 89% done... (step took 4.49 seconds)
+Clustering 94% done... (step took 4.50 seconds)
+Clustering 99% done... (step took 4.52 seconds)
+Clustering 99% done... (step took 0.00 seconds)
+Clustering 100% done.
+RLSTC Clustering for k=5 completed in 90.19 seconds.
+
+Computing silhouette coefficient...
+Silhouette computation: 0% complete
+Silhouette computation: 1% complete
+Silhouette computation: 2% complete
+Silhouette computation: 3% complete
+Silhouette computation: 4% complete
+Silhouette computation: 5% complete
+Silhouette computation: 6% complete
+Silhouette computation: 7% complete
+Silhouette computation: 8% complete
+Silhouette computation: 9% complete
+Silhouette computation: 10% complete
+Silhouette computation: 11% complete
+Silhouette computation: 12% complete
+Silhouette computation: 13% complete
+Silhouette computation: 14% complete
+Silhouette computation: 15% complete
+Silhouette computation: 16% complete
+Silhouette computation: 17% complete
+Silhouette computation: 18% complete
+Silhouette computation: 19% complete
+Silhouette computation: 20% complete
+Silhouette computation: 21% complete
+Silhouette computation: 22% complete
+Silhouette computation: 23% complete
+Silhouette computation: 24% complete
+Silhouette computation: 25% complete
+Silhouette computation: 26% complete
+Silhouette computation: 27% complete
+Silhouette computation: 28% complete
+Silhouette computation: 29% complete
+Silhouette computation: 30% complete
+Silhouette computation: 31% complete
+Silhouette computation: 32% complete
+Silhouette computation: 33% complete
+Silhouette computation: 34% complete
+Silhouette computation: 35% complete
+Silhouette computation: 36% complete
+Silhouette computation: 37% complete
+Silhouette computation: 38% complete
+Silhouette computation: 39% complete
+Silhouette computation: 40% complete
+Silhouette computation: 41% complete
+Silhouette computation: 42% complete
+Silhouette computation: 43% complete
+Silhouette computation: 44% complete
+Silhouette computation: 45% complete
+Silhouette computation: 46% complete
+Silhouette computation: 47% complete
+Silhouette computation: 48% complete
+Silhouette computation: 49% complete
+Silhouette computation: 50% complete
+Silhouette computation: 51% complete
+Silhouette computation: 52% complete
+Silhouette computation: 53% complete
+Silhouette computation: 54% complete
+Silhouette computation: 55% complete
+Silhouette computation: 56% complete
+Silhouette computation: 57% complete
+Silhouette computation: 58% complete
+Silhouette computation: 59% complete
+Silhouette computation: 60% complete
+Silhouette computation: 61% complete
+Silhouette computation: 62% complete
+Silhouette computation: 63% complete
+Silhouette computation: 64% complete
+Silhouette computation: 65% complete
+Silhouette computation: 66% complete
+Silhouette computation: 67% complete
+Silhouette computation: 68% complete
+Silhouette computation: 69% complete
+Silhouette computation: 70% complete
+Silhouette computation: 71% complete
+Silhouette computation: 72% complete
+Silhouette computation: 73% complete
+Silhouette computation: 74% complete
+Silhouette computation: 75% complete
+Silhouette computation: 76% complete
+Silhouette computation: 77% complete
+Silhouette computation: 78% complete
+Silhouette computation: 79% complete
+Silhouette computation: 80% complete
+Silhouette computation: 81% complete
+Silhouette computation: 82% complete
+Silhouette computation: 83% complete
+Silhouette computation: 84% complete
+Silhouette computation: 85% complete
+Silhouette computation: 86% complete
+Silhouette computation: 87% complete
+Silhouette computation: 88% complete
+Silhouette computation: 89% complete
+Silhouette computation: 90% complete
+Silhouette computation: 91% complete
+Silhouette computation: 92% complete
+Silhouette computation: 93% complete
+Silhouette computation: 94% complete
+Silhouette computation: 95% complete
+Silhouette computation: 96% complete
+Silhouette computation: 97% complete
+Silhouette computation: 98% complete
+Silhouette computation: 99% complete
+Silhouette computation: 100% complete
+Silhouette computation: 100% complete
+RLSTC Clustering metrics for k=5:
+  - SSE: 32704.8594
+  - Valid assignments (N): 77932
+  - SSE/N: 0.4197
+  - Silhouette coefficient: 0.1878
+Results for k=5 saved to out/classical_k5_a10.pkl
+
+Clustering with k=6...
+Starting center initialization...
+→ Center initialization done in 0.14 seconds.
+
+Clustering 0% done... (step took 0.00 seconds)
+Clustering 4% done... (step took 5.36 seconds)
+Clustering 9% done... (step took 5.31 seconds)
+Clustering 14% done... (step took 5.37 seconds)
+Clustering 19% done... (step took 5.36 seconds)
+Clustering 24% done... (step took 5.28 seconds)
+Clustering 29% done... (step took 5.32 seconds)
+Clustering 34% done... (step took 5.33 seconds)
+Clustering 39% done... (step took 5.35 seconds)
+Clustering 44% done... (step took 5.36 seconds)
+Clustering 49% done... (step took 5.40 seconds)
+Clustering 54% done... (step took 5.33 seconds)
+Clustering 59% done... (step took 5.32 seconds)
+Clustering 64% done... (step took 5.31 seconds)
+Clustering 69% done... (step took 5.34 seconds)
+Clustering 74% done... (step took 5.31 seconds)
+Clustering 79% done... (step took 5.32 seconds)
+Clustering 84% done... (step took 5.33 seconds)
+Clustering 89% done... (step took 5.31 seconds)
+Clustering 94% done... (step took 5.32 seconds)
+Clustering 99% done... (step took 5.37 seconds)
+Clustering 99% done... (step took 0.00 seconds)
+Clustering 100% done.
+RLSTC Clustering for k=6 completed in 106.86 seconds.
+
+Computing silhouette coefficient...
+Silhouette computation: 0% complete
+Silhouette computation: 1% complete
+Silhouette computation: 2% complete
+Silhouette computation: 3% complete
+Silhouette computation: 4% complete
+Silhouette computation: 5% complete
+Silhouette computation: 6% complete
+Silhouette computation: 7% complete
+Silhouette computation: 8% complete
+Silhouette computation: 9% complete
+Silhouette computation: 10% complete
+Silhouette computation: 11% complete
+Silhouette computation: 12% complete
+Silhouette computation: 13% complete
+Silhouette computation: 14% complete
+Silhouette computation: 15% complete
+Silhouette computation: 16% complete
+Silhouette computation: 17% complete
+Silhouette computation: 18% complete
+Silhouette computation: 19% complete
+Silhouette computation: 20% complete
+Silhouette computation: 21% complete
+Silhouette computation: 22% complete
+Silhouette computation: 23% complete
+Silhouette computation: 24% complete
+Silhouette computation: 25% complete
+Silhouette computation: 26% complete
+Silhouette computation: 27% complete
+Silhouette computation: 28% complete
+Silhouette computation: 29% complete
+Silhouette computation: 30% complete
+Silhouette computation: 31% complete
+Silhouette computation: 32% complete
+Silhouette computation: 33% complete
+Silhouette computation: 34% complete
+Silhouette computation: 35% complete
+Silhouette computation: 36% complete
+Silhouette computation: 37% complete
+Silhouette computation: 38% complete
+Silhouette computation: 39% complete
+Silhouette computation: 40% complete
+Silhouette computation: 41% complete
+Silhouette computation: 42% complete
+Silhouette computation: 43% complete
+Silhouette computation: 44% complete
+Silhouette computation: 45% complete
+Silhouette computation: 46% complete
+Silhouette computation: 47% complete
+Silhouette computation: 48% complete
+Silhouette computation: 49% complete
+Silhouette computation: 50% complete
+Silhouette computation: 51% complete
+Silhouette computation: 52% complete
+Silhouette computation: 53% complete
+Silhouette computation: 54% complete
+Silhouette computation: 55% complete
+Silhouette computation: 56% complete
+Silhouette computation: 57% complete
+Silhouette computation: 58% complete
+Silhouette computation: 59% complete
+Silhouette computation: 60% complete
+Silhouette computation: 61% complete
+Silhouette computation: 62% complete
+Silhouette computation: 63% complete
+Silhouette computation: 64% complete
+Silhouette computation: 65% complete
+Silhouette computation: 66% complete
+Silhouette computation: 67% complete
+Silhouette computation: 68% complete
+Silhouette computation: 69% complete
+Silhouette computation: 70% complete
+Silhouette computation: 71% complete
+Silhouette computation: 72% complete
+Silhouette computation: 73% complete
+Silhouette computation: 74% complete
+Silhouette computation: 75% complete
+Silhouette computation: 76% complete
+Silhouette computation: 77% complete
+Silhouette computation: 78% complete
+Silhouette computation: 79% complete
+Silhouette computation: 80% complete
+Silhouette computation: 81% complete
+Silhouette computation: 82% complete
+Silhouette computation: 83% complete
+Silhouette computation: 84% complete
+Silhouette computation: 85% complete
+Silhouette computation: 86% complete
+Silhouette computation: 87% complete
+Silhouette computation: 88% complete
+Silhouette computation: 89% complete
+Silhouette computation: 90% complete
+Silhouette computation: 91% complete
+Silhouette computation: 92% complete
+Silhouette computation: 93% complete
+Silhouette computation: 94% complete
+Silhouette computation: 95% complete
+Silhouette computation: 96% complete
+Silhouette computation: 97% complete
+Silhouette computation: 98% complete
+Silhouette computation: 99% complete
+Silhouette computation: 100% complete
+Silhouette computation: 100% complete
+RLSTC Clustering metrics for k=6:
+  - SSE: 31088.2407
+  - Valid assignments (N): 77932
+  - SSE/N: 0.3989
+  - Silhouette coefficient: 0.3159
+Results for k=6 saved to out/classical_k6_a10.pkl
+
+Clustering with k=7...
+Starting center initialization...
+→ Center initialization done in 0.21 seconds.
+
+Clustering 0% done... (step took 0.00 seconds)
+Clustering 4% done... (step took 6.25 seconds)
+Clustering 9% done... (step took 6.20 seconds)
+Clustering 14% done... (step took 6.24 seconds)
+Clustering 19% done... (step took 6.23 seconds)
+Clustering 24% done... (step took 6.20 seconds)
+Clustering 29% done... (step took 6.25 seconds)
+Clustering 34% done... (step took 6.22 seconds)
+Clustering 39% done... (step took 6.22 seconds)
+Clustering 44% done... (step took 6.20 seconds)
+Clustering 49% done... (step took 6.24 seconds)
+Clustering 54% done... (step took 6.24 seconds)
+Clustering 59% done... (step took 6.25 seconds)
+Clustering 64% done... (step took 6.22 seconds)
+Clustering 69% done... (step took 6.22 seconds)
+Clustering 74% done... (step took 6.23 seconds)
+Clustering 79% done... (step took 6.25 seconds)
+Clustering 84% done... (step took 6.23 seconds)
+Clustering 89% done... (step took 6.22 seconds)
+Clustering 94% done... (step took 6.22 seconds)
+Clustering 99% done... (step took 6.27 seconds)
+Clustering 99% done... (step took 0.00 seconds)
+Clustering 100% done.
+RLSTC Clustering for k=7 completed in 124.80 seconds.
+
+Computing silhouette coefficient...
+Silhouette computation: 0% complete
+Silhouette computation: 1% complete
+Silhouette computation: 2% complete
+Silhouette computation: 3% complete
+Silhouette computation: 4% complete
+Silhouette computation: 5% complete
+Silhouette computation: 6% complete
+Silhouette computation: 7% complete
+Silhouette computation: 8% complete
+Silhouette computation: 9% complete
+Silhouette computation: 10% complete
+Silhouette computation: 11% complete
+Silhouette computation: 12% complete
+Silhouette computation: 13% complete
+Silhouette computation: 14% complete
+Silhouette computation: 15% complete
+Silhouette computation: 16% complete
+Silhouette computation: 17% complete
+Silhouette computation: 18% complete
+Silhouette computation: 19% complete
+Silhouette computation: 20% complete
+Silhouette computation: 21% complete
+Silhouette computation: 22% complete
+Silhouette computation: 23% complete
+Silhouette computation: 24% complete
+Silhouette computation: 25% complete
+Silhouette computation: 26% complete
+Silhouette computation: 27% complete
+Silhouette computation: 28% complete
+Silhouette computation: 29% complete
+Silhouette computation: 30% complete
+Silhouette computation: 31% complete
+Silhouette computation: 32% complete
+Silhouette computation: 33% complete
+Silhouette computation: 34% complete
+Silhouette computation: 35% complete
+Silhouette computation: 36% complete
+Silhouette computation: 37% complete
+Silhouette computation: 38% complete
+Silhouette computation: 39% complete
+Silhouette computation: 40% complete
+Silhouette computation: 41% complete
+Silhouette computation: 42% complete
+Silhouette computation: 43% complete
+Silhouette computation: 44% complete
+Silhouette computation: 45% complete
+Silhouette computation: 46% complete
+Silhouette computation: 47% complete
+Silhouette computation: 48% complete
+Silhouette computation: 49% complete
+Silhouette computation: 50% complete
+Silhouette computation: 51% complete
+Silhouette computation: 52% complete
+Silhouette computation: 53% complete
+Silhouette computation: 54% complete
+Silhouette computation: 55% complete
+Silhouette computation: 56% complete
+Silhouette computation: 57% complete
+Silhouette computation: 58% complete
+Silhouette computation: 59% complete
+Silhouette computation: 60% complete
+Silhouette computation: 61% complete
+Silhouette computation: 62% complete
+Silhouette computation: 63% complete
+Silhouette computation: 64% complete
+Silhouette computation: 65% complete
+Silhouette computation: 66% complete
+Silhouette computation: 67% complete
+Silhouette computation: 68% complete
+Silhouette computation: 69% complete
+Silhouette computation: 70% complete
+Silhouette computation: 71% complete
+Silhouette computation: 72% complete
+Silhouette computation: 73% complete
+Silhouette computation: 74% complete
+Silhouette computation: 75% complete
+Silhouette computation: 76% complete
+Silhouette computation: 77% complete
+Silhouette computation: 78% complete
+Silhouette computation: 79% complete
+Silhouette computation: 80% complete
+Silhouette computation: 81% complete
+Silhouette computation: 82% complete
+Silhouette computation: 83% complete
+Silhouette computation: 84% complete
+Silhouette computation: 85% complete
+Silhouette computation: 86% complete
+Silhouette computation: 87% complete
+Silhouette computation: 88% complete
+Silhouette computation: 89% complete
+Silhouette computation: 90% complete
+Silhouette computation: 91% complete
+Silhouette computation: 92% complete
+Silhouette computation: 93% complete
+Silhouette computation: 94% complete
+Silhouette computation: 95% complete
+Silhouette computation: 96% complete
+Silhouette computation: 97% complete
+Silhouette computation: 98% complete
+Silhouette computation: 99% complete
+Silhouette computation: 100% complete
+Silhouette computation: 100% complete
+RLSTC Clustering metrics for k=7:
+  - SSE: 29850.6894
+  - Valid assignments (N): 77932
+  - SSE/N: 0.3830
+  - Silhouette coefficient: 0.3067
+Results for k=7 saved to out/classical_k7_a10.pkl
+
+Clustering with k=8...
+Starting center initialization...
+→ Center initialization done in 0.27 seconds.
+
+Clustering 0% done... (step took 0.00 seconds)
+Clustering 4% done... (step took 7.26 seconds)
+Clustering 9% done... (step took 7.22 seconds)
+Clustering 14% done... (step took 7.22 seconds)
+Clustering 19% done... (step took 7.21 seconds)
+Clustering 24% done... (step took 7.20 seconds)
+Clustering 29% done... (step took 7.20 seconds)
+Clustering 34% done... (step took 7.24 seconds)
+Clustering 39% done... (step took 7.23 seconds)
+Clustering 44% done... (step took 7.21 seconds)
+Clustering 49% done... (step took 7.22 seconds)
+Clustering 54% done... (step took 7.23 seconds)
+Clustering 59% done... (step took 7.22 seconds)
+Clustering 64% done... (step took 7.19 seconds)
+Clustering 69% done... (step took 7.19 seconds)
+Clustering 74% done... (step took 7.23 seconds)
+Clustering 79% done... (step took 7.18 seconds)
+Clustering 84% done... (step took 7.19 seconds)
+Clustering 89% done... (step took 7.19 seconds)
+Clustering 94% done... (step took 7.23 seconds)
+Clustering 99% done... (step took 7.25 seconds)
+Clustering 99% done... (step took 0.00 seconds)
+Clustering 100% done.
+RLSTC Clustering for k=8 completed in 144.58 seconds.
+
+Computing silhouette coefficient...
+Silhouette computation: 0% complete
+Silhouette computation: 1% complete
+Silhouette computation: 2% complete
+Silhouette computation: 3% complete
+Silhouette computation: 4% complete
+Silhouette computation: 5% complete
+Silhouette computation: 6% complete
+Silhouette computation: 7% complete
+Silhouette computation: 8% complete
+Silhouette computation: 9% complete
+Silhouette computation: 10% complete
+Silhouette computation: 11% complete
+Silhouette computation: 12% complete
+Silhouette computation: 13% complete
+Silhouette computation: 14% complete
+Silhouette computation: 15% complete
+Silhouette computation: 16% complete
+Silhouette computation: 17% complete
+Silhouette computation: 18% complete
+Silhouette computation: 19% complete
+Silhouette computation: 20% complete
+Silhouette computation: 21% complete
+Silhouette computation: 22% complete
+Silhouette computation: 23% complete
+Silhouette computation: 24% complete
+Silhouette computation: 25% complete
+Silhouette computation: 26% complete
+Silhouette computation: 27% complete
+Silhouette computation: 28% complete
+Silhouette computation: 29% complete
+Silhouette computation: 30% complete
+Silhouette computation: 31% complete
+Silhouette computation: 32% complete
+Silhouette computation: 33% complete
+Silhouette computation: 34% complete
+Silhouette computation: 35% complete
+Silhouette computation: 36% complete
+Silhouette computation: 37% complete
+Silhouette computation: 38% complete
+Silhouette computation: 39% complete
+Silhouette computation: 40% complete
+Silhouette computation: 41% complete
+Silhouette computation: 42% complete
+Silhouette computation: 43% complete
+Silhouette computation: 44% complete
+Silhouette computation: 45% complete
+Silhouette computation: 46% complete
+Silhouette computation: 47% complete
+Silhouette computation: 48% complete
+Silhouette computation: 49% complete
+Silhouette computation: 50% complete
+Silhouette computation: 51% complete
+Silhouette computation: 52% complete
+Silhouette computation: 53% complete
+Silhouette computation: 54% complete
+Silhouette computation: 55% complete
+Silhouette computation: 56% complete
+Silhouette computation: 57% complete
+Silhouette computation: 58% complete
+Silhouette computation: 59% complete
+Silhouette computation: 60% complete
+Silhouette computation: 61% complete
+Silhouette computation: 62% complete
+Silhouette computation: 63% complete
+Silhouette computation: 64% complete
+Silhouette computation: 65% complete
+Silhouette computation: 66% complete
+Silhouette computation: 67% complete
+Silhouette computation: 68% complete
+Silhouette computation: 69% complete
+Silhouette computation: 70% complete
+Silhouette computation: 71% complete
+Silhouette computation: 72% complete
+Silhouette computation: 73% complete
+Silhouette computation: 74% complete
+Silhouette computation: 75% complete
+Silhouette computation: 76% complete
+Silhouette computation: 77% complete
+Silhouette computation: 78% complete
+Silhouette computation: 79% complete
+Silhouette computation: 80% complete
+Silhouette computation: 81% complete
+Silhouette computation: 82% complete
+Silhouette computation: 83% complete
+Silhouette computation: 84% complete
+Silhouette computation: 85% complete
+Silhouette computation: 86% complete
+Silhouette computation: 87% complete
+Silhouette computation: 88% complete
+Silhouette computation: 89% complete
+Silhouette computation: 90% complete
+Silhouette computation: 91% complete
+Silhouette computation: 92% complete
+Silhouette computation: 93% complete
+Silhouette computation: 94% complete
+Silhouette computation: 95% complete
+Silhouette computation: 96% complete
+Silhouette computation: 97% complete
+Silhouette computation: 98% complete
+Silhouette computation: 99% complete
+Silhouette computation: 100% complete
+Silhouette computation: 100% complete
+RLSTC Clustering metrics for k=8:
+  - SSE: 30359.1979
+  - Valid assignments (N): 77932
+  - SSE/N: 0.3896
+  - Silhouette coefficient: 0.0938
+Results for k=8 saved to out/classical_k8_a10.pkl
+
+Clustering with k=9...
+Starting center initialization...
+→ Center initialization done in 0.36 seconds.
+
+Clustering 0% done... (step took 0.00 seconds)
+Clustering 4% done... (step took 8.13 seconds)
+Clustering 9% done... (step took 8.05 seconds)
+Clustering 14% done... (step took 8.06 seconds)
+Clustering 19% done... (step took 8.09 seconds)
+Clustering 24% done... (step took 8.07 seconds)
+Clustering 29% done... (step took 8.04 seconds)
+Clustering 34% done... (step took 8.05 seconds)
+Clustering 39% done... (step took 8.06 seconds)
+Clustering 44% done... (step took 8.03 seconds)
+Clustering 49% done... (step took 8.07 seconds)
+Clustering 54% done... (step took 8.03 seconds)
+Clustering 59% done... (step took 8.04 seconds)
+Clustering 64% done... (step took 8.05 seconds)
+Clustering 69% done... (step took 8.04 seconds)
+Clustering 74% done... (step took 8.02 seconds)
+Clustering 79% done... (step took 8.02 seconds)
+Clustering 84% done... (step took 8.07 seconds)
+Clustering 89% done... (step took 8.05 seconds)
+Clustering 94% done... (step took 8.03 seconds)
+Clustering 99% done... (step took 8.13 seconds)
+Clustering 99% done... (step took 0.00 seconds)
+Clustering 100% done.
+RLSTC Clustering for k=9 completed in 161.49 seconds.
+
+Computing silhouette coefficient...
+Silhouette computation: 0% complete
+Silhouette computation: 1% complete
+Silhouette computation: 2% complete
+Silhouette computation: 3% complete
+Silhouette computation: 4% complete
+Silhouette computation: 5% complete
+Silhouette computation: 6% complete
+Silhouette computation: 7% complete
+Silhouette computation: 8% complete
+Silhouette computation: 9% complete
+Silhouette computation: 10% complete
+Silhouette computation: 11% complete
+Silhouette computation: 12% complete
+Silhouette computation: 13% complete
+Silhouette computation: 14% complete
+Silhouette computation: 15% complete
+Silhouette computation: 16% complete
+Silhouette computation: 17% complete
+Silhouette computation: 18% complete
+Silhouette computation: 19% complete
+Silhouette computation: 20% complete
+Silhouette computation: 21% complete
+Silhouette computation: 22% complete
+Silhouette computation: 23% complete
+Silhouette computation: 24% complete
+Silhouette computation: 25% complete
+Silhouette computation: 26% complete
+Silhouette computation: 27% complete
+Silhouette computation: 28% complete
+Silhouette computation: 29% complete
+Silhouette computation: 30% complete
+Silhouette computation: 31% complete
+Silhouette computation: 32% complete
+Silhouette computation: 33% complete
+Silhouette computation: 34% complete
+Silhouette computation: 35% complete
+Silhouette computation: 36% complete
+Silhouette computation: 37% complete
+Silhouette computation: 38% complete
+Silhouette computation: 39% complete
+Silhouette computation: 40% complete
+Silhouette computation: 41% complete
+Silhouette computation: 42% complete
+Silhouette computation: 43% complete
+Silhouette computation: 44% complete
+Silhouette computation: 45% complete
+Silhouette computation: 46% complete
+Silhouette computation: 47% complete
+Silhouette computation: 48% complete
+Silhouette computation: 49% complete
+Silhouette computation: 50% complete
+Silhouette computation: 51% complete
+Silhouette computation: 52% complete
+Silhouette computation: 53% complete
+Silhouette computation: 54% complete
+Silhouette computation: 55% complete
+Silhouette computation: 56% complete
+Silhouette computation: 57% complete
+Silhouette computation: 58% complete
+Silhouette computation: 59% complete
+Silhouette computation: 60% complete
+Silhouette computation: 61% complete
+Silhouette computation: 62% complete
+Silhouette computation: 63% complete
+Silhouette computation: 64% complete
+Silhouette computation: 65% complete
+Silhouette computation: 66% complete
+Silhouette computation: 67% complete
+Silhouette computation: 68% complete
+Silhouette computation: 69% complete
+Silhouette computation: 70% complete
+Silhouette computation: 71% complete
+Silhouette computation: 72% complete
+Silhouette computation: 73% complete
+Silhouette computation: 74% complete
+Silhouette computation: 75% complete
+Silhouette computation: 76% complete
+Silhouette computation: 77% complete
+Silhouette computation: 78% complete
+Silhouette computation: 79% complete
+Silhouette computation: 80% complete
+Silhouette computation: 81% complete
+Silhouette computation: 82% complete
+Silhouette computation: 83% complete
+Silhouette computation: 84% complete
+Silhouette computation: 85% complete
+Silhouette computation: 86% complete
+Silhouette computation: 87% complete
+Silhouette computation: 88% complete
+Silhouette computation: 89% complete
+Silhouette computation: 90% complete
+Silhouette computation: 91% complete
+Silhouette computation: 92% complete
+Silhouette computation: 93% complete
+Silhouette computation: 94% complete
+Silhouette computation: 95% complete
+Silhouette computation: 96% complete
+Silhouette computation: 97% complete
+Silhouette computation: 98% complete
+Silhouette computation: 99% complete
+Silhouette computation: 100% complete
+Silhouette computation: 100% complete
+RLSTC Clustering metrics for k=9:
+  - SSE: 29489.7004
+  - Valid assignments (N): 77932
+  - SSE/N: 0.3784
+  - Silhouette coefficient: 0.1027
+Results for k=9 saved to out/classical_k9_a10.pkl
+
+Clustering with k=10...
+Starting center initialization...
+→ Center initialization done in 0.44 seconds.
+
+Clustering 0% done... (step took 0.00 seconds)
+Clustering 4% done... (step took 9.09 seconds)
+Clustering 9% done... (step took 8.99 seconds)
+Clustering 14% done... (step took 9.01 seconds)
+Clustering 19% done... (step took 9.02 seconds)
+Clustering 24% done... (step took 8.95 seconds)
+Clustering 29% done... (step took 8.95 seconds)
+Clustering 34% done... (step took 8.97 seconds)
+Clustering 39% done... (step took 8.98 seconds)
+Clustering 44% done... (step took 8.97 seconds)
+Clustering 49% done... (step took 9.05 seconds)
+Clustering 54% done... (step took 9.01 seconds)
+Clustering 59% done... (step took 9.01 seconds)
+Clustering 64% done... (step took 8.94 seconds)
+Clustering 69% done... (step took 8.97 seconds)
+Clustering 74% done... (step took 8.95 seconds)
+Clustering 79% done... (step took 8.94 seconds)
+Clustering 84% done... (step took 9.10 seconds)
+Clustering 89% done... (step took 8.98 seconds)
+Clustering 94% done... (step took 8.99 seconds)
+Clustering 99% done... (step took 9.02 seconds)
+Clustering 99% done... (step took 0.00 seconds)
+Clustering 100% done.
+RLSTC Clustering for k=10 completed in 180.35 seconds.
+
+Computing silhouette coefficient...
+Silhouette computation: 0% complete
+Silhouette computation: 1% complete
+Silhouette computation: 2% complete
+Silhouette computation: 3% complete
+Silhouette computation: 4% complete
+Silhouette computation: 5% complete
+Silhouette computation: 6% complete
+Silhouette computation: 7% complete
+Silhouette computation: 8% complete
+Silhouette computation: 9% complete
+Silhouette computation: 10% complete
+Silhouette computation: 11% complete
+Silhouette computation: 12% complete
+Silhouette computation: 13% complete
+Silhouette computation: 14% complete
+Silhouette computation: 15% complete
+Silhouette computation: 16% complete
+Silhouette computation: 17% complete
+Silhouette computation: 18% complete
+Silhouette computation: 19% complete
+Silhouette computation: 20% complete
+Silhouette computation: 21% complete
+Silhouette computation: 22% complete
+Silhouette computation: 23% complete
+Silhouette computation: 24% complete
+Silhouette computation: 25% complete
+Silhouette computation: 26% complete
+Silhouette computation: 27% complete
+Silhouette computation: 28% complete
+Silhouette computation: 29% complete
+Silhouette computation: 30% complete
+Silhouette computation: 31% complete
+Silhouette computation: 32% complete
+Silhouette computation: 33% complete
+Silhouette computation: 34% complete
+Silhouette computation: 35% complete
+Silhouette computation: 36% complete
+Silhouette computation: 37% complete
+Silhouette computation: 38% complete
+Silhouette computation: 39% complete
+Silhouette computation: 40% complete
+Silhouette computation: 41% complete
+Silhouette computation: 42% complete
+Silhouette computation: 43% complete
+Silhouette computation: 44% complete
+Silhouette computation: 45% complete
+Silhouette computation: 46% complete
+Silhouette computation: 47% complete
+Silhouette computation: 48% complete
+Silhouette computation: 49% complete
+Silhouette computation: 50% complete
+Silhouette computation: 51% complete
+Silhouette computation: 52% complete
+Silhouette computation: 53% complete
+Silhouette computation: 54% complete
+Silhouette computation: 55% complete
+Silhouette computation: 56% complete
+Silhouette computation: 57% complete
+Silhouette computation: 58% complete
+Silhouette computation: 59% complete
+Silhouette computation: 60% complete
+Silhouette computation: 61% complete
+Silhouette computation: 62% complete
+Silhouette computation: 63% complete
+Silhouette computation: 64% complete
+Silhouette computation: 65% complete
+Silhouette computation: 66% complete
+Silhouette computation: 67% complete
+Silhouette computation: 68% complete
+Silhouette computation: 69% complete
+Silhouette computation: 70% complete
+Silhouette computation: 71% complete
+Silhouette computation: 72% complete
+Silhouette computation: 73% complete
+Silhouette computation: 74% complete
+Silhouette computation: 75% complete
+Silhouette computation: 76% complete
+Silhouette computation: 77% complete
+Silhouette computation: 78% complete
+Silhouette computation: 79% complete
+Silhouette computation: 80% complete
+Silhouette computation: 81% complete
+Silhouette computation: 82% complete
+Silhouette computation: 83% complete
+Silhouette computation: 84% complete
+Silhouette computation: 85% complete
+Silhouette computation: 86% complete
+Silhouette computation: 87% complete
+Silhouette computation: 88% complete
+Silhouette computation: 89% complete
+Silhouette computation: 90% complete
+Silhouette computation: 91% complete
+Silhouette computation: 92% complete
+Silhouette computation: 93% complete
+Silhouette computation: 94% complete
+Silhouette computation: 95% complete
+Silhouette computation: 96% complete
+Silhouette computation: 97% complete
+Silhouette computation: 98% complete
+Silhouette computation: 99% complete
+Silhouette computation: 100% complete
+Silhouette computation: 100% complete
+RLSTC Clustering metrics for k=10:
+  - SSE: 29280.0191
+  - Valid assignments (N): 77932
+  - SSE/N: 0.3757
+  - Silhouette coefficient: 0.1265
+Results for k=10 saved to out/classical_k10_a10.pkl
+
+Generating visualization plots...
+Cluster plot saved to out/classical_k3_a10.png
+Cluster plot saved to out/classical_k4_a10.png
+Cluster plot saved to out/classical_k5_a10.png
+Cluster plot saved to out/classical_k6_a10.png
+Cluster plot saved to out/classical_k7_a10.png
+Cluster plot saved to out/classical_k8_a10.png
+Cluster plot saved to out/classical_k9_a10.png
+Cluster plot saved to out/classical_k10_a10.png
+Elbow plot saved to out/classical_elbow_a10.png
+Silhouette plot saved to out/classical_silhouette_a10.png
+
+Entire clustering process completed in 10434.02 seconds
+Average time per k value: 1304.25 seconds
+Circuit diagram saving is enabled. First circuit will be saved to out/first_swap_test_circuit.png
+
+Starting quantum clustering process for all k values...
+
+Processing for k=3...
+Starting q-means++ center initialization...
+Circuit diagram saved to out/first_swap_test_circuit.png
+→ Center initialization done in 0.72 seconds.
+
+Clustering 0% done... (step took 0.00 seconds)
+Clustering 4% done... (step took 110.80 seconds)
+Clustering 9% done... (step took 110.88 seconds)
+Clustering 14% done... (step took 110.86 seconds)
+Clustering 19% done... (step took 111.12 seconds)
+Clustering 24% done... (step took 110.87 seconds)
+Clustering 29% done... (step took 111.25 seconds)
+Clustering 34% done... (step took 110.99 seconds)
+Clustering 39% done... (step took 110.98 seconds)
+Clustering 44% done... (step took 110.93 seconds)
+Clustering 49% done... (step took 111.39 seconds)
+Clustering 54% done... (step took 110.98 seconds)
+Clustering 59% done... (step took 111.17 seconds)
+Clustering 64% done... (step took 110.84 seconds)
+Clustering 69% done... (step took 111.40 seconds)
+Clustering 74% done... (step took 111.24 seconds)
+Clustering 79% done... (step took 110.68 seconds)
+Clustering 84% done... (step took 111.31 seconds)
+Clustering 89% done... (step took 111.00 seconds)
+Clustering 94% done... (step took 111.19 seconds)
+Clustering 99% done... (step took 111.31 seconds)
+Clustering 99% done... (step took 0.06 seconds)
+Clustering 100% done.
+QRLSTC (quantum) clustering for k=3 completed in 2222.85 seconds.

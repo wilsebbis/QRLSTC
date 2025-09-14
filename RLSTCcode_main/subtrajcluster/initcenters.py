@@ -21,6 +21,7 @@ Author: Wil Bishop, Date: August 14, 2025
 
 import pickle
 import sys
+import os
 import numpy as np
 import random
 from point import Point
@@ -30,6 +31,7 @@ from collections import defaultdict
 from trajdistance import traj2trajIED
 import argparse
 import time
+import json
 
 def initialize_centers(data, K):
     """
@@ -139,70 +141,64 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Cluster subtrajectories using k-means++-like initialization.")
     parser.add_argument("-subtrajsfile", default='data/traclus_subtrajs', help="Pickle file containing subtrajectories")
     parser.add_argument("-trajsfile", default='data/Tdrive_norm_traj_RLSTC', help="Pickle file containing full trajectories")
-    parser.add_argument("-k", type=int, default=10, help="Number of clusters")
+    parser.add_argument("-k_values", "-k", nargs='+', type=int, default=[10], help="List of k values to try")
     parser.add_argument("-amount", type=int, default=1000, help="Number of trajectories to use")
-    parser.add_argument("-centerfile", default='data/tdrive_clustercenter_RLSTC', help="Output file for cluster centers")
+    parser.add_argument("-output_dir", default='out', help="Directory to save clustering results")
 
     # Parse arguments
     args = parser.parse_args()
+
     # Load subtrajectories and trajectories from pickle files
+    print("Loading data files...")
     subtrajs = pickle.load(open(args.subtrajsfile, 'rb'))
     trajs = pickle.load(open(args.trajsfile, 'rb'))
 
-    start_time = time.time()
-    res = saveclus(args.k, subtrajs, trajs, args.amount)
-    end_time = time.time()
-    elapsed_time = end_time - start_time
-    print(f"RLSTC Clustering completed in {elapsed_time:.2f} seconds.")
+    # Create output directory if it doesn't exist
+    os.makedirs(args.output_dir, exist_ok=True)
 
-    pickle.dump(res, open(args.centerfile, 'wb'), protocol=2)
+    print("\nStarting clustering process for all k values...")
+    overall_start_time = time.time()
 
-    def compute_sse(res):
-        sse = 0
-        cluster_dict = res[0][2]  # Extract cluster_dict from tuple
-        for cluster_idx in cluster_dict:
-            center = cluster_dict[cluster_idx][1]  # Center trajectory
-            subtrajs = cluster_dict[cluster_idx][3]  # Assigned subtrajectories
-            for traj in subtrajs:
-                dist = traj2trajIED(center.points, traj.points)
-                sse += dist ** 2
-        return sse
+    k_values = sorted(args.k_values)
+    timing_data = {
+        'k_values': k_values,
+        'individual_times': [],
+        'total_time': None,
+        'average_time': None
+    }
 
+    for k in k_values:
+        print(f"\nClustering with k={k}...")
+        start_time = time.time()
+        res = saveclus(k, subtrajs, trajs, args.amount)
+        end_time = time.time()
+        execution_time = end_time - start_time
+        print(f"RLSTC Clustering for k={k} completed in {execution_time:.2f} seconds.")
 
-    sse = compute_sse(res)
-    print(f"RLSTC Goodness of fit (SSE): {sse:.4f}")
+        # Save results for this k value with automatic filename
+        out_file = f"{args.output_dir}/classical_k{k}_a{args.amount}"
+        pickle.dump(res, open(out_file + '.pkl', 'wb'), protocol=2)
+        print(f"Results for k={k} saved to {out_file}.pkl")
 
+        # Record timing data
+        timing_data['individual_times'].append({
+            'k': k,
+            'time': execution_time
+        })
 
-# --- Cluster Visualization ---
-import matplotlib.pyplot as plt
+    # Calculate and record overall timing information
+    overall_end_time = time.time()
+    overall_elapsed_time = overall_end_time - overall_start_time
+    timing_data['total_time'] = overall_elapsed_time
+    timing_data['average_time'] = overall_elapsed_time/len(k_values)
 
-def plot_clusters(cluster_dict, out_png):
-    """
-    Plot each subtrajectory point color-coded by cluster assignment, and cluster centers.
-    Args:
-        cluster_dict: dict, output from getbaseclus (or res[0][2])
-        out_png: save plot to file
-    """
-    colors = plt.cm.get_cmap('tab10', len(cluster_dict))
-    plt.figure(figsize=(10, 8))
-    for i, cluster in cluster_dict.items():
-        subtrajs = cluster[3]
-        for traj in subtrajs:
-            xs = [p.x for p in traj.points]
-            ys = [p.y for p in traj.points]
-            plt.scatter(xs, ys, s=5, color=colors(i), label=f"Cluster {i}" if i not in plt.gca().get_legend_handles_labels()[1] else "")
-        # Plot cluster center trajectory (optional, as a star)
-        center_traj = cluster[1]
-        xs = [p.x for p in center_traj.points]
-        ys = [p.y for p in center_traj.points]
-        plt.plot(xs, ys, color=colors(i), linewidth=2, marker='*', markersize=10, label=f"Center {i}")
-    plt.xlabel('Longitude')
-    plt.ylabel('Latitude')
-    plt.title('Subtrajectory Clusters')
-    plt.legend()
-    plt.savefig(out_png)
-    print(f"Cluster plot saved to {out_png}")
+    # Save timing data
+    timing_file = f"{args.output_dir}/timing_data_a{args.amount}.json"
+    with open(timing_file, 'w') as f:
+        json.dump(timing_data, f, indent=2)
 
-# Save plot after clustering
-    print("Plotting clusters and saving to file...")
-    plot_clusters(res[0][2], out_png=args.centerfile + '.png')
+    print(f"\nEntire clustering process completed in {overall_elapsed_time:.2f} seconds")
+    print(f"Average time per k value: {overall_elapsed_time/len(k_values):.2f} seconds")
+    print(f"Timing data saved to {timing_file}")
+    print(f"\nTo generate plots, run: python plot_utils.py -results_dir {args.output_dir}")
+

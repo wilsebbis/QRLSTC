@@ -1,17 +1,18 @@
 psycopg[binary]
 torch
-numpy
+numpy>=1.22
 matplotlib
 gymnasium
-qiskit==1.4.2
-qiskit[visualization]
-qiskit-machine-learning
-qiskit-machine-learning[torch]
-qiskit-aer
 
+# Qiskit Stack
+qiskit>=0.44.0
+qiskit-aer>=0.12.0
+qiskit[visualization]>=0.44.0
+qiskit-machine-learning>=0.6.0
+qiskit-algorithms>=0.2.0
+
+tqdm
 psycopg2-binary
 mock
-
 wandb
-
 tensorflow
